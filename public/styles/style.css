@@ -508,7 +508,7 @@ body {
 
     .hero {
         padding: 40px 0;
-        min-height: auto;
+        min-height: unset;
     }
 
     .section-header h2 {
@@ -1164,5 +1164,4 @@ body {
         flex: 1 1 auto;
         min-width: 80px;
     }
-}
-
+}}
