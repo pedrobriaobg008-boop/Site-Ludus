@@ -631,9 +631,14 @@ body {
 
 .project-logo {
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 163, 224, 0.2));
+    filter: drop-shadow(0 20px 40px rgba(***REMOVED***, 63, 242, 0.25));
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* OBJECTIVES SECTION */
