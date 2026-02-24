@@ -45,6 +45,13 @@ body {
     font-size: 28px;
     font-weight: bold;
     color: var(--primary-blue);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .logo img {
