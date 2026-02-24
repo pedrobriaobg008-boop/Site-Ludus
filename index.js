@@ -18,6 +18,10 @@ app.get('/projeto', (req, res) => {
   res.render('projeto');
 });
 
+app.get('/jogos', (req, res) => {
+  res.render('jogos');
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
