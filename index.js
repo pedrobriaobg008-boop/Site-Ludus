@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const jogos = require('./models/jogos');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,7 +20,23 @@ app.get('/projeto', (req, res) => {
 });
 
 app.get('/jogos', (req, res) => {
-  res.render('jogos');
+  res.render('jogos', { jogos });
+});
+
+app.get('/jogo/:id', (req, res) => {
+  const jogoId = parseInt(req.params.id);
+  const jogo = jogos.find(j => j.id === jogoId);
+  
+  if (!jogo) {
+    return res.status(404).render('404');
+  }
+
+  // Obter jogos relacionados
+  const jogosRelacionados = jogo.relacionados
+    .map(id => jogos.find(j => j.id === id))
+    .filter(j => j !== undefined);
+
+  res.render('jogo-detalhes', { jogo, jogosRelacionados });
 });
 
 app.listen(PORT, () => {

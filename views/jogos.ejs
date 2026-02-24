@@ -51,146 +51,30 @@
     <!-- Games Grid Section -->
     <section class="games-grid-section">
         <div class="container">
-            <p class="games-counter">6 jogos encontrados</p>
+            <p class="games-counter"><%= jogos.length %> jogos encontrados</p>
             
             <div class="games-grid">
-                <!-- Game 1 -->
-                <div class="game-card-full">
-                    <div class="game-image">
-                        <div class="game-placeholder">🎮</div>
-                    </div>
-                    <div class="game-info">
-                        <h3>Mundo das Cores</h3>
-                        <p class="game-description">Aprenda sobre cores de forma divertida e interativa. Ideal para desenvolver habilidades visuais e cognitivas.</p>
-                        <div class="game-tags">
-                            <span class="tag">Arte</span>
-                            <span class="tag">Linguagens</span>
+                <% jogos.forEach(jogo => { %>
+                    <div class="game-card-full">
+                        <div class="game-image">
+                            <div class="game-placeholder"><%= jogo.icon %></div>
                         </div>
-                        <button class="btn-play">🎮 Abrir Jogo</button>
-                    </div>
-                </div>
-
-                <!-- Game 2 -->
-                <div class="game-card-full">
-                    <div class="game-image">
-                        <div class="game-placeholder">🎮</div>
-                    </div>
-                    <div class="game-info">
-                        <h3>Aventura dos Números</h3>
-                        <p class="game-description">Explore o mundo dos números com atividades lúdicas e acessíveis para todas as crianças.</p>
-                        <div class="game-tags">
-                            <span class="tag">Matemática</span>
+                        <div class="game-info">
+                            <h3><%= jogo.nome %></h3>
+                            <p class="game-description"><%= jogo.descricao %></p>
+                            <div class="game-tags">
+                                <% jogo.tags.forEach(tag => { %>
+                                    <span class="tag"><%= tag %></span>
+                                <% }); %>
+                            </div>
+                            <a href="/jogo/<%= jogo.id %>" class="btn-play">🎮 Abrir Jogo</a>
                         </div>
-                        <button class="btn-play">🎮 Abrir Jogo</button>
                     </div>
-                </div>
-
-                <!-- Game 3 -->
-                <div class="game-card-full">
-                    <div class="game-image">
-                        <div class="game-placeholder">🎮</div>
-                    </div>
-                    <div class="game-info">
-                        <h3>Reino Animal</h3>
-                        <p class="game-description">Conheça os animais e seus habitats através de jogos educacionais e ilustrações amigáveis.</p>
-                        <div class="game-tags">
-                            <span class="tag">Ciências da Natureza</span>
-                        </div>
-                        <button class="btn-play">🎮 Abrir Jogo</button>
-                    </div>
-                </div>
-
-                <!-- Game 4 -->
-                <div class="game-card-full">
-                    <div class="game-image">
-                        <div class="game-placeholder">🎮</div>
-                    </div>
-                    <div class="game-info">
-                        <h3>Alfabeto Divertido</h3>
-                        <p class="game-description">Aprenda as letras do alfabeto com imagens e atividades interativas.</p>
-                        <div class="game-tags">
-                            <span class="tag">Língua Portuguesa</span>
-                            <span class="tag">Linguagens</span>
-                        </div>
-                        <button class="btn-play">🎮 Abrir Jogo</button>
-                    </div>
-                </div>
-
-                <!-- Game 5 -->
-                <div class="game-card-full">
-                    <div class="game-image">
-                        <div class="game-placeholder">🎮</div>
-                    </div>
-                    <div class="game-info">
-                        <h3>Formas Geométricas</h3>
-                        <p class="game-description">Descubra as formas geométricas básicas através de quebra-cabeças e desafios acessórios.</p>
-                        <div class="game-tags">
-                            <span class="tag">Matemática</span>
-                        </div>
-                        <button class="btn-play">🎮 Abrir Jogo</button>
-                    </div>
-                </div>
-
-                <!-- Game 6 -->
-                <div class="game-card-full">
-                    <div class="game-image">
-                        <div class="game-placeholder">🎮</div>
-                    </div>
-                    <div class="game-info">
-                        <h3>Minhas Emoções</h3>
-                        <p class="game-description">Aprenda a identificar e expressar emoções de forma clara e divertida.</p>
-                        <div class="game-tags">
-                            <span class="tag">Ciências Humanas</span>
-                        </div>
-                        <button class="btn-play">🎮 Abrir Jogo</button>
-                    </div>
-                </div>
+                <% }); %>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="/logo-ludus-vertical.png" alt="Logo +LUDUS">
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Navegação</h4>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/projeto">Projeto +LUDUS</a></li>
-                        <li><a href="/jogos">Jogos</a></li>
-                        <li><a href="/#equipe">Equipe</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Contato</h4>
-                    <p>
-                        <a href="mailto:ludus@ifsul.edu.br">ludus@ifsul.edu.br</a>
-                    </p>
-                    <div class="social-links">
-                        <a href="#instagram" title="Instagram">📱</a>
-                        <a href="#facebook" title="Facebook">f</a>
-                        <a href="#youtube" title="YouTube">▶️</a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>♿ Acessibilidade</h4>
-                    <p>Este site é acessível e segue as diretrizes WCAG 2.1 e GAIA para garantir acesso a todas as pessoas.</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 Projeto +LUDUS - Instituto Federal Sul-rio-grandense (IFSUL). Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <%- include('./footer') %>
 </body>
 </html>

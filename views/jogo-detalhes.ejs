@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= jogo.nome %> - +LUDUS</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('./header') %>
+
+    <!-- Jogo Detalhes -->
+    <section class="jogo-detalhes">
+        <div class="container">
+            
+            <!-- Cabeçalho do Jogo -->
+            <div class="jogo-header">
+                <h1><%= jogo.nome %></h1>
+                <div class="jogo-tags">
+                    <% jogo.tags.forEach(tag => { %>
+                        <span class="tag"><%= tag %></span>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Área de Exibição do Jogo -->
+            <div class="jogo-player-area">
+                <div class="jogo-player-container">
+                    <div class="jogo-icon-container">
+                        <div class="jogo-icon"><%= jogo.icon %></div>
+                    </div>
+                </div>
+                <p class="jogo-play-hint">Clique no botão "Abrir Jogo" para começar</p>
+            </div>
+
+            <!-- Descrição e Ações -->
+            <div class="jogo-info-section">
+                <div class="jogo-description">
+                    <p><%= jogo.descricaoCompleta %></p>
+                </div>
+
+                <div class="jogo-actions">
+                    <button class="btn-action">Artículos Relacionados</button>
+                    <button class="btn-action">Ler Sobre</button>
+                </div>
+            </div>
+
+            <!-- Botão Abrir Jogo Grande -->
+            <div class="jogo-play-section">
+                <button class="btn-play-large">🎮 Abrir Jogo</button>
+            </div>
+
+            <!-- Jogos Relacionados -->
+            <div class="relacionados-section">
+                <div class="relacionados-header">
+                    <h2>Jogos Relacionados</h2>
+                    <a href="/jogos" class="link-all-games">Ver todos os jogos →</a>
+                </div>
+
+                <div class="games-grid">
+                    <% jogosRelacionados.forEach(jogoRel => { %>
+                        <div class="game-card-full">
+                            <div class="game-image">
+                                <div class="game-placeholder"><%= jogoRel.icon %></div>
+                            </div>
+                            <div class="game-info">
+                                <h3><%= jogoRel.nome %></h3>
+                                <p class="game-description"><%= jogoRel.descricao %></p>
+                                <div class="game-tags">
+                                    <% jogoRel.tags.forEach(tag => { %>
+                                        <span class="tag"><%= tag %></span>
+                                    <% }); %>
+                                </div>
+                                <a href="/jogo/<%= jogoRel.id %>" class="btn-play">🎮 Abrir Jogo</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <%- include('./footer') %>
+</body>
+</html>
