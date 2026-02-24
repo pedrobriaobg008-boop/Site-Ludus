@@ -399,7 +399,7 @@ body {
 
 .footer-logo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     font-size: 24px;
     font-weight: bold;
@@ -407,7 +407,7 @@ body {
 }
 
 .footer-logo img {
-    height: 50px;
+    height: 200px;
     width: auto;
 }
 
