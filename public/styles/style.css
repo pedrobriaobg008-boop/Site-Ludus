@@ -1057,6 +1057,13 @@ body {
     padding: 50px 0;
 }
 
+.games-counter {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
