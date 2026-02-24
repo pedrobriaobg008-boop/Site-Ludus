@@ -1,0 +1,25 @@
+{
+  "name": "site-ludus",
+  "version": "1.0.0",
+  "description": "Website +LUDUS - Jogos Educacionais Acessíveis para Crianças Autistas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "ludus",
+    "educacional",
+    "acessível",
+    "autismo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
