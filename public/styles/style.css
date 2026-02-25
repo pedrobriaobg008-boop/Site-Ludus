@@ -1562,14 +1562,15 @@ body {
 
 .equipe-badge {
     display: inline-block;
-    background: rgba(0, 163, 224, 0.15);
-    padding: 10px 20px;
+    background: rgba(0, 163, 224, 0.2);
+    padding: 12px 28px;
     border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
     letter-spacing: 0.5px;
     color: var(--primary-blue);
+    border: 2px solid rgba(0, 163, 224, 0.3);
 }
 
 .equipe-header h1 {
@@ -1675,8 +1676,8 @@ body {
     }
 
     .equipe-badge {
-        font-size: 11px;
-        padding: 8px 16px;
+        font-size: 12px;
+        padding: 10px 22px;
     }
 
     .equipe-header h1 {
