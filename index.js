@@ -49,6 +49,10 @@ app.get('/jogo/:id', (req, res) => {
   res.render('jogo-detalhes', { jogo, jogosRelacionados });
 });
 
+app.get('/contato', (req, res) => {
+  res.render('contato');
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

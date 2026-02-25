@@ -2079,3 +2079,309 @@ body {
         font-size: 10px;
     }
 }
+
+/* CONTATO PAGE */
+.contato-header {
+    background: var(--section-alt-bg);
+    color: var(--dark-purple);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contato-badge {
+    display: inline-block;
+    background: rgba(0, 163, 224, 0.12);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    color: var(--primary-blue);
+}
+
+.contato-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.contato-header p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--primary-blue);
+}
+
+.contato-content {
+    background: white;
+    padding: 60px 0;
+}
+
+.contato-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: white;
+    border: 2px solid #E0E0E0;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.email-card {
+    border-color: var(--primary-pink);
+    border-left: 4px solid var(--primary-pink);
+}
+
+.email-card:hover {
+    box-shadow: 0 4px 12px rgba(233, 30, 140, 0.15);
+}
+
+.location-card {
+    border-color: var(--primary-pink);
+    border-left: 4px solid var(--primary-pink);
+}
+
+.location-card:hover {
+    box-shadow: 0 4px 12px rgba(233, 30, 140, 0.15);
+}
+
+.social-card {
+    border-color: var(--primary-pink);
+    border-left: 4px solid var(--primary-pink);
+}
+
+.social-card:hover {
+    box-shadow: 0 4px 12px rgba(233, 30, 140, 0.15);
+}
+
+.info-card .card-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.info-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.info-card a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+    color: var(--primary-pink);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 163, 224, 0.1);
+    border-radius: 50%;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.contato-form-wrapper {
+    background: white;
+    border: 2px solid var(--primary-blue);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: white;
+    color: #333;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.1);
+}
+
+.submit-btn {
+    padding: 14px 28px;
+    background: var(--primary-pink);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #c7187d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 30, 140, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* RESPONSIVE - CONTATO PAGE */
+@media (max-width: 768px) {
+    .contato-header {
+        padding: 40px 0;
+    }
+
+    .contato-badge {
+        font-size: 12px;
+        padding: 10px 22px;
+    }
+
+    .contato-header h1 {
+        font-size: 32px;
+    }
+
+    .contato-header p {
+        font-size: 14px;
+    }
+
+    .contato-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contato-form-wrapper {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .submit-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contato-header {
+        padding: 30px 0;
+    }
+
+    .contato-badge {
+        font-size: 11px;
+        padding: 8px 18px;
+    }
+
+    .contato-header h1 {
+        font-size: 24px;
+    }
+
+    .contato-header p {
+        font-size: 12px;
+    }
+
+    .contato-info {
+        gap: 15px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-card .card-icon {
+        font-size: 28px;
+    }
+
+    .info-card h3 {
+        font-size: 16px;
+    }
+
+    .info-card p {
+        font-size: 12px;
+    }
+
+    .contato-form-wrapper {
+        padding: 15px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato +LUDUS - Jogos Educacionais Acessíveis</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('./header') %>
+
+    <!-- Contato Header Section -->
+    <section class="contato-header">
+        <div class="container">
+            <div class="contato-badge">📧 Fale Conosco</div>
+            <h1>Entre em Contato</h1>
+            <p>Tem dúvidas, sugestões ou quer saber mais sobre o projeto? Adoraríamos ouvir você!</p>
+        </div>
+    </section>
+
+    <!-- Contato Content Section -->
+    <section class="contato-content">
+        <div class="container">
+            <div class="contato-container">
+                <!-- Left Side - Contact Info -->
+                <div class="contato-info">
+                    <!-- Email Card -->
+                    <div class="info-card email-card">
+                        <div class="card-icon">📧</div>
+                        <h3>E-mail</h3>
+                        <p><a href="mailto:marsludus@gmail.com">marsludus@gmail.com</a></p>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="info-card location-card">
+                        <div class="card-icon">📍</div>
+                        <h3>Localização</h3>
+                        <p>Instituto Federal Sul-Rio-Grandense (IFSUL)<br>Rio Grande do Sul, Brasil</p>
+                    </div>
+
+                    <!-- Social Media Card -->
+                    <div class="info-card social-card">
+                        <div class="card-icon">
+                            <span class="social-icon">📱</span>
+                        </div>
+                        <h3>Redes Sociais</h3>
+                        <p>Siga-nos no Instagram e no YouTube para acompanhar as novidades do projeto.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com" target="_blank" title="Instagram">📷</a>
+                            <a href="https://youtube.com" target="_blank" title="YouTube">🎥</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Contact Form -->
+                <div class="contato-form-wrapper">
+                    <form class="contato-form">
+                        <div class="form-group">
+                            <label for="nome">Nome completo *</label>
+                            <input type="text" id="nome" name="nome" required placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assunto">Assunto *</label>
+                            <input type="text" id="assunto" name="assunto" required placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" rows="6" required placeholder=""></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>✈️</span> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('./footer') %>
+</body>
+</html>
