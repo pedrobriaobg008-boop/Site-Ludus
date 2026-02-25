@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const jogos = require('./models/jogos');
 const equipe = require('./models/equipe');
+const parceiros = require('./models/parceiros');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,6 +27,10 @@ app.get('/jogos', (req, res) => {
 
 app.get('/equipe', (req, res) => {
   res.render('equipe', { equipe });
+});
+
+app.get('/parceiros', (req, res) => {
+  res.render('parceiros', { parceiros });
 });
 
 app.get('/jogo/:id', (req, res) => {

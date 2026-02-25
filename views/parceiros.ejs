@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiros +LUDUS - Jogos Educacionais Acessíveis</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('./header') %>
+
+    <!-- Parceiros Header Section -->
+    <section class="parceiros-header">
+        <div class="container">
+            <div class="parceiros-badge">🏢 Parceiros e Apoiadores</div>
+            <h1>Instituições Parceiras</h1>
+            
+            <div class="parceiros-descricao">
+                <p><%= parceiros.descricao[0] %></p>
+                <p><%= parceiros.descricao[1] %></p>
+                <p class="parceiros-destaque"><%= parceiros.descricao[2] %></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instituição Sede Section -->
+    <section class="instituicao-sede-section">
+        <div class="container">
+            <div class="sede-title">
+                <span class="sede-icon">🏢</span>
+                <h2>Instituição Sede</h2>
+            </div>
+
+            <div class="sede-card">
+                <h3><%= parceiros.instituicaoSede.nome %></h3>
+                <p><%= parceiros.instituicaoSede.descricao %></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instituições Parceiras Section -->
+    <section class="instituicoes-parceiras-section">
+        <div class="container">
+            <div class="parceiros-title">
+                <span class="parceiros-icon">🌐</span>
+                <h2>Instituições Parceiras</h2>
+            </div>
+
+            <div class="parceiros-grid">
+                <% parceiros.instituicoesParceiras.forEach(parceiro => { %>
+                    <div class="parceiro-card">
+                        <div class="parceiro-icon-container"></div>
+                        <h3><%= parceiro.nome %></h3>
+                        <p><%= parceiro.descricao %></p>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <%- include('./footer') %>
+</body>
+</html>

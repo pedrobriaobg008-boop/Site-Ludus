@@ -4,7 +4,7 @@ const equipe = {
     professoresePesquisadores: [
         {
             id: 1,
-            nome: 'Marcelo Soufer',
+            nome: 'Marcelo Siedler',
             cargo: 'Docente do Curso de Computação',
             instituicao: 'IFSul',
             bio: 'Coordenador do projeto +LUDUS'
@@ -59,7 +59,7 @@ const equipe = {
     colaboradoresExternos: [
         {
             id: 8,
-            nome: 'Marcelo Soufer',
+            nome: 'Marcelo Siedler',
             cargo: 'Especialista em Acessibilidade',
             instituicao: 'Consultoria para Inclusão Digital',
             bio: 'Consultor WCAG 2.1 e GAIA'

@@ -1772,3 +1772,303 @@ body {
         font-size: 10px;
     }
 }
+
+/* PARCEIROS PAGE */
+.parceiros-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #0088B4 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.parceiros-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.parceiros-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.parceiros-descricao {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.parceiros-descricao p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    opacity: 0.95;
+}
+
+.parceiros-descricao p:last-child {
+    margin-bottom: 0;
+}
+
+.parceiros-descricao .parceiros-destaque {
+    color: var(--primary-pink);
+    font-weight: 600;
+}
+
+/* Instituição Sede Section */
+.instituicao-sede-section {
+    background: linear-gradient(135deg, #B3E5FC 0%, #E1BEE7 100%);
+    padding: 60px 0;
+}
+
+.sede-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.sede-icon {
+    font-size: 24px;
+}
+
+.sede-title h2 {
+    font-size: 28px;
+    color: var(--primary-blue);
+    margin: 0;
+    font-weight: 700;
+}
+
+.sede-card {
+    background: white;
+    border: 2px solid var(--primary-blue);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.sede-card h3 {
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+
+.sede-card p {
+    font-size: 14px;
+    color: var(--primary-blue);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Instituições Parceiras Section */
+.instituicoes-parceiras-section {
+    background: white;
+    padding: 60px 0;
+}
+
+.parceiros-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.parceiros-icon {
+    font-size: 24px;
+}
+
+.parceiros-title h2 {
+    font-size: 28px;
+    color: var(--primary-blue);
+    margin: 0;
+    font-weight: 700;
+}
+
+.parceiros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.parceiro-card {
+    background: white;
+    border: 2px solid var(--primary-pink);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.parceiro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(233, 30, 140, 0.15);
+}
+
+.parceiro-icon-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #E8F4F8 0%, #F5E8F8 100%);
+    margin: 0 auto 15px;
+}
+
+.parceiro-card h3 {
+    font-size: 18px;
+    color: var(--primary-pink);
+    margin: 15px 0 10px;
+    font-weight: 700;
+}
+
+.parceiro-card p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* RESPONSIVE - PARCEIROS PAGE */
+@media (max-width: 768px) {
+    .parceiros-header {
+        padding: 40px 0;
+    }
+
+    .parceiros-badge {
+        font-size: 11px;
+        padding: 8px 16px;
+    }
+
+    .parceiros-header h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .parceiros-descricao {
+        max-width: 100%;
+    }
+
+    .parceiros-descricao p {
+        font-size: 14px;
+    }
+
+    .instituicao-sede-section {
+        padding: 40px 0;
+    }
+
+    .sede-title h2 {
+        font-size: 22px;
+    }
+
+    .sede-card {
+        padding: 25px 20px;
+        max-width: 100%;
+    }
+
+    .sede-card h3 {
+        font-size: 20px;
+    }
+
+    .sede-card p {
+        font-size: 13px;
+    }
+
+    .instituicoes-parceiras-section {
+        padding: 40px 0;
+    }
+
+    .parceiros-title h2 {
+        font-size: 22px;
+    }
+
+    .parceiros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .parceiro-card {
+        padding: 20px 15px;
+    }
+
+    .parceiro-icon-container {
+        width: 60px;
+        height: 60px;
+    }
+
+    .parceiro-card h3 {
+        font-size: 16px;
+    }
+
+    .parceiro-card p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .parceiros-header {
+        padding: 30px 0;
+    }
+
+    .parceiros-header h1 {
+        font-size: 24px;
+    }
+
+    .parceiros-descricao p {
+        font-size: 13px;
+    }
+
+    .instituicao-sede-section {
+        padding: 30px 0;
+    }
+
+    .sede-title h2 {
+        font-size: 18px;
+    }
+
+    .sede-card {
+        padding: 20px 15px;
+    }
+
+    .sede-card h3 {
+        font-size: 18px;
+    }
+
+    .sede-card p {
+        font-size: 12px;
+    }
+
+    .instituicoes-parceiras-section {
+        padding: 30px 0;
+    }
+
+    .parceiros-title h2 {
+        font-size: 18px;
+    }
+
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .parceiro-card {
+        padding: 18px 12px;
+    }
+
+    .parceiro-icon-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .parceiro-card h3 {
+        font-size: 14px;
+    }
+
+    .parceiro-card p {
+        font-size: 10px;
+    }
+}
