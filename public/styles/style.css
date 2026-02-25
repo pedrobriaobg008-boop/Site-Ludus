@@ -11,6 +11,9 @@
     --light-purple: #E8D5F2;
     --dark-purple: #4A235A;
     --light-bg: #E8F4F8;
+    --header-bg: #E8F7FC;
+    --section-alt-bg: #E0F3F9;
+    --footer-dark: #5D1B7A;
 }
 
 body {
@@ -21,7 +24,7 @@ body {
 
 /* NAVBAR */
 .navbar {
-    background: linear-gradient(135deg, #E8F4F8 0%, #F5E8F8 100%);
+    background: var(--header-bg);
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -82,7 +85,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-    background: linear-gradient(135deg, var(--light-bg) 0%, #F0E8F8 100%);
+    background: white;
     padding: 80px 0;
     min-height: 100vh;
     display: flex;
@@ -175,7 +178,7 @@ body {
 
 /* JOGOS EM DESTAQUE */
 .featured-games {
-    background: linear-gradient(135deg, #B3E5FC 0%, #E1BEE7 100%);
+    background: var(--section-alt-bg);
     padding: 80px 0;
 }
 
@@ -358,7 +361,7 @@ body {
 
 /* INSTITUIÇÃO RESPONSÁVEL */
 .institution {
-    background: var(--light-bg);
+    background: var(--section-alt-bg);
     padding: 60px 0;
     text-align: center;
 }
@@ -386,7 +389,7 @@ body {
 
 /* FOOTER */
 .footer {
-    background: linear-gradient(135deg, var(--purple) 0%, #9147FF 100%);
+    background: var(--footer-dark);
     color: white;
     padding: 60px 0 20px;
 }
@@ -588,7 +591,7 @@ body {
 
 /* PAGE TITLE */
 .page-title {
-    background: linear-gradient(135deg, var(--light-bg) 0%, #F0E8F8 100%);
+    background: var(--section-alt-bg);
     padding: 60px 0;
     text-align: center;
 }
@@ -607,7 +610,7 @@ body {
 
 /* ABOUT SECTION */
 .about-section {
-    background: linear-gradient(135deg, #E8F4F8 0%, #F5E8F8 100%);
+    background: var(--section-alt-bg);
     padding: 80px 0;
 }
 
@@ -695,7 +698,7 @@ body {
 
 /* METHODOLOGY SECTION */
 .methodology-section {
-    background: linear-gradient(135deg, #E8F4F8 0%, #F5E8F8 100%);
+    background: var(--section-alt-bg);
     padding: 80px 0;
 }
 
@@ -912,7 +915,7 @@ body {
 
 /* GAMES PAGE */
 .games-page-title {
-    background: #B3E5FC;
+    background: var(--section-alt-bg);
     padding: 60px 0 50px;
     text-align: center;
 }
@@ -1053,7 +1056,7 @@ body {
 
 /* GAMES GRID SECTION */
 .games-grid-section {
-    background: white;
+    background: var(--section-alt-bg);
     padding: 50px 0;
 }
 
@@ -1260,7 +1263,7 @@ body {
 
 /* JOGO DETALHES PAGE */
 .jogo-detalhes {
-    background: linear-gradient(135deg, #B3E5FC 0%, #E8D5F2 100%);
+    background: white;
     padding: 60px 0;
     min-height: 100vh;
 }
@@ -1551,27 +1554,29 @@ body {
 
 /* EQUIPE PAGE */
 .equipe-header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #0088B4 100%);
-    color: white;
+    background: var(--section-alt-bg);
+    color: var(--dark-purple);
     padding: 60px 0;
     text-align: center;
 }
 
 .equipe-badge {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 163, 224, 0.15);
     padding: 10px 20px;
     border-radius: 50px;
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 15px;
     letter-spacing: 0.5px;
+    color: var(--primary-blue);
 }
 
 .equipe-header h1 {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 15px;
+    color: var(--primary-blue);
 }
 
 .equipe-header p {
@@ -1579,11 +1584,11 @@ body {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
-    opacity: 0.95;
+    color: var(--primary-blue);
 }
 
 .equipe-content {
-    background: linear-gradient(135deg, #B3E5FC 0%, #E1BEE7 100%);
+    background: white;
     padding: 60px 0;
 }
 
@@ -1775,8 +1780,8 @@ body {
 
 /* PARCEIROS PAGE */
 .parceiros-header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #0088B4 100%);
-    color: white;
+    background: var(--section-alt-bg);
+    color: var(--dark-purple);
     padding: 60px 0;
     text-align: center;
 }
@@ -1796,6 +1801,7 @@ body {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 30px;
+    color: var(--primary-blue);
 }
 
 .parceiros-descricao {
@@ -1808,7 +1814,7 @@ body {
     font-size: 15px;
     line-height: 1.8;
     margin-bottom: 15px;
-    opacity: 0.95;
+    color: var(--primary-blue);
 }
 
 .parceiros-descricao p:last-child {
@@ -1822,7 +1828,7 @@ body {
 
 /* Instituição Sede Section */
 .instituicao-sede-section {
-    background: linear-gradient(135deg, #B3E5FC 0%, #E1BEE7 100%);
+    background: white;
     padding: 60px 0;
 }
 
@@ -1869,7 +1875,7 @@ body {
 
 /* Instituições Parceiras Section */
 .instituicoes-parceiras-section {
-    background: white;
+    background: var(--section-alt-bg);
     padding: 60px 0;
 }
 
@@ -1915,7 +1921,7 @@ body {
     width: 70px;
     height: 70px;
     border-radius: 12px;
-    background: linear-gradient(135deg, #E8F4F8 0%, #F5E8F8 100%);
+    background: linear-gradient(135deg, #E0F3F9 0%, #D0E8F2 100%);
     margin: 0 auto 15px;
 }
 
