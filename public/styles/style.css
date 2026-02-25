@@ -1544,7 +1544,226 @@ body {
         font-size: 20px;
     }
 
-    .games-grid {
+/* EQUIPE PAGE */
+.equipe-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #0088B4 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.equipe-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.equipe-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.equipe-header p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.equipe-content {
+    background: linear-gradient(135deg, #B3E5FC 0%, #E1BEE7 100%);
+    padding: 60px 0;
+}
+
+.equipe-group {
+    margin-bottom: 60px;
+}
+
+.equipe-group:last-child {
+    margin-bottom: 0;
+}
+
+.group-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.group-icon {
+    font-size: 24px;
+}
+
+.group-title h2 {
+    font-size: 28px;
+    color: var(--primary-pink);
+    margin: 0;
+    font-weight: 700;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.team-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E0E0E0 0%, #D0D0D0 100%);
+    margin: 0 auto 15px;
+    flex-shrink: 0;
+}
+
+.team-card h3 {
+    font-size: 18px;
+    color: var(--dark-purple);
+    margin: 15px 0 8px;
+    font-weight: 700;
+}
+
+.team-card .cargo {
+    font-size: 13px;
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+.team-card .instituicao {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    font-style: italic;
+}
+
+/* RESPONSIVE - EQUIPE PAGE */
+@media (max-width: 768px) {
+    .equipe-header {
+        padding: 40px 0;
+    }
+
+    .equipe-badge {
+        font-size: 11px;
+        padding: 8px 16px;
+    }
+
+    .equipe-header h1 {
+        font-size: 32px;
+    }
+
+    .equipe-header p {
+        font-size: 14px;
+    }
+
+    .equipe-content {
+        padding: 40px 0;
+    }
+
+    .equipe-group {
+        margin-bottom: 40px;
+    }
+
+    .group-title h2 {
+        font-size: 22px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .team-card {
+        padding: 20px 15px;
+    }
+
+    .team-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .team-card h3 {
+        font-size: 16px;
+    }
+
+    .team-card .cargo {
+        font-size: 12px;
+    }
+
+    .team-card .instituicao {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .equipe-header {
+        padding: 30px 0;
+    }
+
+    .equipe-header h1 {
+        font-size: 24px;
+    }
+
+    .equipe-header p {
+        font-size: 13px;
+    }
+
+    .equipe-content {
+        padding: 30px 0;
+    }
+
+    .equipe-group {
+        margin-bottom: 30px;
+    }
+
+    .group-title h2 {
+        font-size: 18px;
+    }
+
+    .team-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .team-card {
+        padding: 18px 12px;
+    }
+
+    .team-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-card h3 {
+        font-size: 14px;
+    }
+
+    .team-card .cargo {
+        font-size: 11px;
+    }
+
+    .team-card .instituicao {
+        font-size: 10px;
     }
 }

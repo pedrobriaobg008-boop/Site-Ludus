@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe +LUDUS - Jogos Educacionais Acessíveis</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('./header') %>
+
+    <!-- Equipe Header Section -->
+    <section class="equipe-header">
+        <div class="container">
+            <div class="equipe-badge">🔑 Pessoas Fazem</div>
+            <h1>Conheça Quem Faz o +LUDUS</h1>
+            <p><%= equipe.descricao %></p>
+        </div>
+    </section>
+
+    <!-- Equipe Content Section -->
+    <section class="equipe-content">
+        <div class="container">
+            
+            <!-- Professores e Pesquisadores -->
+            <div class="equipe-group">
+                <div class="group-title">
+                    <span class="group-icon">👁️</span>
+                    <h2>Professores e Pesquisadores</h2>
+                </div>
+                <div class="team-grid">
+                    <% equipe.professoresePesquisadores.forEach(pessoa => { %>
+                        <div class="team-card">
+                            <div class="team-avatar"></div>
+                            <h3><%= pessoa.nome %></h3>
+                            <p class="cargo"><%= pessoa.cargo %></p>
+                            <p class="instituicao"><%= pessoa.instituicao %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Alunos e Bolsistas -->
+            <div class="equipe-group">
+                <div class="group-title">
+                    <span class="group-icon">🎓</span>
+                    <h2>Alunos e Bolsistas</h2>
+                </div>
+                <div class="team-grid">
+                    <% equipe.alunoseBolsistas.forEach(pessoa => { %>
+                        <div class="team-card">
+                            <div class="team-avatar"></div>
+                            <h3><%= pessoa.nome %></h3>
+                            <p class="cargo"><%= pessoa.cargo %></p>
+                            <p class="instituicao"><%= pessoa.instituicao %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Colaboradores Externos -->
+            <div class="equipe-group">
+                <div class="group-title">
+                    <span class="group-icon">🏢</span>
+                    <h2>Colaboradores Externos</h2>
+                </div>
+                <div class="team-grid">
+                    <% equipe.colaboradoresExternos.forEach(pessoa => { %>
+                        <div class="team-card">
+                            <div class="team-avatar"></div>
+                            <h3><%= pessoa.nome %></h3>
+                            <p class="cargo"><%= pessoa.cargo %></p>
+                            <p class="instituicao"><%= pessoa.instituicao %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <%- include('./footer') %>
+</body>
+</html>
