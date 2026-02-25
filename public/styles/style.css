@@ -1788,13 +1788,14 @@ body {
 
 .parceiros-badge {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px 20px;
+    background: rgba(0, 163, 224, 0.12);
+    padding: 10px 24px;
     border-radius: 50px;
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 15px;
     letter-spacing: 0.5px;
+    color: var(--primary-blue);
 }
 
 .parceiros-header h1 {
@@ -1946,8 +1947,8 @@ body {
     }
 
     .parceiros-badge {
-        font-size: 11px;
-        padding: 8px 16px;
+        font-size: 12px;
+        padding: 10px 22px;
     }
 
     .parceiros-header h1 {
