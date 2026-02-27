@@ -108,13 +108,21 @@ body {
     width: 41px;
     height: 24px;
     opacity: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0;
     vertical-align: middle;
-    color: var(--primary-blue);
+    background: rgba(2, 130, 177, 1);
+    color: white;
+    border-radius: 4px;
+    animation-duration: 0ms;
+    padding: 0 8px;
 }
 
 .nav-icon-jogos {
