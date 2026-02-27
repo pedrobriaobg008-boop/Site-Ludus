@@ -141,9 +141,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    position: absolute;
-    left: 105px;
-    top: 59.5px;
     padding: 10px 16px;
     border-radius: 20px;
     transition: none;
@@ -176,11 +173,7 @@ body {
     line-height: 24px;
     letter-spacing: 0;
     vertical-align: middle;
-    background: rgba(2, 130, 177, 1);
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    color: rgba(2, 130, 177, 1);
     animation-duration: 0ms;
 }
 
