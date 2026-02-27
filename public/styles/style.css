@@ -118,11 +118,8 @@ body {
     line-height: 24px;
     letter-spacing: 0;
     vertical-align: middle;
-    background: rgba(2, 130, 177, 1);
     color: white;
-    border-radius: 4px;
     animation-duration: 0ms;
-    padding: 0 8px;
 }
 
 .nav-icon-jogos {
