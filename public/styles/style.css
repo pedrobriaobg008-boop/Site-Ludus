@@ -94,10 +94,50 @@ body {
 .nav-links a[href="/jogos"] {
     width: 101px;
     height: 44px;
+    padding: 10px 16px;
+    border-radius: 20px;
     opacity: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+    transition: none;
+}
+
+.nav-text-jogos {
+    width: 41px;
+    height: 24px;
+    opacity: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon-jogos {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.nav-icon-jogos::before {
+    content: "";
+    position: absolute;
+    width: 16.666666px;
+    height: 11.666666px;
+    top: 4.17px;
+    left: 1.67px;
+    border: 1.67px solid rgba(2, 130, 177, 1);
+    opacity: 1;
+    box-sizing: border-box;
+}
+
+.nav-links a[href="/jogos"]:hover {
+    color: var(--primary-blue);
 }
 
 .nav-links a:hover {
