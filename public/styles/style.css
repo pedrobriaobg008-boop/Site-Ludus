@@ -117,39 +117,7 @@ body {
     width: 20px;
     height: 20px;
     opacity: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     flex-shrink: 0;
-    position: relative;
-    background: linear-gradient(135deg, transparent 30%, rgba(2, 130, 177, 1) 30%, rgba(2, 130, 177, 1) 35%, transparent 35%, transparent 65%, rgba(2, 130, 177, 1) 65%, rgba(2, 130, 177, 1) 70%, transparent 70%),
-                linear-gradient(45deg, transparent 30%, rgba(2, 130, 177, 1) 30%, rgba(2, 130, 177, 1) 35%, transparent 35%, transparent 65%, rgba(2, 130, 177, 1) 65%, rgba(2, 130, 177, 1) 70%, transparent 70%);
-    background-size: 12px 12px;
-    background-position: 3px 5px;
-    background-repeat: no-repeat;
-}
-
-.nav-icon-jogos::before {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 13px;
-    border: 1.67px solid rgba(2, 130, 177, 1);
-    border-radius: 8px;
-    box-sizing: border-box;
-    top: 3px;
-}
-
-.nav-icon-jogos::after {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: rgba(2, 130, 177, 1);
-    border-radius: 50%;
-    top: 7px;
-    right: 3px;
-    box-shadow: -8px 0 0 -2px rgba(2, 130, 177, 1);
 }
 
 .nav-links a[href="/jogos"]:hover {
