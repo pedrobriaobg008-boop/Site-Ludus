@@ -24,30 +24,31 @@ body {
 
 /* NAVBAR */
 .navbar {
-    background: var(--header-bg);
+    background: rgba(220, 243, 249, 1);
     padding: 0;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     width: 100%;
-    max-width: 1440px;
-    height: 165px;
-    margin: 0 auto;
+    height: auto;
     opacity: 1;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .container-header {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 40px;
+    width: 1216px;
+    height: 163px;
+    margin-left: 112px;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 1;
+    position: relative;
 }
 
 .logo {
@@ -59,11 +60,6 @@ body {
     color: var(--primary-blue);
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
 }
 
 .logo img {
@@ -76,6 +72,12 @@ body {
     display: flex;
     gap: 50px;
     align-items: center;
+    width: 648px;
+    height: 44px;
+    opacity: 1;
+    position: absolute;
+    top: 59.5px;
+    left: 568.18px;
 }
 
 .nav-links a {
