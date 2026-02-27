@@ -91,6 +91,15 @@ body {
     gap: 8px;
 }
 
+.nav-links a[href="/jogos"] {
+    width: 101px;
+    height: 44px;
+    opacity: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .nav-links a:hover {
     color: var(--primary-pink);
 }
