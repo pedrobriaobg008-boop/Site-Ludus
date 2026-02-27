@@ -67,8 +67,9 @@ body {
 }
 
 .logo img {
-    height: 50px;
-    width: auto;
+    width: 270px;
+    height: 87px;
+    opacity: 1;
 }
 
 .nav-links {
