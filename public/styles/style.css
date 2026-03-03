@@ -595,9 +595,13 @@ body {
 
 /* FOOTER */
 .footer {
-    background: var(--footer-dark);
+    background: rgba(105, 15, ***REMOVED***, 1);
     color: white;
-    padding: 60px 0 20px;
+    padding: 60px 80px 20px 80px;
+    width: 1440px;
+    height: 543px;
+    opacity: 1;
+    margin: 0 auto;
 }
 
 .footer-content {
