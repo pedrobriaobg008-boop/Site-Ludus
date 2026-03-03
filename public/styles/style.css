@@ -598,11 +598,14 @@ body {
     background: rgba(105, 15, ***REMOVED***, 1);
     color: white;
     padding: 50px 0px 0px 0px;
-    width: 100%;
-    max-width: 1440px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     height: auto;
     opacity: 1;
-    margin: 0 auto;
 }
 
 .footer .container {
@@ -616,7 +619,7 @@ body {
     max-width: 1280px;
     opacity: 1;
     display: grid;
-    grid-template-columns: 280px 1fr 1fr 1fr;
+    grid-template-columns: 340px 1fr 1fr 1fr;
     gap: 50px;
     margin: 0 auto;
     padding: 0 40px;
@@ -627,8 +630,8 @@ body {
     font-weight: 700;
     margin-bottom: 18px;
     color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    text-transform: none;
+    letter-spacing: 0;
 }
 
 .footer-logo {
@@ -645,18 +648,10 @@ body {
 }
 
 .footer-logo img {
-    width: 140px;
+    width: 210px;
     height: auto;
-    max-width: 140px;
+    max-width: 210px;
     opacity: 1;
-}
-
-.footer-tagline {
-    font-size: 13px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: -8px;
-    line-height: 1.4;
 }
 
 .footer-section ul {
@@ -668,67 +663,66 @@ body {
     margin-bottom: 10px;
 }
 
-.footer-contact-item {
+.footer-contact-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 16px;
 }
 
-.footer-contact-item strong {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-accessibility-links {
-    margin-top: 12px;
+.footer-inline-icon {
+    font-size: 16px;
+    line-height: 1;
+    opacity: 0.95;
 }
 
 .footer-section a {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.92);
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 14px;
+    font-weight: 400;
 }
 
 .footer-section a:hover {
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .footer-section p {
     font-size: 14px;
     line-height: 1.6;
     margin: 0;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .social-links {
     display: flex;
-    gap: 10px;
-    margin-top: 16px;
+    gap: 24px;
+    margin-top: 0;
 }
 
 .social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 50%;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-radius: 0;
     color: white;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
 .social-links a:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
+    background: transparent;
+    transform: none;
 }
 
 .social-links a svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .footer-bottom {
