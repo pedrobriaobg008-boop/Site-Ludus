@@ -597,9 +597,10 @@ body {
 .footer {
     background: rgba(105, 15, ***REMOVED***, 1);
     color: white;
-    padding: 60px 80px 20px 80px;
-    width: 1440px;
-    height: 543px;
+    padding: 50px 0px 0px 0px;
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
     opacity: 1;
     margin: 0 auto;
 }
@@ -609,13 +610,11 @@ body {
     height: auto;
     max-width: 1280px;
     opacity: 1;
-    position: relative;
-    top: 60px;
-    left: 32px;
     display: grid;
     grid-template-columns: 280px 1fr 1fr 1fr;
     gap: 50px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .footer-section h4 {
@@ -731,12 +730,9 @@ body {
     width: 1216px;
     height: auto;
     opacity: 1;
-    position: relative;
-    top: 340px;
-    left: 32px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 24px;
-    padding-bottom: 8px;
+    padding: 24px 40px;
+    margin: 40px auto 0 auto;
     text-align: center;
     color: rgba(255, 255, 255, 0.65);
     font-size: 13px;
