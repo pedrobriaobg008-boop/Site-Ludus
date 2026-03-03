@@ -626,17 +626,24 @@ body {
 }
 
 .footer-logo {
+    width: 339px;
+    height: 204px;
+    gap: 24px;
+    opacity: 1;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
     font-size: 24px;
     font-weight: bold;
     color: white;
 }
 
 .footer-logo img {
-    height: 200px;
-    width: auto;
+    width: 268px;
+    height: 209px;
+    max-width: 268px;
+    max-height: 209.78px;
+    opacity: 1;
 }
 
 .footer-section ul {
