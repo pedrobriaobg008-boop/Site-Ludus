@@ -70,7 +70,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 50px;
+    gap: 18px;
     align-items: center;
     width: 648px;
     height: 44px;
@@ -92,7 +92,7 @@ body {
 }
 
 .nav-links a[href="/jogos"] {
-    width: 101px;
+    width: 95px;
     height: 44px;
     padding: 10px 16px;
     border-radius: 20px;
@@ -134,7 +134,7 @@ body {
 }
 
 .nav-projeto {
-    width: 180px;
+    width: 160px;
     height: 44px;
     opacity: 1;
     display: inline-flex;
@@ -178,7 +178,7 @@ body {
 }
 
 .nav-equipe {
-    width: 110px;
+    width: 100px;
     height: 44px;
     opacity: 1;
     display: inline-flex;
@@ -214,7 +214,7 @@ body {
 }
 
 .nav-parceiros {
-    width: 127px;
+    width: 115px;
     height: 44px;
     opacity: 1;
     display: inline-flex;
@@ -250,7 +250,7 @@ body {
 }
 
 .nav-contato {
-    width: 118px;
+    width: 105px;
     height: 44px;
     opacity: 1;
     display: inline-flex;
