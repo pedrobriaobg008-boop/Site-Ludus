@@ -605,10 +605,13 @@ body {
 }
 
 .footer-content {
-    width: 1280px;
-    height: 543px;
+    width: 1216px;
+    height: 204px;
     max-width: 1280px;
     opacity: 1;
+    position: relative;
+    top: 96px;
+    left: 32px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px;
