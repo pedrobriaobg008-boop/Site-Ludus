@@ -605,6 +605,11 @@ body {
     margin: 0 auto;
 }
 
+.footer .container {
+    padding: 0;
+    max-width: 100%;
+}
+
 .footer-content {
     width: 1216px;
     height: auto;
