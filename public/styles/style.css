@@ -249,6 +249,42 @@ body {
     animation-duration: 0ms;
 }
 
+.nav-contato {
+    width: 118px;
+    height: 44px;
+    opacity: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px 10px 16px;
+    border-radius: 20px;
+    transition: none;
+    animation-duration: 0ms;
+}
+
+.nav-icon-contato {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.nav-text-contato {
+    width: 52px;
+    height: 24px;
+    opacity: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    vertical-align: middle;
+    color: rgba(2, 130, 177, 1);
+    animation-duration: 0ms;
+}
+
 .nav-links a:hover {
     color: var(--primary-pink);
 }
