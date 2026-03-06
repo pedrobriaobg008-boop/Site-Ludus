@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
-const jogos = require('./models/jogos');
+const conectarMongoDB = require('./config/conexao');
+const Jogo = require('./models/jogos');
 const equipe = require('./models/equipe');
 const parceiros = require('./models/parceiros');
 
@@ -21,8 +22,14 @@ app.get('/projeto', (req, res) => {
   res.render('projeto');
 });
 
-app.get('/jogos', (req, res) => {
-  res.render('jogos', { jogos });
+app.get('/jogos', async (req, res) => {
+  try {
+    const jogos = await Jogo.find().limit(10);
+    res.render('jogos', { jogos });
+  } catch (erro) {
+    console.error('Erro ao buscar jogos:', erro);
+    res.render('jogos', { jogos: [] });
+  }
 });
 
 app.get('/equipe', (req, res) => {
@@ -33,26 +40,39 @@ app.get('/parceiros', (req, res) => {
   res.render('parceiros', { parceiros });
 });
 
-app.get('/jogo/:id', (req, res) => {
-  const jogoId = parseInt(req.params.id);
-  const jogo = jogos.find(j => j.id === jogoId);
-  
-  if (!jogo) {
-    return res.status(404).render('404');
+app.get('/jogo/:id', async (req, res) => {
+  try {
+    const jogo = await Jogo.findById(req.params.id).populate('relacionados');
+    
+    if (!jogo) {
+      return res.status(404).render('404');
+    }
+
+    res.render('jogo-detalhes', { 
+      jogo, 
+      jogosRelacionados: jogo.relacionados || [] 
+    });
+  } catch (erro) {
+    console.error('Erro ao buscar jogo:', erro);
+    res.status(404).render('404');
   }
-
-  // Obter jogos relacionados
-  const jogosRelacionados = jogo.relacionados
-    .map(id => jogos.find(j => j.id === id))
-    .filter(j => j !== undefined);
-
-  res.render('jogo-detalhes', { jogo, jogosRelacionados });
 });
 
 app.get('/contato', (req, res) => {
   res.render('contato');
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+// Iniciar servidor
+const iniciarServidor = async () => {
+  try {
+    await conectarMongoDB();
+    app.listen(PORT, () => {
+      console.log(`✓ Servidor rodando em http://localhost:${PORT}`);
+    });
+  } catch (erro) {
+    console.error('✗ Erro ao iniciar servidor:', erro);
+    process.exit(1);
+  }
+};
+
+iniciarServidor();
