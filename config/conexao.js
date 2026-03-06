@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const URL_MONGODB = 'mongodb+srv://Aluno:***REMOVED***@cluster0.9ekdn5x.mongodb.net/ludus?retryWrites=true&w=majority&appName=Cluster0';
+const URL_MONGODB = process.env.MONGODB_URI;
 
 const conectarMongoDB = async () => {
   try {
+    if (!URL_MONGODB) {
+      throw new Error('MONGODB_URI não está definida nas variáveis de ambiente');
+    }
+    
     await mongoose.connect(URL_MONGODB, {
       dbName: 'ludus'
     });

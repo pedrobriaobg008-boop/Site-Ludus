@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URL_MONGODB = 'mongodb+srv://Aluno:***REMOVED***@cluster0.9ekdn5x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const URL_MONGODB = 'mongodb+srv://Aluno:123@cluster0.9ekdn5x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 // Dados dos jogos educacionais
 const jogosEducacionais = [
