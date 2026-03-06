@@ -15,7 +15,7 @@
             
             <!-- Cabeçalho do Jogo -->
             <div class="jogo-header">
-                <h1><%= jogo.nome %></h1>
+                <h1><%= jogo.titulo %></h1>
                 <div class="jogo-tags">
                     <% jogo.tags.forEach(tag => { %>
                         <span class="tag"><%= tag %></span>
@@ -27,7 +27,7 @@
             <div class="jogo-player-area">
                 <div class="jogo-player-container">
                     <div class="jogo-icon-container">
-                        <div class="jogo-icon"><%= jogo.icon %></div>
+                        <div class="jogo-icon"><%= jogo.icone %></div>
                     </div>
                 </div>
                 <p class="jogo-play-hint">Clique no botão "Abrir Jogo" para começar</p>
@@ -61,17 +61,17 @@
                     <% jogosRelacionados.forEach(jogoRel => { %>
                         <div class="game-card-full">
                             <div class="game-image">
-                                <div class="game-placeholder"><%= jogoRel.icon %></div>
+                                <div class="game-placeholder"><%= jogoRel.icone %></div>
                             </div>
                             <div class="game-info">
-                                <h3><%= jogoRel.nome %></h3>
+                                <h3><%= jogoRel.titulo %></h3>
                                 <p class="game-description"><%= jogoRel.descricao %></p>
                                 <div class="game-tags">
                                     <% jogoRel.tags.forEach(tag => { %>
                                         <span class="tag"><%= tag %></span>
                                     <% }); %>
                                 </div>
-                                <a href="/jogo/<%= jogoRel.id %>" class="btn-play">🎮 Abrir Jogo</a>
+                                <a href="/jogo/<%= jogoRel._id %>" class="btn-play">🎮 Abrir Jogo</a>
                             </div>
                         </div>
                     <% }); %>

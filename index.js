@@ -24,7 +24,7 @@ app.get('/projeto', (req, res) => {
 
 app.get('/jogos', async (req, res) => {
   try {
-    const jogos = await Jogo.find().limit(10);
+    const jogos = await Jogo.find({ genero: 'Educacional' });
     res.render('jogos', { jogos });
   } catch (erro) {
     console.error('Erro ao buscar jogos:', erro);
@@ -42,15 +42,21 @@ app.get('/parceiros', (req, res) => {
 
 app.get('/jogo/:id', async (req, res) => {
   try {
-    const jogo = await Jogo.findById(req.params.id).populate('relacionados');
+    const jogo = await Jogo.findById(req.params.id);
     
     if (!jogo) {
       return res.status(404).render('404');
     }
 
+    // Buscar jogos relacionados do mesmo gênero
+    const jogosRelacionados = await Jogo.find({ 
+      genero: jogo.genero,
+      _id: { $ne: jogo._id }
+    }).limit(3);
+
     res.render('jogo-detalhes', { 
       jogo, 
-      jogosRelacionados: jogo.relacionados || [] 
+      jogosRelacionados
     });
   } catch (erro) {
     console.error('Erro ao buscar jogo:', erro);

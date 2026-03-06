@@ -57,17 +57,17 @@
                 <% jogos.forEach(jogo => { %>
                     <div class="game-card-full">
                         <div class="game-image">
-                            <div class="game-placeholder"><%= jogo.icon %></div>
+                            <div class="game-placeholder"><%= jogo.icone %></div>
                         </div>
                         <div class="game-info">
-                            <h3><%= jogo.nome %></h3>
+                            <h3><%= jogo.titulo %></h3>
                             <p class="game-description"><%= jogo.descricao %></p>
                             <div class="game-tags">
                                 <% jogo.tags.forEach(tag => { %>
                                     <span class="tag"><%= tag %></span>
                                 <% }); %>
                             </div>
-                            <a href="/jogo/<%= jogo.id %>" class="btn-play">🎮 Abrir Jogo</a>
+                            <a href="/jogo/<%= jogo._id %>" class="btn-play">🎮 Abrir Jogo</a>
                         </div>
                     </div>
                 <% }); %>

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const jogoSchema = new mongoose.Schema({
-  nome: {
+  titulo: {
     type: String,
     required: true
   },
@@ -12,55 +12,26 @@ const jogoSchema = new mongoose.Schema({
     type: String
   },
   identificacao_unity: {
-    type: String,
-    required: true
+    type: String
   },
   link_jogar: {
     type: String
   },
-  video_demo_url: {
-    type: String
-  },
-  github_url: {
-    type: String
-  },
-  icone_url: {
-    type: String
-  },
-  icon: {
+  icone: {
     type: String
   },
   background: {
     type: String
   },
-  categorias: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Categoria'
-  }],
   tags: [String],
-  total_niveis: {
-    type: Number
-  },
-  xp_maxima: {
-    type: Number
-  },
-  relacionados: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Jogo'
-  }],
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Usuario'
+  genero: {
+    type: String,
+    default: 'Educacional'
   },
   createdAt: {
     type: Date,
     default: Date.now
   }
 }, { toJSON: { virtuals: true }, toObject: { virtuals: true } });
-
-// Getter virtual para compatibilidade com views (retorna _id como id)
-jogoSchema.virtual('id').get(function() {
-  return this._id;
-});
 
 module.exports = mongoose.model('Jogo', jogoSchema);
