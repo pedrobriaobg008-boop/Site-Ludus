@@ -15,20 +15,30 @@
             
             <!-- Cabeçalho do Jogo -->
             <div class="jogo-header">
-                <h1><%= jogo.titulo %></h1>
+                <h1><%= jogo.nome %></h1>
                 <div class="jogo-tags">
-                    <% jogo.tags.forEach(tag => { %>
-                        <span class="tag"><%= tag %></span>
-                    <% }); %>
+                    <% if (jogo.categorias && jogo.categorias.length > 0) { %>
+                        <% jogo.categorias.forEach(cat => { %>
+                            <span class="tag"><%= cat.nome || cat %></span>
+                        <% }); %>
+                    <% } else { %>
+                        <span class="tag">Educacional</span>
+                    <% } %>
                 </div>
             </div>
 
             <!-- Área de Exibição do Jogo -->
             <div class="jogo-player-area">
                 <div class="jogo-player-container">
-                    <div class="jogo-icon-container">
-                        <div class="jogo-icon"><%= jogo.icone %></div>
-                    </div>
+                    <% if (jogo.icone_url) { %>
+                        <div class="jogo-icon-container">
+                            <img src="<%= jogo.icone_url %>" alt="<%= jogo.nome %>" style="max-width: 300px; max-height: 300px; object-fit: contain;">
+                        </div>
+                    <% } else { %>
+                        <div class="jogo-icon-container">
+                            <div class="jogo-icon">🎮</div>
+                        </div>
+                    <% } %>
                 </div>
                 <p class="jogo-play-hint">Clique no botão "Abrir Jogo" para começar</p>
             </div>
@@ -36,21 +46,36 @@
             <!-- Descrição e Ações -->
             <div class="jogo-info-section">
                 <div class="jogo-description">
-                    <p><%= jogo.descricaoCompleta %></p>
+                    <p><%= jogo.descricao || 'Um jogo educacional interativo e divertido!' %></p>
+                    <% if (jogo.total_niveis) { %>
+                        <p><strong>Níveis:</strong> <%= jogo.total_niveis %></p>
+                    <% } %>
+                    <% if (jogo.xp_maxima) { %>
+                        <p><strong>XP Máxima:</strong> <%= jogo.xp_maxima %></p>
+                    <% } %>
                 </div>
 
                 <div class="jogo-actions">
-                    <button class="btn-action">Artículos Relacionados</button>
-                    <button class="btn-action">Ler Sobre</button>
+                    <% if (jogo.video_demo_url) { %>
+                        <a href="<%= jogo.video_demo_url %>" target="_blank" class="btn-action">Vídeo Demo</a>
+                    <% } %>
+                    <% if (jogo.github_url) { %>
+                        <a href="<%= jogo.github_url %>" target="_blank" class="btn-action">GitHub</a>
+                    <% } %>
                 </div>
             </div>
 
             <!-- Botão Abrir Jogo Grande -->
             <div class="jogo-play-section">
-                <button class="btn-play-large">🎮 Abrir Jogo</button>
+                <% if (jogo.link_jogar) { %>
+                    <a href="<%= jogo.link_jogar %>" target="_blank" class="btn-play-large">🎮 Abrir Jogo</a>
+                <% } else { %>
+                    <button class="btn-play-large" disabled>🎮 Em breve</button>
+                <% } %>
             </div>
 
             <!-- Jogos Relacionados -->
+            <% if (jogosRelacionados && jogosRelacionados.length > 0) { %>
             <div class="relacionados-section">
                 <div class="relacionados-header">
                     <h2>Jogos Relacionados</h2>
@@ -61,15 +86,21 @@
                     <% jogosRelacionados.forEach(jogoRel => { %>
                         <div class="game-card-full">
                             <div class="game-image">
-                                <div class="game-placeholder"><%= jogoRel.icone %></div>
+                                <% if (jogoRel.icone_url) { %>
+                                    <img src="<%= jogoRel.icone_url %>" alt="<%= jogoRel.nome %>" style="width: 100%; height: 100%; object-fit: cover;">
+                                <% } else { %>
+                                    <div class="game-placeholder">🎮</div>
+                                <% } %>
                             </div>
                             <div class="game-info">
-                                <h3><%= jogoRel.titulo %></h3>
-                                <p class="game-description"><%= jogoRel.descricao %></p>
+                                <h3><%= jogoRel.nome %></h3>
+                                <p class="game-description"><%= jogoRel.descricao || 'Jogo educacional' %></p>
                                 <div class="game-tags">
-                                    <% jogoRel.tags.forEach(tag => { %>
-                                        <span class="tag"><%= tag %></span>
-                                    <% }); %>
+                                    <% if (jogoRel.categorias && jogoRel.categorias.length > 0) { %>
+                                        <% jogoRel.categorias.forEach(cat => { %>
+                                            <span class="tag"><%= cat.nome || cat %></span>
+                                        <% }); %>
+                                    <% } %>
                                 </div>
                                 <a href="/jogo/<%= jogoRel._id %>" class="btn-play">🎮 Abrir Jogo</a>
                             </div>
@@ -77,6 +108,7 @@
                     <% }); %>
                 </div>
             </div>
+            <% } %>
 
         </div>
     </section>

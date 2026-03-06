@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const conectarMongoDB = require('./config/conexao');
 const Jogo = require('./models/jogos');
+const Categoria = require('./models/categoria');
 const equipe = require('./models/equipe');
 const parceiros = require('./models/parceiros');
 
@@ -24,7 +25,7 @@ app.get('/projeto', (req, res) => {
 
 app.get('/jogos', async (req, res) => {
   try {
-    const jogos = await Jogo.find({ genero: 'Educacional' });
+    const jogos = await Jogo.find().populate('categorias');
     res.render('jogos', { jogos });
   } catch (erro) {
     console.error('Erro ao buscar jogos:', erro);
@@ -42,17 +43,16 @@ app.get('/parceiros', (req, res) => {
 
 app.get('/jogo/:id', async (req, res) => {
   try {
-    const jogo = await Jogo.findById(req.params.id);
+    const jogo = await Jogo.findById(req.params.id).populate('categorias');
     
     if (!jogo) {
       return res.status(404).render('404');
     }
 
-    // Buscar jogos relacionados do mesmo gênero
+    // Buscar jogos relacionados (outros jogos)
     const jogosRelacionados = await Jogo.find({ 
-      genero: jogo.genero,
       _id: { $ne: jogo._id }
-    }).limit(3);
+    }).limit(3).populate('categorias');
 
     res.render('jogo-detalhes', { 
       jogo, 

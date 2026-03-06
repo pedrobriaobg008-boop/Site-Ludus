@@ -1,90 +1,83 @@
-# Integração MongoDB - Site +LUDUS
+# Integracao MongoDB - Site +LUDUS
 
-## ✓ Status: Concluído e Testado
+## Status
 
-### O que foi implementado:
+Concluido e funcionando.
 
-#### 1. **Conexão com MongoDB**
-- Instalado pacote `mongoose` (v18+)
-- Configurada conexão com MongoDB Atlas em `config/conexao.js`
-- URL: `mongodb+srv://Aluno:***REMOVED***@cluster0.9ekdn5x.mongodb.net/`
+## O que foi implementado
 
-#### 2. **Modelo de Dados**
-- Arquivo: `models/jogos.js`
-- Esquema Mongoose para a coleção `jogos`
-- Campos suportados:
-  - `titulo` (String, obrigatório)
-  - `descricao` (String)
-  - `descricaoCompleta` (String)
-  - `icone` (String - emoji ou URL)
-  - `background` (String - cor hex)
-  - `tags` (Array de Strings)
-  - `genero` (String, default: "Educacional")
-  - `identificacao_unity` (String)
-  - `link_jogar` (String)
-  - `createdAt` (Date, auto)
+### Conexao com MongoDB
 
-#### 3. **Dados Populados**
-- 6 jogos educacionais inseridos na coleção:
-  1. **Mundo das Cores** - 🎨 Arte, Linguagens
-  2. **Aventura dos Números** - 🔢 Matemática
-  3. **Reino Animal** - 🦁 Ciências da Natureza
-  4. **Alfabeto Divertido** - 🔤 Língua Portuguesa, Linguagens
-  5. **Formas Geométricas** - ✨ Matemática
-  6. **Minhas Emoções** - 😊 Ciências Humanas
+- Pacote `mongoose` adicionado no projeto.
+- Conexao configurada em `config/conexao.js`.
+- URI configurada para usar o banco `ludus`.
 
-#### 4. **Rotas Implementadas**
-- `GET /jogos` - Lista todos os jogos educacionais
-- `GET /jogo/:id` - Detalhes de um jogo específico com sugestões relacionadas
+### Modelos
 
-#### 5. **Views Atualizadas**
-- `views/jogos.ejs` - Renderiza grid de jogos do MongoDB
-- `views/jogo-detalhes.ejs` - Página de detalhes com jogos relacionados
+- `models/jogos.js` ajustado para o mesmo formato usado no admin.
+- `models/categoria.js` criado para permitir `populate('categorias')`.
 
-### 📊 Testes Realizados:
-✓ Servidor inicia sem erros
-✓ Conexão MongoDB bem-sucedida
-✓ Todos os 6 jogos renderizados na /jogos
-✓ Página de detalhes funciona corretamente
-✓ IDs MongoDB funcionam nas URLs
+Campos principais usados em `jogos`:
 
-### 🚀 Como usar:
+- `nome`
+- `descricao`
+- `identificacao_unity`
+- `link_jogar`
+- `video_demo_url`
+- `github_url`
+- `icone_url`
+- `categorias`
+- `total_niveis`
+- `xp_maxima`
 
-1. **Iniciar o servidor:**
-   ```bash
-   npm start
-   ```
+### Rotas atualizadas
 
-2. **Acessar no navegador:**
-   - Lista de jogos: `http://localhost:3000/jogos`
-   - Jogo específico: `http://localhost:3000/jogo/[ID_DO_JOGO]`
+- `GET /jogos`: busca jogos no banco `ludus` e popula categorias.
+- `GET /jogo/:id`: mostra detalhes do jogo e lista relacionados.
 
-3. **Para adicionar novos jogos:**
-   - Use o formulário em `-Ludus` (site administrativo)
-   OU
-   - Execute: `node seed-jogos.js` (adiciona 6 jogos padrão)
+### Views atualizadas
 
-### 📝 Próximos passos (opcionais):
-- [ ] Implementar filtros por categoria/tag no frontend
-- [ ] Adicionar busca de jogos
-- [ ] Conectar links para jogar os games reais
-- [ ] Sistema de inscrição/login integrado com o MongoDB
-- [ ] Painel admin para gerenciar jogos
+- `views/jogos.ejs`: renderiza nome, descricao, categorias e icone por URL.
+- `views/jogo-detalhes.ejs`: renderiza dados completos e links externos.
 
-### 📂 Arquivos modificados:
-- `config/conexao.js` - Nova
-- `models/jogos.js` - Atualizado
-- `index.js` - Atualizado com rotas async/await
-- `views/jogos.ejs` - Atualizado
-- `views/jogo-detalhes.ejs` - Atualizado
-- `package.json` - Adicionado mongoose
+## Validacao
 
-### 🔧 Banco de Dados
-- **Host:** MongoDB Atlas
-- **Cluster:** cluster0
-- **Database:** padrão (ludus)
-- **Collection:** jogos
-- **Documentos:** 6 (educacionais)
+- Servidor inicia sem erro.
+- Conexao com MongoDB esta ok.
+- Jogos cadastrados no administrativo aparecem em `/jogos`.
+- Pagina de detalhes em `/jogo/:id` funciona.
+
+## Como usar
+
+1. Iniciar o servidor:
+
+```bash
+npm start
+```
+
+1. Abrir:
+
+- `http://localhost:3000/jogos`
+- `http://localhost:3000/jogo/<id>`
+
+1. Cadastrar novos jogos pelo sistema administrativo (`-Ludus`).
+
+## Arquivos alterados
+
+- `config/conexao.js`
+- `models/jogos.js`
+- `models/categoria.js`
+- `index.js`
+- `views/jogos.ejs`
+- `views/jogo-detalhes.ejs`
+
+## Banco de dados
+
+- Host: MongoDB Atlas
+- Cluster: `cluster0`
+- Database: `ludus`
+- Colecao principal: `jogos`
 
 ---
-**Integração concluída em:** 6 de março de 2026
+
+Atualizado em 2026-03-06.

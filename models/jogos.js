@@ -1,32 +1,42 @@
 const mongoose = require('mongoose');
 
 const jogoSchema = new mongoose.Schema({
-  titulo: {
+  nome: {
     type: String,
     required: true
   },
   descricao: {
     type: String
   },
-  descricaoCompleta: {
-    type: String
-  },
   identificacao_unity: {
-    type: String
+    type: String,
+    required: true
   },
   link_jogar: {
     type: String
   },
-  icone: {
+  video_demo_url: {
     type: String
   },
-  background: {
+  github_url: {
     type: String
   },
-  tags: [String],
-  genero: {
-    type: String,
-    default: 'Educacional'
+  icone_url: {
+    type: String
+  },
+  categorias: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Categoria'
+  }],
+  total_niveis: {
+    type: Number
+  },
+  xp_maxima: {
+    type: Number
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Usuario'
   },
   createdAt: {
     type: Date,

@@ -57,15 +57,23 @@
                 <% jogos.forEach(jogo => { %>
                     <div class="game-card-full">
                         <div class="game-image">
-                            <div class="game-placeholder"><%= jogo.icone %></div>
+                            <% if (jogo.icone_url) { %>
+                                <img src="<%= jogo.icone_url %>" alt="<%= jogo.nome %>" style="width: 100%; height: 100%; object-fit: cover;">
+                            <% } else { %>
+                                <div class="game-placeholder">🎮</div>
+                            <% } %>
                         </div>
                         <div class="game-info">
-                            <h3><%= jogo.titulo %></h3>
-                            <p class="game-description"><%= jogo.descricao %></p>
+                            <h3><%= jogo.nome %></h3>
+                            <p class="game-description"><%= jogo.descricao || 'Jogo educacional divertido e interativo' %></p>
                             <div class="game-tags">
-                                <% jogo.tags.forEach(tag => { %>
-                                    <span class="tag"><%= tag %></span>
-                                <% }); %>
+                                <% if (jogo.categorias && jogo.categorias.length > 0) { %>
+                                    <% jogo.categorias.forEach(cat => { %>
+                                        <span class="tag"><%= cat.nome || cat %></span>
+                                    <% }); %>
+                                <% } else { %>
+                                    <span class="tag">Educacional</span>
+                                <% } %>
                             </div>
                             <a href="/jogo/<%= jogo._id %>" class="btn-play">🎮 Abrir Jogo</a>
                         </div>
