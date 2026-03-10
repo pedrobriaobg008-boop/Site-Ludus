@@ -32,6 +32,7 @@
         </div>
     </section>
 
+    <% if (jogosDestaque && jogosDestaque.length > 0) { %>
     <!-- Jogos em Destaque -->
     <section class="featured-games">
         <div class="container">
@@ -41,42 +42,39 @@
             </div>
 
             <div class="games-grid">
-                <% if (jogosDestaque && jogosDestaque.length > 0) { %>
-                    <% jogosDestaque.forEach(jogo => { %>
-                        <div class="game-card">
-                            <div class="game-icon">
-                                <% if (jogo.icone_url) { %>
-                                    <img src="<%= jogo.icone_url %>" alt="" class="game-icon-image" aria-hidden="true">
-                                <% } else { %>
-                                    🎮
-                                <% } %>
-                            </div>
-                            <h3><%= jogo.nome %></h3>
-                            <p><%= jogo.descricao || 'Jogo educacional acessível para todas as crianças.' %></p>
-                            <div class="game-tags">
-                                <% if (jogo.categorias && jogo.categorias.length > 0) { %>
-                                    <% jogo.categorias.slice(0, 2).forEach(cat => { %>
-                                        <span class="tag"><%= cat.nome || cat %></span>
-                                    <% }); %>
-                                <% } else { %>
-                                    <span class="tag">Educacional</span>
-                                <% } %>
-                            </div>
-                            <a href="/jogo/<%= jogo._id %>" class="btn-secondary">
-                                <span>🎮</span> Abrir jogo
-                            </a>
+                <% jogosDestaque.forEach(jogo => { %>
+                    <div class="game-card">
+                        <div class="game-cover">
+                            <% if (jogo.icone_url) { %>
+                                <img src="<%= jogo.icone_url %>" alt="Capa do jogo <%= jogo.nome %>" class="game-cover-image">
+                            <% } else { %>
+                                <div class="game-cover-placeholder">🎮</div>
+                            <% } %>
                         </div>
-                    <% }); %>
-                <% } else { %>
-                    <p class="featured-games-empty">Nenhum jogo disponível no momento.</p>
-                <% } %>
+                        <h3><%= jogo.nome %></h3>
+                        <p><%= jogo.descricao || 'Jogo educacional acessível para todas as crianças.' %></p>
+                        <div class="game-tags">
+                            <% if (jogo.categorias && jogo.categorias.length > 0) { %>
+                                <% jogo.categorias.slice(0, 2).forEach(cat => { %>
+                                    <span class="tag"><%= cat.nome || cat %></span>
+                                <% }); %>
+                            <% } else { %>
+                                <span class="tag">Educacional</span>
+                            <% } %>
+                        </div>
+                        <a href="/jogo/<%= jogo._id %>" class="btn-secondary">
+                            <span>🎮</span> Abrir jogo
+                        </a>
+                    </div>
+                <% }); %>
             </div>
 
             <div class="section-footer">
-                <a href="jogos" class="link-arrow">Ver todos os jogos →</a>
+                <a href="/jogos" class="link-arrow">Ver todos os jogos →</a>
             </div>
         </div>
     </section>
+    <% } %>
 
     <!-- Jogos pensados para todos -->
     <section class="features">

@@ -33,8 +33,13 @@ app.set('views', path.join(__dirname, 'views'));
 // Rotas
 app.get('/', async (req, res) => {
   try {
-    const jogos = await Jogo.find().populate('categorias').lean();
-    const jogosDestaque = selecionarAleatorios(jogos, 4);
+    const jogosRecentes = await Jogo.find()
+      .sort({ createdAt: -1, _id: -1 })
+      .limit(12)
+      .populate('categorias')
+      .lean();
+
+    const jogosDestaque = selecionarAleatorios(jogosRecentes, 4);
 
     res.render('index', { jogosDestaque });
   } catch (erro) {
