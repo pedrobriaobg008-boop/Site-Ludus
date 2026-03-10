@@ -1178,28 +1178,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 14px;
     margin-bottom: 12px;
-    background: #d5e6ee;
-    padding: 22px 42px;
-    border-radius: 64px;
+    background: #dcf3f9;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 60px;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
 
 .page-icon {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
     flex-shrink: 0;
 }
 
 .games-page-title h2 {
-    font-size: 56px;
-    color: #0b86b8;
+    font-size: 62px;
+    color: #0599d9;
     margin: 0;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 1;
 }
@@ -1445,11 +1446,11 @@ body {
     }
 
     .page-header-content {
-        padding: 16px 24px;
+        padding: 14px 24px;
     }
 
     .games-page-title h2 {
-        font-size: 38px;
+        font-size: 44px;
     }
 
     .search-container {
@@ -1494,12 +1495,12 @@ body {
     }
 
     .page-icon {
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
     }
 
     .games-page-title h2 {
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .search-input {
