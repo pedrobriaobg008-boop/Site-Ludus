@@ -178,9 +178,27 @@
             });
         });
 
-        // Event listener para pesquisa
+        // Event listener para pesquisa em tempo real
         searchInput.addEventListener('input', () => {
             updateGames();
+        });
+
+        // Event listener para ENTER - fixa a pesquisa e limpa filtros
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                
+                // Resetar filtro para "Todos" quando pressiona ENTER
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                document.querySelector('[data-filter="all"]').classList.add('active');
+                currentFilter = 'all';
+                
+                // Atualizar jogos exibidos
+                updateGames();
+                
+                // Focus no input (feedback visual)
+                searchInput.focus();
+            }
         });
 
         // Inicializar
