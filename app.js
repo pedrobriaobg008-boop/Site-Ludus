@@ -14,14 +14,33 @@ const normalizarCategoria = (texto = '') => String(texto)
   .replace(/[^a-z0-9]+/g, '-')
   .replace(/^-+|-+$/g, '');
 
+const selecionarAleatorios = (itens = [], limite = 4) => {
+  const copia = [...itens];
+
+  for (let indice = copia.length - 1; indice > 0; indice -= 1) {
+    const indiceAleatorio = Math.floor(Math.random() * (indice + 1));
+    [copia[indice], copia[indiceAleatorio]] = [copia[indiceAleatorio], copia[indice]];
+  }
+
+  return copia.slice(0, limite);
+};
+
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Rotas
-app.get('/', (req, res) => {
-  res.render('index');
+app.get('/', async (req, res) => {
+  try {
+    const jogos = await Jogo.find().populate('categorias').lean();
+    const jogosDestaque = selecionarAleatorios(jogos, 4);
+
+    res.render('index', { jogosDestaque });
+  } catch (erro) {
+    console.error('Erro ao buscar jogos em destaque:', erro);
+    res.render('index', { jogosDestaque: [] });
+  }
 });
 
 app.get('/projeto', (req, res) => {

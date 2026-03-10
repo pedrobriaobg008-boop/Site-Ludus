@@ -41,44 +41,35 @@
             </div>
 
             <div class="games-grid">
-                <div class="game-card">
-                    <div class="game-icon">🎮</div>
-                    <h3>Mundo das Cores</h3>
-                    <p>Aprenda sobre cores de forma divertida e interativa. Ideal para desenvolver habilidades visuais e cognitivas.</p>
-                    <div class="game-tags">
-                        <span class="tag">Cor</span>
-                        <span class="tag">Linguagem</span>
-                    </div>
-                    <button class="btn-secondary">
-                        <span>🎮</span> Abrir jogo
-                    </button>
-                </div>
-
-                <div class="game-card">
-                    <div class="game-icon">🎮</div>
-                    <h3>Mundo das Cores</h3>
-                    <p>Aprenda sobre cores de forma divertida e interativa. Ideal para desenvolver habilidades visuais e cognitivas.</p>
-                    <div class="game-tags">
-                        <span class="tag">Cor</span>
-                        <span class="tag">Linguagem</span>
-                    </div>
-                    <button class="btn-secondary">
-                        <span>🎮</span> Abrir jogo
-                    </button>
-                </div>
-
-                <div class="game-card">
-                    <div class="game-icon">🎮</div>
-                    <h3>Mundo das Cores</h3>
-                    <p>Aprenda sobre cores de forma divertida e interativa. Ideal para desenvolver habilidades visuais e cognitivas.</p>
-                    <div class="game-tags">
-                        <span class="tag">Cor</span>
-                        <span class="tag">Linguagem</span>
-                    </div>
-                    <button class="btn-secondary">
-                        <span>🎮</span> Abrir jogo
-                    </button>
-                </div>
+                <% if (jogosDestaque && jogosDestaque.length > 0) { %>
+                    <% jogosDestaque.forEach(jogo => { %>
+                        <div class="game-card">
+                            <div class="game-icon">
+                                <% if (jogo.icone_url) { %>
+                                    <img src="<%= jogo.icone_url %>" alt="" class="game-icon-image" aria-hidden="true">
+                                <% } else { %>
+                                    🎮
+                                <% } %>
+                            </div>
+                            <h3><%= jogo.nome %></h3>
+                            <p><%= jogo.descricao || 'Jogo educacional acessível para todas as crianças.' %></p>
+                            <div class="game-tags">
+                                <% if (jogo.categorias && jogo.categorias.length > 0) { %>
+                                    <% jogo.categorias.slice(0, 2).forEach(cat => { %>
+                                        <span class="tag"><%= cat.nome || cat %></span>
+                                    <% }); %>
+                                <% } else { %>
+                                    <span class="tag">Educacional</span>
+                                <% } %>
+                            </div>
+                            <a href="/jogo/<%= jogo._id %>" class="btn-secondary">
+                                <span>🎮</span> Abrir jogo
+                            </a>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p class="featured-games-empty">Nenhum jogo disponível no momento.</p>
+                <% } %>
             </div>
 
             <div class="section-footer">
