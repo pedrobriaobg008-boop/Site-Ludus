@@ -1169,7 +1169,7 @@ body {
 
 /* GAMES PAGE */
 .games-page-title {
-    background: var(--section-alt-bg);
+    background: white;
     padding: 60px 0 50px;
     text-align: center;
 }
