@@ -69,6 +69,10 @@ const selecionarDestaquesRotativos = (jogos = [], limite = 4) => {
 };
 
 const obterSecaoAtual = (caminho = '/') => {
+  if (caminho === '/') {
+    return '/';
+  }
+
   if (caminho === '/jogos' || caminho.startsWith('/jogo/')) {
     return '/jogos';
   }

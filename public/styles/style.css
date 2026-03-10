@@ -23,18 +23,49 @@ body {
 }
 
 /* NAVBAR */
-@keyframes navbarGlow {
-    from {
-        transform: translateX(-4%);
+@keyframes navbarAurora {
+    0% {
+        background-position: 0% 50%, 12% 42%, 88% 36%, 50% 100%;
+        transform: scale(1.04) rotate(0deg);
     }
 
-    to {
-        transform: translateX(4%);
+    50% {
+        background-position: 100% 50%, 30% 58%, 70% 44%, 50% 0%;
+        transform: scale(1.08) rotate(-1deg);
+    }
+
+    100% {
+        background-position: 0% 50%, 12% 42%, 88% 36%, 50% 100%;
+        transform: scale(1.05) rotate(0.8deg);
+    }
+}
+
+@keyframes navbarSheen {
+    0% {
+        transform: translateX(-130%);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.28;
+    }
+
+    50% {
+        opacity: 0.42;
+    }
+
+    80% {
+        opacity: 0.28;
+    }
+
+    100% {
+        transform: translateX(130%);
+        opacity: 0;
     }
 }
 
 .navbar {
-    background: rgba(232, 247, 252, 0.9);
+    background: linear-gradient(135deg, rgba(232, 247, 252, 0.92) 0%, rgba(247, 252, 255, 0.95) 48%, rgba(232, 247, 252, 0.92) 100%);
     padding: 0;
     position: sticky;
     top: 0;
@@ -48,18 +79,34 @@ body {
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+    isolation: isolate;
 }
 
 .navbar::before {
     content: "";
     position: absolute;
-    inset: 0;
+    inset: -30% -10%;
     background:
-        radial-gradient(circle at 12% 50%, rgba(233, 30, 140, 0.12), transparent 28%),
-        radial-gradient(circle at 88% 35%, rgba(0, 163, 224, 0.14), transparent 26%);
-    opacity: 0.9;
+        linear-gradient(115deg, rgba(255, 255, 255, 0) 16%, rgba(255, 255, 255, 0.42) 34%, rgba(233, 30, 140, 0.12) 52%, rgba(0, 163, 224, 0.12) 70%, rgba(255, 255, 255, 0) 86%),
+        radial-gradient(circle at 18% 44%, rgba(233, 30, 140, 0.22) 0%, transparent 32%),
+        radial-gradient(circle at 82% 36%, rgba(0, 163, 224, 0.24) 0%, transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(123, 63, 242, 0.16) 0%, transparent 38%);
+    background-size: 220% 220%, 160% 160%, 160% 160%, 180% 180%;
+    background-position: 0% 50%, 12% 42%, 88% 36%, 50% 100%;
+    opacity: 0.95;
     pointer-events: none;
-    animation: navbarGlow 10s ease-in-out infinite alternate;
+    transform-origin: center;
+    animation: navbarAurora 16s ease-in-out infinite;
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0) 24%, rgba(255, 255, 255, 0.36) 50%, rgba(255, 255, 255, 0) 76%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    animation: navbarSheen 8s linear infinite;
 }
 
 .container-header {
@@ -84,6 +131,23 @@ body {
     color: var(--primary-blue);
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.35s ease;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 24px;
+    bottom: -8px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary-pink) 0%, rgba(0, 163, 224, 0.9) 100%);
+    transform: scaleX(0.72);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 .logo img {
@@ -93,9 +157,26 @@ body {
     transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.logo:hover img {
+.logo:hover,
+.logo:focus-visible {
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.logo:hover img,
+.logo:focus-visible img {
     transform: translateY(-2px) scale(1.01);
     filter: drop-shadow(0 10px 18px rgba(0, 163, 224, 0.16));
+}
+
+.logo[aria-current="page"]::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.logo[aria-current="page"] img {
+    transform: translateY(-1px) scale(1.02);
+    filter: drop-shadow(0 10px 18px rgba(233, 30, 140, 0.16)) drop-shadow(0 8px 16px rgba(0, 163, 224, 0.16));
 }
 
 .nav-links {
