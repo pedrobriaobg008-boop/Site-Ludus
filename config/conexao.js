@@ -2,11 +2,15 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const URL_MONGODB = process.env.MONGODB_URI;
-let conectado = false;
+let conexaoPromise = null;
 
 const conectarMongoDB = async () => {
-  if (conectado || mongoose.connection.readyState === 1) {
-    return;
+  if (mongoose.connection.readyState === 1) {
+    return mongoose.connection;
+  }
+
+  if (conexaoPromise) {
+    return conexaoPromise;
   }
 
   try {
@@ -14,12 +18,15 @@ const conectarMongoDB = async () => {
       throw new Error('MONGODB_URI não está definida nas variáveis de ambiente');
     }
 
-    await mongoose.connect(URL_MONGODB, {
+    conexaoPromise = mongoose.connect(URL_MONGODB, {
       dbName: 'ludus'
     });
-    conectado = true;
+
+    await conexaoPromise;
     console.log('✓ Conectado ao MongoDB (banco: ludus) com sucesso!');
+    return mongoose.connection;
   } catch (erro) {
+    conexaoPromise = null;
     console.error('✗ Erro ao conectar ao MongoDB:', erro.message);
     throw erro;
   }
