@@ -839,6 +839,18 @@ body {
     margin-right: 4px;
 }
 
+.footer-tip-text {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.footer-tip-text.is-changing {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
 .social-links {
     display: flex;
     gap: 24px;
@@ -875,9 +887,44 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 16px 40px;
     margin: 20px auto 0 auto;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
     color: rgba(255, 255, 255, 0.65);
     font-size: 13px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    flex: 1;
+    min-width: 260px;
+    text-align: center;
+}
+
+.footer-back-to-top {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.footer-back-to-top:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.55);
+    transform: translateY(-1px);
+}
+
+.footer-back-to-top:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 2px;
 }
 
 /* RESPONSIVE */
@@ -957,6 +1004,14 @@ body {
         grid-column: span 2;
     }
 
+    .footer-bottom {
+        justify-content: center;
+    }
+
+    .footer-back-to-top {
+        margin: 0 auto;
+    }
+
     .institution h2 {
         font-size: 26px;
     }
@@ -1022,6 +1077,15 @@ body {
 
     .footer-section h4 {
         font-size: 16px;
+    }
+
+    .footer-bottom {
+        padding: 14px 20px;
+    }
+
+    .footer-bottom p {
+        min-width: 100%;
+        text-align: center;
     }
 }
 
