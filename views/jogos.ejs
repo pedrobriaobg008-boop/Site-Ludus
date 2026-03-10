@@ -84,5 +84,107 @@
     </section>
 
     <%- include('./footer') %>
+
+    <script>
+        // Filtro e Pesquisa de Jogos
+        const searchInput = document.querySelector('.search-input');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const gameCards = document.querySelectorAll('.game-card-full');
+        const gamesCounter = document.querySelector('.games-counter');
+        
+        let currentFilter = 'all';
+
+        // Função para normalizar texto (remover acentos)
+        function normalizeText(text) {
+            return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        // Função para verificar se um jogo corresponde ao filtro
+        function matchesFilter(card, filter) {
+            if (filter === 'all') return true;
+            
+            const tags = card.querySelectorAll('.tag');
+            const filterMap = {
+                'linguagens': ['Linguagens', 'Linguagem'],
+                'matematica': ['Matemática', 'Matematica'],
+                'natureza': ['Ciências da Natureza', 'Ciencias da Natureza'],
+                'humanas': ['Ciências Humanas', 'Ciencias Humanas'],
+                'arte': ['Arte'],
+                'portugues': ['Língua Portuguesa', 'Lingua Portuguesa', 'Português', 'Portugues']
+            };
+
+            const targetCategories = filterMap[filter] || [];
+            
+            for (let tag of tags) {
+                const tagText = tag.textContent.trim();
+                for (let category of targetCategories) {
+                    if (normalizeText(tagText) === normalizeText(category)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // Função para verificar se um jogo corresponde à pesquisa
+        function matchesSearch(card, searchTerm) {
+            if (!searchTerm) return true;
+            
+            const normalized = normalizeText(searchTerm);
+            const title = normalizeText(card.querySelector('h3').textContent);
+            const description = normalizeText(card.querySelector('.game-description').textContent);
+            const tags = Array.from(card.querySelectorAll('.tag')).map(t => normalizeText(t.textContent));
+            
+            return title.includes(normalized) || 
+                   description.includes(normalized) || 
+                   tags.some(tag => tag.includes(normalized));
+        }
+
+        // Função para atualizar a exibição dos jogos
+        function updateGames() {
+            const searchTerm = searchInput.value;
+            let visibleCount = 0;
+
+            gameCards.forEach(card => {
+                const matchFilter = matchesFilter(card, currentFilter);
+                const matchSearch = matchesSearch(card, searchTerm);
+                
+                if (matchFilter && matchSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Atualizar contador
+            gamesCounter.textContent = `${visibleCount} jogo${visibleCount !== 1 ? 's' : ''} encontrado${visibleCount !== 1 ? 's' : ''}`;
+        }
+
+        // Event listeners para filtros
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remover classe active do botão anterior
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                
+                // Adicionar classe active ao botão clicado
+                button.classList.add('active');
+                
+                // Atualizar filtro atual
+                currentFilter = button.dataset.filter;
+                
+                // Atualizar exibição
+                updateGames();
+            });
+        });
+
+        // Event listener para pesquisa
+        searchInput.addEventListener('input', () => {
+            updateGames();
+        });
+
+        // Inicializar
+        updateGames();
+    </script>
 </body>
 </html>
