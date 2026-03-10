@@ -37,12 +37,11 @@
                 </div>
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="linguagens">Linguagens</button>
-                    <button class="filter-btn" data-filter="matematica">Matemática</button>
-                    <button class="filter-btn" data-filter="natureza">Ciências da Natureza</button>
-                    <button class="filter-btn" data-filter="humanas">Ciências Humanas</button>
-                    <button class="filter-btn" data-filter="arte">Arte</button>
-                    <button class="filter-btn" data-filter="portugues">Língua Portuguesa</button>
+                    <% if (categorias && categorias.length > 0) { %>
+                        <% categorias.forEach(categoria => { %>
+                            <button class="filter-btn" data-filter="<%= categoria.slug %>"><%= categoria.nome %></button>
+                        <% }); %>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -104,31 +103,15 @@
             if (filter === 'all') return true;
             
             const tags = card.querySelectorAll('.tag');
-            
-            // Mapa de filtro para palavras-chave
-            const filterKeywords = {
-                'linguagens': ['linguagem', 'lingua', 'português', 'portugues', 'leitura', 'escrita'],
-                'matematica': ['matemática', 'matematica', 'números', 'numeros', 'cálculo', 'calculo', 'contagem'],
-                'natureza': ['natureza', 'ciência', 'ciencia', 'biologia', 'ecologia', 'ambiente'],
-                'humanas': ['história', 'historia', 'geografia', 'sociedade', 'cultura', 'humanas'],
-                'arte': ['arte', 'música', 'musica', 'desenho', 'criatividade'],
-                'portugues': ['português', 'portugues', 'lingua portuguesa', 'linguagem']
-            };
 
-            const keywords = filterKeywords[filter] || [];
-            
-            // Verificar se alguma tag corresponde ao filtro
+            // Compara categoria do botão com as tags do card usando o mesmo padrão de slug
             for (let tag of tags) {
-                const tagNormalized = normalizeText(tag.textContent.trim());
-                for (let keyword of keywords) {
-                    const keywordNormalized = normalizeText(keyword);
-                    
-                    // Verifica correspondência exata ou parcial
-                    if (tagNormalized === keywordNormalized || 
-                        tagNormalized.includes(keywordNormalized) ||
-                        keywordNormalized.includes(tagNormalized)) {
-                        return true;
-                    }
+                const tagSlug = normalizeText(tag.textContent.trim())
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-+|-+$/g, '');
+
+                if (tagSlug === filter) {
+                    return true;
                 }
             }
             
