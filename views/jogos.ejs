@@ -104,25 +104,34 @@
             if (filter === 'all') return true;
             
             const tags = card.querySelectorAll('.tag');
-            const filterMap = {
-                'linguagens': ['Linguagens', 'Linguagem'],
-                'matematica': ['Matemática', 'Matematica'],
-                'natureza': ['Ciências da Natureza', 'Ciencias da Natureza'],
-                'humanas': ['Ciências Humanas', 'Ciencias Humanas'],
-                'arte': ['Arte'],
-                'portugues': ['Língua Portuguesa', 'Lingua Portuguesa', 'Português', 'Portugues']
+            
+            // Mapa de filtro para palavras-chave
+            const filterKeywords = {
+                'linguagens': ['linguagem', 'lingua', 'português', 'portugues', 'leitura', 'escrita'],
+                'matematica': ['matemática', 'matematica', 'números', 'numeros', 'cálculo', 'calculo', 'contagem'],
+                'natureza': ['natureza', 'ciência', 'ciencia', 'biologia', 'ecologia', 'ambiente'],
+                'humanas': ['história', 'historia', 'geografia', 'sociedade', 'cultura', 'humanas'],
+                'arte': ['arte', 'música', 'musica', 'desenho', 'criatividade'],
+                'portugues': ['português', 'portugues', 'lingua portuguesa', 'linguagem']
             };
 
-            const targetCategories = filterMap[filter] || [];
+            const keywords = filterKeywords[filter] || [];
             
+            // Verificar se alguma tag corresponde ao filtro
             for (let tag of tags) {
-                const tagText = tag.textContent.trim();
-                for (let category of targetCategories) {
-                    if (normalizeText(tagText) === normalizeText(category)) {
+                const tagNormalized = normalizeText(tag.textContent.trim());
+                for (let keyword of keywords) {
+                    const keywordNormalized = normalizeText(keyword);
+                    
+                    // Verifica correspondência exata ou parcial
+                    if (tagNormalized === keywordNormalized || 
+                        tagNormalized.includes(keywordNormalized) ||
+                        keywordNormalized.includes(tagNormalized)) {
                         return true;
                     }
                 }
             }
+            
             return false;
         }
 
