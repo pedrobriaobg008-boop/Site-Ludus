@@ -14,7 +14,7 @@ const normalizarCategoria = (texto = '') => String(texto)
   .replace(/[^a-z0-9]+/g, '-')
   .replace(/^-+|-+$/g, '');
 
-const selecionarAleatorios = (itens = [], limite = 4) => {
+const embaralharItens = (itens = []) => {
   const copia = [...itens];
 
   for (let indice = copia.length - 1; indice > 0; indice -= 1) {
@@ -22,7 +22,50 @@ const selecionarAleatorios = (itens = [], limite = 4) => {
     [copia[indice], copia[indiceAleatorio]] = [copia[indiceAleatorio], copia[indice]];
   }
 
-  return copia.slice(0, limite);
+  return copia;
+};
+
+const rotacaoDestaquesHome = {
+  assinatura: '',
+  filaIds: []
+};
+
+const selecionarDestaquesRotativos = (jogos = [], limite = 4) => {
+  if (jogos.length <= limite) {
+    return jogos.slice(0, limite);
+  }
+
+  const idsDisponiveis = jogos.map((jogo) => String(jogo._id));
+  const assinaturaAtual = idsDisponiveis.join('|');
+
+  if (rotacaoDestaquesHome.assinatura !== assinaturaAtual) {
+    rotacaoDestaquesHome.assinatura = assinaturaAtual;
+    rotacaoDestaquesHome.filaIds = embaralharItens(idsDisponiveis);
+  }
+
+  const jogosPorId = new Map(jogos.map((jogo) => [String(jogo._id), jogo]));
+  const idsSelecionados = [];
+
+  while (idsSelecionados.length < limite) {
+    if (rotacaoDestaquesHome.filaIds.length === 0) {
+      const idsRestantes = idsDisponiveis.filter((id) => !idsSelecionados.includes(id));
+      rotacaoDestaquesHome.filaIds = embaralharItens(
+        idsRestantes.length > 0 ? idsRestantes : idsDisponiveis
+      );
+    }
+
+    const proximoId = rotacaoDestaquesHome.filaIds.shift();
+
+    if (!proximoId || idsSelecionados.includes(proximoId) || !jogosPorId.has(proximoId)) {
+      continue;
+    }
+
+    idsSelecionados.push(proximoId);
+  }
+
+  return idsSelecionados
+    .map((id) => jogosPorId.get(id))
+    .filter(Boolean);
 };
 
 // Middleware
@@ -39,7 +82,7 @@ app.get('/', async (req, res) => {
       .populate('categorias')
       .lean();
 
-    const jogosDestaque = selecionarAleatorios(jogosRecentes, 4);
+    const jogosDestaque = selecionarDestaquesRotativos(jogosRecentes, 4);
 
     res.render('index', { jogosDestaque });
   } catch (erro) {
