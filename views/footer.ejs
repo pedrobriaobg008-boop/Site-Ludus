@@ -8,16 +8,7 @@
         { href: '/contato', label: 'Contato' }
     ];
 
-    const mapaSecoes = {
-        '/': 'Home',
-        '/jogos': 'Jogos',
-        '/projeto': 'Projeto +LUDUS',
-        '/equipe': 'Equipe',
-        '/parceiros': 'Parceiros',
-        '/contato': 'Contato'
-    };
-
-    const secaoAtualFooter = mapaSecoes[currentSection] || 'Navegando no site';
+    const secaoAtualFooter = (linksNavegacao.find((l) => l.href === currentSection) || { label: 'Navegando no site' }).label;
 
     const dicasPadrao = [
         'Prefira textos curtos e objetivos para reduzir carga cognitiva.',

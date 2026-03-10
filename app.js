@@ -69,31 +69,9 @@ const selecionarDestaquesRotativos = (jogos = [], limite = 4) => {
 };
 
 const obterSecaoAtual = (caminho = '/') => {
-  if (caminho === '/') {
-    return '/';
-  }
-
-  if (caminho === '/jogos' || caminho.startsWith('/jogo/')) {
-    return '/jogos';
-  }
-
-  if (caminho === '/projeto') {
-    return '/projeto';
-  }
-
-  if (caminho === '/equipe') {
-    return '/equipe';
-  }
-
-  if (caminho === '/parceiros') {
-    return '/parceiros';
-  }
-
-  if (caminho === '/contato') {
-    return '/contato';
-  }
-
-  return '';
+  if (caminho.startsWith('/jogo/')) return '/jogos';
+  const secoes = ['/', '/jogos', '/projeto', '/equipe', '/parceiros', '/contato'];
+  return secoes.includes(caminho) ? caminho : '';
 };
 
 // Middleware
@@ -143,12 +121,9 @@ app.get('/jogos', async (req, res) => {
       }
 
       jogo.categorias.forEach((categoria) => {
-        if (categoria && typeof categoria === 'object' && categoria.nome) {
+        if (categoria?.nome) {
           categoriasExtras.add(categoria.nome);
-          return;
-        }
-
-        if (typeof categoria === 'string' && !/^[a-f0-9]{24}$/i.test(categoria)) {
+        } else if (typeof categoria === 'string' && !/^[a-f0-9]{24}$/i.test(categoria)) {
           categoriasExtras.add(categoria);
         }
       });
