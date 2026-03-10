@@ -5,25 +5,25 @@
             <img src="/Azul Horizontal (3).png" alt="Logo +LUDUS">
         </a>
         <nav class="nav-links">
-            <a href="/jogos">
+            <a href="/jogos" <%= currentSection === '/jogos' ? 'aria-current="page"' : '' %>>
                 <img src="/ícone controle azul.png" alt="" class="nav-icon-jogos" aria-hidden="true">
                 <span class="nav-text-jogos">Jogos</span>
             </a>
-            <a href="/projeto" class="nav-projeto">
+            <a href="/projeto" class="nav-projeto" <%= currentSection === '/projeto' ? 'aria-current="page"' : '' %>>
                 <img src="/icone informacao azul (2).png" alt="" class="nav-icon-projeto" aria-hidden="true">
                 <span class="nav-text-projeto-container">
                     <span class="nav-text-projeto">Projeto +LUDUS</span>
                 </span>
             </a>
-            <a href="/equipe" class="nav-equipe">
+            <a href="/equipe" class="nav-equipe" <%= currentSection === '/equipe' ? 'aria-current="page"' : '' %>>
                 <img src="/ícone equipe azul.png" alt="" class="nav-icon-equipe" aria-hidden="true">
                 <span class="nav-text-equipe">Equipe</span>
             </a>
-            <a href="/parceiros" class="nav-parceiros">
+            <a href="/parceiros" class="nav-parceiros" <%= currentSection === '/parceiros' ? 'aria-current="page"' : '' %>>
                 <img src="/Ícone Parceiros Azul.png" alt="" class="nav-icon-parceiros" aria-hidden="true">
                 <span class="nav-text-parceiros">Parceiros</span>
             </a>
-            <a href="/contato" class="nav-contato">
+            <a href="/contato" class="nav-contato" <%= currentSection === '/contato' ? 'aria-current="page"' : '' %>>
                 <img src="/Ícone Contato Azul.png" alt="" class="nav-icon-contato" aria-hidden="true">
                 <span class="nav-text-contato">Contato</span>
             </a>

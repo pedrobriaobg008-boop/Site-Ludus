@@ -68,10 +68,39 @@ const selecionarDestaquesRotativos = (jogos = [], limite = 4) => {
     .filter(Boolean);
 };
 
+const obterSecaoAtual = (caminho = '/') => {
+  if (caminho === '/jogos' || caminho.startsWith('/jogo/')) {
+    return '/jogos';
+  }
+
+  if (caminho === '/projeto') {
+    return '/projeto';
+  }
+
+  if (caminho === '/equipe') {
+    return '/equipe';
+  }
+
+  if (caminho === '/parceiros') {
+    return '/parceiros';
+  }
+
+  if (caminho === '/contato') {
+    return '/contato';
+  }
+
+  return '';
+};
+
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+app.use((req, res, next) => {
+  res.locals.currentSection = obterSecaoAtual(req.path);
+  next();
+});
 
 // Rotas
 app.get('/', async (req, res) => {
