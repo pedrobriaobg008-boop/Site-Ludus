@@ -1182,7 +1182,7 @@ body {
     margin-bottom: 16px;
     background: #d6eaf4;
     border: none;
-    padding: 7px 14px;
+    padding: 8px 16px;
     border-radius: 999px;
     width: fit-content;
     margin-left: auto;
@@ -1190,14 +1190,14 @@ body {
 }
 
 .page-icon {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     object-fit: contain;
     flex-shrink: 0;
 }
 
 .games-page-title h2 {
-    font-size: 14px;
+    font-size: 15px;
     color: #0a8ec8;
     margin: 0;
     font-weight: 600;
@@ -1446,11 +1446,11 @@ body {
     }
 
     .page-header-content {
-        padding: 7px 12px;
+        padding: 8px 14px;
     }
 
     .games-page-title h2 {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .search-container {
@@ -1495,8 +1495,8 @@ body {
     }
 
     .page-icon {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
     }
 
     .games-page-title h2 {
