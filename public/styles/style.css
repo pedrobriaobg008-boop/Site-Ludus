@@ -360,7 +360,36 @@ body {
 }
 
 .icon {
-    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.controller-icon {
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.controller-icon--button {
+    width: 18px;
+    height: 18px;
+}
+
+.controller-icon--button-large {
+    width: 22px;
+    height: 22px;
+}
+
+.controller-icon--placeholder {
+    width: clamp(52px, 10vw, 64px);
+    height: clamp(52px, 10vw, 64px);
+}
+
+.controller-icon--placeholder-large {
+    width: clamp(72px, 14vw, 96px);
+    height: clamp(72px, 14vw, 96px);
 }
 
 /* HERO IMAGE */
@@ -448,7 +477,10 @@ body {
 }
 
 .game-cover-placeholder {
-    font-size: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
 }
 
 .game-card h3 {
@@ -1366,7 +1398,10 @@ body {
 }
 
 .game-placeholder {
-    font-size: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
 }
 
 .game-info {
@@ -1419,6 +1454,10 @@ body {
     transition: all 0.3s ease;
     font-family: inherit;
     margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
 }
 
 .btn-play:hover {
@@ -1597,8 +1636,10 @@ body {
 }
 
 .jogo-icon {
-    font-size: 80px;
-    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
 }
 
 .jogo-play-hint {
@@ -1672,6 +1713,11 @@ body {
     transition: all 0.3s ease;
     font-family: inherit;
     box-shadow: 0 8px 20px rgba(233, 30, 140, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
 .btn-play-large:hover {
