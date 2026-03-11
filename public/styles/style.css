@@ -6,7 +6,7 @@
 
 :root {
     --primary-pink: #E91E8C;
-    --primary-blue: #00A3E0;
+    --primary-blue: #0282b1;
     --purple: #7B3FF2;
     --light-purple: #E8D5F2;
     --dark-purple: #4A235A;
@@ -194,7 +194,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: rgba(2, 130, 177, 1);
+    color: var(--primary-blue);
     font-weight: 600;
     font-size: 15px;
     display: inline-flex;
@@ -1363,7 +1363,7 @@ body {
 
 .objective-content h3 {
     font-size: 22px;
-    color: #00A3E0;
+    color: var(--primary-blue);
     margin-bottom: 10px;
     font-weight: 700;
 }
@@ -1461,7 +1461,7 @@ body {
 
 .games-page-title h2 {
     font-size: 18px;
-    color: #0a8ec8;
+    color: var(--primary-blue);
     margin: 0;
     font-weight: 600;
     letter-spacing: 0.1px;
