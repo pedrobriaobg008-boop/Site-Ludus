@@ -7,6 +7,7 @@
 :root {
     --primary-pink: #E91E8C;
     --primary-blue: #0282b1;
+    --color-magenta-40: rgba(122, 71, 133, 1);
     --purple: #7B3FF2;
     --light-purple: #E8D5F2;
     --dark-purple: #4A235A;
@@ -368,7 +369,7 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--purple) 0%, #9147FF 100%);
+    background: var(--color-magenta-40, rgba(122, 71, 133, 1));
     color: white;
     border: none;
     padding: 18px 40px;
@@ -377,7 +378,7 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(123, 63, 242, 0.3);
+    box-shadow: 0 10px 24px rgba(122, 71, 133, 0.28);
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -386,12 +387,13 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(123, 63, 242, 0.4);
-    background: linear-gradient(135deg, #6B2FD1 0%, #8033E5 100%);
+    box-shadow: 0 14px 32px rgba(122, 71, 133, 0.36);
+    background: rgba(104, 56, 114, 1);
 }
 
 .btn-primary:active {
     transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(122, 71, 133, 0.24);
 }
 
 .icon {
@@ -432,6 +434,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hero-image img {
+    width: min(100%, 560px);
+    aspect-ratio: 16 / 11;
+    display: block;
+    object-fit: cover;
+    object-position: center 28%;
+    border-radius: 28px;
+    border: 6px solid rgba(255, 255, 255, 0.92);
+    box-shadow: 0 26px 54px rgba(2, 130, 177, 0.14), 0 14px 28px rgba(122, 71, 133, 0.18);
 }
 
 .illustration-placeholder {
@@ -955,6 +968,13 @@ body {
         gap: 40px;
     }
 
+    .hero-image img {
+        width: min(100%, 520px);
+        border-radius: 24px;
+        border-width: 5px;
+        object-position: center 26%;
+    }
+
     .hero-text h1 {
         font-size: 48px;
     }
@@ -1053,6 +1073,14 @@ body {
 
     .hero-description {
         font-size: 14px;
+    }
+
+    .hero-image img {
+        aspect-ratio: 4 / 3;
+        border-radius: 18px;
+        border-width: 4px;
+        object-position: center 24%;
+        box-shadow: 0 18px 34px rgba(2, 130, 177, 0.12), 0 10px 22px rgba(122, 71, 133, 0.14);
     }
 
     .btn-primary {
