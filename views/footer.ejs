@@ -7,54 +7,6 @@
         { href: '/parceiros', label: 'Parceiros' },
         { href: '/contato', label: 'Contato' }
     ];
-
-    const secaoAtualFooter = (linksNavegacao.find((l) => l.href === currentSection) || { label: 'Navegando no site' }).label;
-
-    const dicasPadrao = [
-        'Prefira textos curtos e objetivos para reduzir carga cognitiva.',
-        'Sempre verifique contraste entre texto e fundo para facilitar a leitura.',
-        'Use navegação por teclado para testar se todos os elementos estão acessíveis.',
-        'Padronize ícones e rótulos para tornar a interface previsível e acolhedora.'
-    ];
-
-    const dicasPorSecao = {
-        '/': [
-            'Na página inicial, títulos claros ajudam a encontrar conteúdo rapidamente.',
-            'Agrupe informações relacionadas para reduzir distrações visuais.',
-            'Elementos interativos devem ter foco visível para navegação por teclado.'
-        ],
-        '/jogos': [
-            'Filtros consistentes facilitam a busca por jogos adequados a cada necessidade.',
-            'Descrições objetivas ajudam famílias e educadores na escolha do jogo.',
-            'Use botões com rótulos diretos como Abrir jogo para orientar a ação.'
-        ],
-        '/projeto': [
-            'Textos explicativos curtos tornam a leitura mais confortável em telas menores.',
-            'Hierarquia visual bem definida ajuda a compreender metas e impactos do projeto.',
-            'Use contraste alto em blocos de conteúdo institucional para melhorar legibilidade.'
-        ],
-        '/equipe': [
-            'Apresente nomes e funções com padrão visual uniforme para leitura previsível.',
-            'Fotos devem manter texto alternativo quando agregarem contexto importante.',
-            'Listagens em grade precisam de espaçamento consistente para evitar sobrecarga.'
-        ],
-        '/parceiros': [
-            'Logotipos devem preservar tamanho equilibrado para evitar competição visual.',
-            'Links externos de parceiros devem indicar claramente que abrem outro site.',
-            'Mantenha descrições curtas para facilitar varredura por leitores de tela.'
-        ],
-        '/contato': [
-            'Formulários devem ter rótulos explícitos e mensagens de erro claras.',
-            'Informações de contato precisam estar acessíveis sem exigir rolagem extensa.',
-            'Sempre combine ícone com texto para evitar ambiguidades de interpretação.'
-        ]
-    };
-
-    const dicasAcessibilidade = dicasPorSecao[currentSection] || dicasPadrao;
-
-    const indiceDicaInicial = new Date().getDate() % dicasAcessibilidade.length;
-    const dicaInicial = dicasAcessibilidade[indiceDicaInicial];
-    const dicasSerializadas = encodeURIComponent(JSON.stringify(dicasAcessibilidade));
 %>
 
 <!-- Footer -->
@@ -105,17 +57,11 @@
                 </div>
             </div>
 
-            <div class="footer-section footer-section-dynamic" data-footer-dynamic data-tips="<%= dicasSerializadas %>">
-                <h4>Acessibilidade em foco</h4>
-                <p class="footer-live-line">
-                    <span class="footer-live-dot" aria-hidden="true"></span>
-                    <span>Seção atual: <strong><%= secaoAtualFooter %></strong></span>
-                </p>
-                <p class="footer-live-line">Horário local: <span class="footer-live-time" data-footer-clock>--:--:--</span></p>
-                <p class="footer-tip">
-                    <span class="footer-tip-label">Dica:</span>
-                    <span class="footer-tip-text" data-footer-tip><%= dicaInicial %></span>
-                </p>
+            <div class="footer-section">
+                <h4>
+                    <span aria-hidden="true">♿</span> Acessibilidade
+                </h4>
+                <p>Este site foi desenvolvido seguindo as diretrizes WCAG 2.1 e GAIA para garantir acesso a todas as pessoas.</p>
             </div>
         </div>
 
@@ -130,76 +76,17 @@
 
 <script>
     (function () {
-        const footerDinamico = document.querySelector('[data-footer-dynamic]');
-        if (!footerDinamico) {
-            return;
-        }
-
-        const relogio = footerDinamico.querySelector('[data-footer-clock]');
-        const dica = footerDinamico.querySelector('[data-footer-tip]');
         const ano = document.querySelector('[data-footer-year]');
         const botaoTopo = document.querySelector('[data-footer-top-btn]');
-        const dicasCodificadas = footerDinamico.getAttribute('data-tips') || '';
-        const prefereMenosMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        let dicas = [];
-        try {
-            dicas = JSON.parse(decodeURIComponent(dicasCodificadas));
-        } catch (erro) {
-            dicas = [];
+        if (ano) {
+            ano.textContent = String(new Date().getFullYear());
         }
-
-        const atualizarRelogio = function () {
-            const agora = new Date();
-
-            if (relogio) {
-                relogio.textContent = agora.toLocaleTimeString('pt-BR', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit'
-                });
-            }
-
-            if (ano) {
-                ano.textContent = String(agora.getFullYear());
-            }
-        };
-
-        atualizarRelogio();
-        window.setInterval(atualizarRelogio, 1000);
 
         if (botaoTopo) {
             botaoTopo.addEventListener('click', function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
-
-        if (!dica || dicas.length <= 1) {
-            return;
-        }
-
-        const transicaoDica = function (texto) {
-            if (prefereMenosMovimento) {
-                dica.textContent = texto;
-                return;
-            }
-
-            dica.classList.add('is-changing');
-
-            window.setTimeout(function () {
-                dica.textContent = texto;
-                dica.classList.remove('is-changing');
-            }, 280);
-        };
-
-        let indiceAtual = Math.max(dicas.indexOf(dica.textContent.trim()), 0);
-
-        window.setInterval(function () {
-            indiceAtual = (indiceAtual + 1) % dicas.length;
-            transicaoDica(dicas[indiceAtual]);
-        }, 9000);
     })();
 </script>
