@@ -724,6 +724,19 @@ body {
     letter-spacing: 0;
 }
 
+.footer-heading-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-heading-icon {
+    width: 1.1em;
+    height: 1.1em;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 .footer-section-logo {
     display: flex;
     justify-content: center;
