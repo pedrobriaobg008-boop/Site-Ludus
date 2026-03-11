@@ -11,14 +11,14 @@ const equipe = {
         },
         {
             id: 2,
-            nome: 'Rafael Corbiou',
+            nome: 'Rafael Cardoso',
             cargo: 'Docente da Área de Computação',
             instituicao: 'IFSul',
             bio: 'Pesquisador em Tecnologias Educacionais'
         },
         {
             id: 3,
-            nome: 'Michelle Schmitt',
+            nome: 'Michelle Schmidt',
             cargo: 'Pesquisadora em Educação Inclusiva',
             instituicao: 'IFSul',
             bio: 'Especialista em Design Acessível para UTI'
@@ -66,14 +66,14 @@ const equipe = {
         },
         {
             id: 9,
-            nome: 'Rafael Corbiou',
+            nome: 'Rafael Cardoso',
             cargo: 'Consultor de Tecnologia',
             instituicao: 'Inovação & Tecnologia',
             bio: 'Especialista em Arquitetura de Software'
         },
         {
             id: 10,
-            nome: 'Michelle Schmitt',
+            nome: 'Michelle Schmidt',
             cargo: 'Consultora Psicopedagógica',
             instituicao: 'Instituto de Educação Inclusiva',
             bio: 'Metodologia para Educação Especial'
