@@ -63,21 +63,30 @@
                                     </div>
                                 <% } %>
                             </div>
-                            <h3><%= jogo.nome %></h3>
-                            <p><%= jogo.descricao || 'Jogo educacional acessível para todas as crianças.' %></p>
-                            <div class="game-tags">
-                                <% if (jogo.categorias && jogo.categorias.length > 0) { %>
-                                    <% jogo.categorias.slice(0, 2).forEach((cat) => { %>
-                                        <span class="tag"><%= cat.nome || cat %></span>
-                                    <% }); %>
-                                <% } else { %>
-                                    <span class="tag">Educacional</span>
-                                <% } %>
+                            <div class="featured-game-body">
+                                <h3><%= jogo.nome %></h3>
+                                <p><%= jogo.descricao || 'Jogo educacional acessível para todas as crianças.' %></p>
+                                <div class="game-tags">
+                                    <% if (jogo.categorias && jogo.categorias.length > 0) { %>
+                                        <% jogo.categorias.slice(0, 2).forEach((cat) => { %>
+                                            <span class="tag"><%= cat.nome || cat %></span>
+                                        <% }); %>
+                                    <% } else { %>
+                                        <span class="tag">Educacional</span>
+                                    <% } %>
+                                </div>
+                                <a href="/jogo/<%= jogo._id %>" class="btn-secondary btn-secondary--featured">
+                                    <span class="btn-secondary-label">
+                                        <img src="/icone controle branco.png" alt="" class="controller-icon controller-icon--button-featured" aria-hidden="true">
+                                        <span>Abrir Jogo</span>
+                                    </span>
+                                    <svg class="btn-secondary-trailing-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M14 5h5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 14 19 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
                             </div>
-                            <a href="/jogo/<%= jogo._id %>" class="btn-secondary">
-                                <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
-                                Abrir jogo
-                            </a>
                         </div>
                     </article>
                 <% }); %>
