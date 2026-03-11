@@ -36,44 +36,51 @@
     <!-- Jogos em Destaque -->
     <section class="featured-games">
         <div class="container">
-            <div class="section-header">
-                <h2>Jogos em Destaque</h2>
-                <p>Explore nossa coleção de jogos educacionais acessíveis</p>
+            <div class="featured-games-head">
+                <div class="section-header section-header--featured">
+                    <h2>Jogos em Destaque</h2>
+                    <p>Explore nossa coleção de jogos educacionais acessíveis</p>
+                </div>
+
+                <a href="/jogos" class="featured-games-link">
+                    Ver todos os jogos
+                    <span aria-hidden="true">→</span>
+                </a>
             </div>
 
-            <div class="games-grid">
-                <% jogosDestaque.forEach(jogo => { %>
-                    <div class="game-card">
-                        <div class="game-cover">
-                            <% if (jogo.icone_url) { %>
-                                <img src="<%= jogo.icone_url %>" alt="Capa do jogo <%= jogo.nome %>" class="game-cover-image">
-                            <% } else { %>
-                                <div class="game-cover-placeholder">
-                                    <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--placeholder" aria-hidden="true">
-                                </div>
-                            <% } %>
+            <div class="featured-games-grid">
+                <% jogosDestaque.slice(0, 3).forEach((jogo) => { %>
+                    <article class="featured-games-slot">
+                        <span class="featured-games-slot-line" aria-hidden="true"></span>
+
+                        <div class="game-card">
+                            <div class="game-cover">
+                                <% if (jogo.icone_url) { %>
+                                    <img src="<%= jogo.icone_url %>" alt="Capa do jogo <%= jogo.nome %>" class="game-cover-image">
+                                <% } else { %>
+                                    <div class="game-cover-placeholder">
+                                        <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--placeholder" aria-hidden="true">
+                                    </div>
+                                <% } %>
+                            </div>
+                            <h3><%= jogo.nome %></h3>
+                            <p><%= jogo.descricao || 'Jogo educacional acessível para todas as crianças.' %></p>
+                            <div class="game-tags">
+                                <% if (jogo.categorias && jogo.categorias.length > 0) { %>
+                                    <% jogo.categorias.slice(0, 2).forEach((cat) => { %>
+                                        <span class="tag"><%= cat.nome || cat %></span>
+                                    <% }); %>
+                                <% } else { %>
+                                    <span class="tag">Educacional</span>
+                                <% } %>
+                            </div>
+                            <a href="/jogo/<%= jogo._id %>" class="btn-secondary">
+                                <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
+                                Abrir jogo
+                            </a>
                         </div>
-                        <h3><%= jogo.nome %></h3>
-                        <p><%= jogo.descricao || 'Jogo educacional acessível para todas as crianças.' %></p>
-                        <div class="game-tags">
-                            <% if (jogo.categorias && jogo.categorias.length > 0) { %>
-                                <% jogo.categorias.slice(0, 2).forEach(cat => { %>
-                                    <span class="tag"><%= cat.nome || cat %></span>
-                                <% }); %>
-                            <% } else { %>
-                                <span class="tag">Educacional</span>
-                            <% } %>
-                        </div>
-                        <a href="/jogo/<%= jogo._id %>" class="btn-secondary">
-                            <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
-                            Abrir jogo
-                        </a>
-                    </div>
+                    </article>
                 <% }); %>
-            </div>
-
-            <div class="section-footer">
-                <a href="/jogos" class="link-arrow">Ver todos os jogos →</a>
             </div>
         </div>
     </section>
