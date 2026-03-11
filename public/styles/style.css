@@ -776,11 +776,14 @@ body {
     align-items: center;
     gap: 10px;
     margin-bottom: 16px;
+    font-size: 15px;
 }
 
 .footer-inline-icon {
-    font-size: 16px;
-    line-height: 1;
+    width: 1.1em;
+    height: 1.1em;
+    object-fit: contain;
+    flex-shrink: 0;
     opacity: 0.95;
 }
 
