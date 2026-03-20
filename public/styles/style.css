@@ -1395,35 +1395,36 @@ body {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 52px;
     align-items: center;
 }
 
 .about-text h2 {
-    font-size: 42px;
-    color: var(--primary-blue);
-    margin-bottom: 30px;
+    font-size: clamp(42px, 4.4vw, 56px);
+    color: var(--primary-pink);
+    margin-bottom: 24px;
+    line-height: 1.12;
 }
 
 .about-text p {
     font-size: 18px;
     line-height: 1.8;
-    color: #333;
-    margin-bottom: 20px;
+    color: var(--primary-blue);
+    margin-bottom: 18px;
 }
 
 .about-image {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
 .project-logo {
     width: 100%;
-    max-width: 350px;
+    max-width: 430px;
     height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 163, 224, 0.2));
+    filter: none;
 }
 
 /* OBJECTIVES SECTION */
@@ -1674,11 +1675,19 @@ body {
     }
 
     .about-text h2 {
-        font-size: 32px;
+        font-size: 38px;
     }
 
     .about-text p {
         font-size: 16px;
+    }
+
+    .about-image {
+        justify-content: center;
+    }
+
+    .project-logo {
+        max-width: 320px;
     }
 
     .objectives-section h2,
