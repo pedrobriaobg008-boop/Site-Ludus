@@ -1582,38 +1582,36 @@ body {
     margin-bottom: 20px;
 }
 
-.mvv-icon svg {
-    width: 24px;
-    height: 24px;
+.mvv-icon-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 .mvv-icon--mission {
     background: rgba(233, 30, 140, 0.12);
-    color: #f13aa4;
 }
 
 .mvv-icon--vision {
     background: rgba(2, 130, 177, 0.14);
-    color: #0282b1;
 }
 
 .mvv-icon--values {
     background: rgba(214, 151, 0, 0.16);
-    color: #d28600;
 }
 
 .mvv-card h3 {
     font-size: 34px;
     color: var(--color-magenta-15, rgba(58, 8, 68, 1));
     margin-bottom: 16px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.15;
 }
 
 .mvv-card p {
     font-size: 17px;
     line-height: 1.55;
-    color: #8f6ea0;
+    color: var(--color-magenta-40, rgba(122, 71, 133, 1));
     max-width: 310px;
 }
 
