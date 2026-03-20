@@ -1604,7 +1604,7 @@ body {
 
 .mvv-card h3 {
     font-size: 34px;
-    color: var(--color-magenta-40, rgba(122, 71, 133, 1));
+    color: var(--color-magenta-15, rgba(58, 8, 68, 1));
     margin-bottom: 16px;
     font-weight: 700;
     line-height: 1.15;
