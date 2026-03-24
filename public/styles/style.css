@@ -1658,20 +1658,25 @@ body {
 }
 
 .objective-icon-img {
-    width: 46px;
-    height: 46px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
+    object-position: center;
+    transform: translateY(2px);
 }
 
 .objective-content {
     flex: 1;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .objective-content h3 {
     font-size: 19px;
     color: var(--primary-blue);
-    margin-bottom: 6px;
+    margin: 0 0 6px;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -1729,8 +1734,9 @@ body {
     }
 
     .objective-icon-img {
-        width: 42px;
-        height: 42px;
+        width: 46px;
+        height: 46px;
+        transform: translateY(1px);
     }
 
     .objective-content h3 {
