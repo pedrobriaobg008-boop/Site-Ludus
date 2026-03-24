@@ -1619,48 +1619,57 @@ body {
 .objectives-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 18px;
+    max-width: 760px;
+    margin: 0 auto;
 }
 
 .objective-item {
-    background: linear-gradient(135deg, rgba(233, 30, 140, 0.05) 0%, rgba(233, 30, 140, 0.03) 100%);
-    border-left: 5px solid #E91E8C;
-    padding: 30px 40px;
-    border-radius: 12px;
+    background: #f2f4f6;
+    border: none;
+    padding: 18px 20px;
+    border-radius: 18px;
     display: flex;
-    gap: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    gap: 16px;
+    box-shadow: none;
     transition: all 0.3s ease;
 }
 
 .objective-item:hover {
-    box-shadow: 0 4px 15px rgba(233, 30, 140, 0.1);
-    transform: translateX(5px);
+    box-shadow: 0 8px 22px rgba(2, 130, 177, 0.12);
+    transform: translateY(-1px);
 }
 
 .objective-icon {
-    font-size: 48px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
-    background: rgba(233, 30, 140, 0.1);
-    border-radius: 12px;
+    width: 64px;
+    height: 64px;
+    background: rgba(233, 30, 140, 0.12);
+    border-radius: 50%;
+    color: #ef3ca8;
+}
+
+.objective-icon svg {
+    width: 32px;
+    height: 32px;
 }
 
 .objective-content h3 {
-    font-size: 22px;
+    font-size: 35px;
     color: var(--primary-blue);
-    margin-bottom: 10px;
-    font-weight: 700;
+    margin-bottom: 6px;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 .objective-content p {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
-    color: #555;
+    color: var(--primary-blue);
     margin: 0;
 }
 
@@ -1691,11 +1700,20 @@ body {
 
     .objective-item {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        align-items: flex-start;
     }
 
     .objective-item {
-        padding: 25px 20px;
+        padding: 18px;
+    }
+
+    .objective-content h3 {
+        font-size: 28px;
+    }
+
+    .objective-content p {
+        font-size: 16px;
     }
 }
 
