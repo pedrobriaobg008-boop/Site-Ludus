@@ -1655,7 +1655,7 @@ body {
     border-radius: 32px;
     justify-self: center;
     align-self: center;
-    transform: translateY(6px);
+    transform: translateY(8px);
 }
 
 .objective-icon-img {
@@ -1728,7 +1728,7 @@ body {
         width: 76px;
         height: 76px;
         border-radius: 30px;
-        transform: translateY(4px);
+        transform: translateY(6px);
     }
 
     .objective-content {
