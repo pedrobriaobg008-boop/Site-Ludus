@@ -1648,20 +1648,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
+    width: 84px;
+    height: 84px;
     background: rgba(233, 30, 140, 0.12);
-    border-radius: 50%;
-    color: #ef3ca8;
+    border-radius: 24px;
 }
 
-.objective-icon svg {
-    width: 32px;
-    height: 32px;
+.objective-icon-img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
 }
 
 .objective-content h3 {
-    font-size: 35px;
+    font-size: 19px;
     color: var(--primary-blue);
     margin-bottom: 6px;
     font-weight: 600;
@@ -1710,8 +1710,19 @@ body {
         padding: 18px;
     }
 
+    .objective-icon {
+        width: 76px;
+        height: 76px;
+        border-radius: 22px;
+    }
+
+    .objective-icon-img {
+        width: 42px;
+        height: 42px;
+    }
+
     .objective-content h3 {
-        font-size: 28px;
+        font-size: 18px;
     }
 
     .objective-content p {
