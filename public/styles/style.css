@@ -1631,9 +1631,9 @@ body {
     border: none;
     padding: 18px 20px;
     border-radius: 18px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 84px 1fr;
     align-items: center;
-    justify-content: flex-start;
     gap: 16px;
     box-shadow: none;
     transition: all 0.3s ease;
@@ -1653,6 +1653,8 @@ body {
     height: 84px;
     background: rgba(233, 30, 140, 0.12);
     border-radius: 32px;
+    justify-self: center;
+    align-self: center;
 }
 
 .objective-icon-img {
@@ -1707,7 +1709,7 @@ body {
     }
 
     .objective-item {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 12px;
         align-items: center;
     }
