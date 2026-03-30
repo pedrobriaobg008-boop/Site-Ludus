@@ -2229,6 +2229,19 @@ body {
     margin: 0;
 }
 
+.jogo-iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.jogo-iframe-container iframe {
+    min-height: 400px;
+    display: block;
+}
+
 /* Jogo Info Section */
 .jogo-info-section {
     background: white;
@@ -2363,6 +2376,12 @@ body {
         height: 200px;
     }
 
+    .jogo-iframe-container iframe {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 300px;
+    }
+
     .jogo-icon {
         font-size: 60px;
     }
@@ -2423,6 +2442,12 @@ body {
 
     .jogo-icon {
         font-size: 48px;
+    }
+
+    .jogo-iframe-container iframe {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 250px;
     }
 
     .jogo-info-section {
