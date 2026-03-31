@@ -2432,7 +2432,10 @@ body {
 
 /* Clean embed mode used to hide common Unity chrome around the canvas. */
 .jogo-iframe-container.is-unity-embed .jogo-iframe {
-    height: calc(100% + 54px);
+    width: calc(100% + 180px);
+    height: calc(100% + 96px);
+    margin-left: -90px;
+    margin-top: -28px;
 }
 
 .jogo-iframe-container.is-unity-embed::after {
@@ -2442,6 +2445,18 @@ body {
     right: 0;
     bottom: 0;
     height: 54px;
+    background: #ffffff;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.jogo-iframe-container.is-unity-embed::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 22px;
     background: #ffffff;
     pointer-events: none;
     z-index: 2;
