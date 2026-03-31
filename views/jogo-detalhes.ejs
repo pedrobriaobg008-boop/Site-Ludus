@@ -28,42 +28,44 @@
             </div>
 
             <!-- Área de Exibição do Jogo -->
-            <div class="jogo-player-area">
-                <% if (jogo.link_jogar) { %>
-                    <div class="jogo-iframe-shell">
-                        <div class="jogo-iframe-container">
-                            <iframe
-                                src="<%= jogo.link_jogar %>"
-                                class="jogo-iframe"
-                                loading="lazy"
-                                allow="fullscreen; autoplay; gamepad"
-                                allowfullscreen>
-                            </iframe>
+            <div class="jogo-player-band">
+                <div class="jogo-player-area">
+                    <% if (jogo.link_jogar) { %>
+                        <div class="jogo-iframe-shell">
+                            <div class="jogo-iframe-container">
+                                <iframe
+                                    src="<%= jogo.link_jogar %>"
+                                    class="jogo-iframe"
+                                    loading="lazy"
+                                    allow="fullscreen; autoplay; gamepad"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <button type="button" class="btn-action btn-action--fullscreen" id="fullscreen-game-btn">
+                                <span class="btn-play-label">
+                                    <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
+                                    <span id="fullscreen-game-btn-label">Tela cheia</span>
+                                </span>
+                                <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
+                            </button>
                         </div>
-                        <button type="button" class="btn-action btn-action--fullscreen" id="fullscreen-game-btn">
-                            <span class="btn-play-label">
-                                <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
-                                <span id="fullscreen-game-btn-label">Tela cheia</span>
-                            </span>
-                            <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
-                        </button>
-                    </div>
-                <% } else { %>
-                    <div class="jogo-player-container">
-                        <% if (jogo.icone_url) { %>
-                            <div class="jogo-icon-container">
-                                <img src="<%= jogo.icone_url %>" alt="<%= jogo.nome %>" style="max-width: 300px; max-height: 300px; object-fit: contain;">
-                            </div>
-                        <% } else { %>
-                            <div class="jogo-icon-container">
-                                <div class="jogo-icon">
-                                    <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--placeholder-large" aria-hidden="true">
+                    <% } else { %>
+                        <div class="jogo-player-container">
+                            <% if (jogo.icone_url) { %>
+                                <div class="jogo-icon-container">
+                                    <img src="<%= jogo.icone_url %>" alt="<%= jogo.nome %>" style="max-width: 300px; max-height: 300px; object-fit: contain;">
                                 </div>
-                            </div>
-                        <% } %>
-                    </div>
-                    <p class="jogo-play-hint">Clique no botão "Abrir Jogo" para começar</p>
-                <% } %>
+                            <% } else { %>
+                                <div class="jogo-icon-container">
+                                    <div class="jogo-icon">
+                                        <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--placeholder-large" aria-hidden="true">
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                        <p class="jogo-play-hint">Clique no botão "Abrir Jogo" para começar</p>
+                    <% } %>
+                </div>
             </div>
 
             <!-- Descrição e Ações -->

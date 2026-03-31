@@ -2351,13 +2351,19 @@ body {
 }
 
 /* Jogo Player Area */
-.jogo-player-area {
+.jogo-player-band {
     background: rgba(220, 243, 249, 1);
+    border-radius: 22px;
+    padding: 18px;
+    margin-bottom: 40px;
+}
+
+.jogo-player-area {
+    background: #ffffff;
     border-radius: 20px;
     padding: 32px;
-    margin-bottom: 40px;
     border: 3px solid #ffffff;
-    box-shadow: 0 10px 24px rgba(2, 130, 177, 0.14);
+    box-shadow: 0 10px 24px rgba(2, 130, 177, 0.12);
     text-align: center;
 }
 
@@ -2571,6 +2577,10 @@ body {
         font-size: 34px;
     }
 
+    .jogo-player-band {
+        padding: 12px;
+    }
+
     .jogo-player-area {
         padding: 20px;
     }
@@ -2632,6 +2642,10 @@ body {
     .jogo-tags .tag {
         font-size: 13px;
         padding: 8px 14px;
+    }
+
+    .jogo-player-band {
+        padding: 10px;
     }
 
     .jogo-player-area {
