@@ -2356,7 +2356,7 @@ body {
     margin-left: -40px;
     margin-right: -40px;
     width: auto;
-    padding: 8px 40px 6px;
+    padding: 6px 40px 6px;
     margin-bottom: 40px;
     border-radius: 0;
 }
@@ -2367,7 +2367,7 @@ body {
     padding: 0 0 3px;
     border: none;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    width: 100%;
+    width: min(1240px, calc(100% - 120px));
     margin: 0 auto;
     text-align: center;
 }
@@ -2559,7 +2559,7 @@ body {
     }
 
     .jogo-player-area {
-        width: 100%;
+        width: min(100%, calc(100% - 48px));
         padding: 0 0 4px;
     }
 
@@ -2621,7 +2621,7 @@ body {
     }
 
     .jogo-player-area {
-        width: 100%;
+        width: min(100%, calc(100% - 20px));
         padding: 0 0 3px;
     }
 
