@@ -2470,12 +2470,24 @@ body {
 }
 
 .btn-action--fullscreen {
+    width: min(380px, 100%);
     min-width: 220px;
+    margin: 0 auto;
+    position: relative;
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
-    padding: 9px 14px;
+    padding: 9px 38px 9px 14px;
+}
+
+.btn-action--fullscreen .btn-play-label {
+    justify-content: center;
+}
+
+.btn-action--fullscreen .btn-play-trailing-icon {
+    position: absolute;
+    right: 14px;
 }
 
 /* Jogo Info Section */
