@@ -42,13 +42,13 @@
                                     allowfullscreen>
                                 </iframe>
                             </div>
-                            <button type="button" class="btn-action btn-action--fullscreen" id="fullscreen-game-btn">
+                            <a href="<%= jogo.link_jogar %>" target="_blank" class="btn-action btn-action--fullscreen" id="fullscreen-game-btn">
                                 <span class="btn-play-label">
                                     <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
-                                    <span id="fullscreen-game-btn-label">Tela cheia</span>
+                                    <span id="fullscreen-game-btn-label">Abrir em Nova Guia</span>
                                 </span>
                                 <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
-                            </button>
+                            </a>
                         </div>
                     <% } else { %>
                         <div class="jogo-player-container">
@@ -202,25 +202,7 @@
             }
         }
 
-        if (fullscreenButton && iframeContainer) {
-            fullscreenButton.addEventListener('click', async () => {
-                try {
-                    if (document.fullscreenElement) {
-                        await document.exitFullscreen();
-                    } else {
-                        await iframeContainer.requestFullscreen();
-                    }
-                } catch (error) {
-                    console.error('Nao foi possivel alternar tela cheia.', error);
-                }
-            });
 
-            document.addEventListener('fullscreenchange', () => {
-                if (fullscreenButtonLabel) {
-                    fullscreenButtonLabel.textContent = document.fullscreenElement ? 'Sair da tela cheia' : 'Tela cheia';
-                }
-            });
-        }
     </script>
 </body>
 </html>
