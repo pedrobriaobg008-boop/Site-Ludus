@@ -2323,12 +2323,14 @@ body {
 }
 
 .jogo-header h1 {
-    font-size: 48px;
-    color: var(--purple);
+    font-size: clamp(42px, 5vw, 56px);
+    color: var(--color-magenta-27, rgba(105, 15, 123, 1));
     margin-bottom: 15px;
-    font-weight: 700;
+    font-family: 'Century Gothic', 'Trebuchet MS', 'Segoe UI', sans-serif;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.6px;
+    line-height: 1.15;
 }
 
 .jogo-tags {
@@ -2341,10 +2343,11 @@ body {
 .jogo-tags .tag {
     background: rgba(233, 30, 140, 0.15);
     color: var(--primary-pink);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 16px;
     font-weight: 600;
+    line-height: 1;
 }
 
 /* Jogo Player Area */
@@ -2521,7 +2524,7 @@ body {
     }
 
     .jogo-header h1 {
-        font-size: 32px;
+        font-size: 34px;
     }
 
     .jogo-player-area {
@@ -2580,12 +2583,12 @@ body {
 
 @media (max-width: 480px) {
     .jogo-header h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .jogo-tags .tag {
-        font-size: 11px;
-        padding: 6px 12px;
+        font-size: 13px;
+        padding: 8px 14px;
     }
 
     .jogo-player-area {
