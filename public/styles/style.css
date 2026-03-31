@@ -1961,6 +1961,48 @@ body {
     padding: 50px 0;
 }
 
+.tags-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.75);
+    color: #4f5b66;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legend-dot--pink {
+    background: var(--primary-pink);
+}
+
+.legend-dot--blue {
+    background: var(--primary-blue);
+}
+
+.legend-dot--green {
+    background: #2f7d32;
+}
+
+.legend-dot--orange {
+    background: #c56a00;
+}
+
 .games-counter {
     font-size: 14px;
     color: #999;
@@ -2048,6 +2090,26 @@ body {
     border-radius: 14px;
     font-size: 11px;
     font-weight: 600;
+}
+
+.tag--pink {
+    background: rgba(233, 30, 140, 0.15);
+    color: var(--primary-pink);
+}
+
+.tag--blue {
+    background: rgba(2, 130, 177, 0.16);
+    color: var(--primary-blue);
+}
+
+.tag--green {
+    background: rgba(34, 139, 34, 0.16);
+    color: #2f7d32;
+}
+
+.tag--orange {
+    background: rgba(245, 158, 11, 0.18);
+    color: #c56a00;
 }
 
 .btn-play {
@@ -2145,6 +2207,16 @@ body {
 
     .games-grid {
         grid-template-columns: 1fr;
+    }
+
+    .tags-legend {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .legend-item {
+        font-size: 11px;
+        padding: 6px 10px;
     }
 
     .filter-buttons {

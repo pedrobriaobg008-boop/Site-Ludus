@@ -150,5 +150,39 @@
     </section>
 
     <%- include('./footer') %>
+
+    <script>
+        function normalizeText(text) {
+            return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        function getTagColorClass(tagText) {
+            const normalizedTag = normalizeText(tagText);
+
+            const pinkKeywords = ['linguagem', 'portugues', 'leitura', 'escrita', 'alfabetizacao', 'educacao', 'aprendizagem', 'aprendizado', 'idioma', 'literatura', 'gramatica'];
+            const blueKeywords = ['matematica', 'exatas', 'logica', 'fisica', 'programacao', 'algebra', 'geometria', 'numeros', 'calculo', 'estatistica'];
+            const greenKeywords = ['ciencias naturais', 'ciencias', 'biologia', 'quimica', 'natureza', 'ecologia', 'meio ambiente', 'ambiental', 'corpo humano'];
+            const orangeKeywords = ['ciencias humanas', 'humanas', 'historia', 'geografia', 'sociologia', 'filosofia', 'cidadania', 'sociedade', 'cultura'];
+
+            if (pinkKeywords.some(keyword => normalizedTag.includes(keyword))) return 'tag--pink';
+            if (blueKeywords.some(keyword => normalizedTag.includes(keyword))) return 'tag--blue';
+            if (greenKeywords.some(keyword => normalizedTag.includes(keyword))) return 'tag--green';
+            if (orangeKeywords.some(keyword => normalizedTag.includes(keyword))) return 'tag--orange';
+
+            return 'tag--pink';
+        }
+
+        function applyFeaturedTagColors() {
+            const tagColorClasses = ['tag--pink', 'tag--blue', 'tag--green', 'tag--orange'];
+            const tags = document.querySelectorAll('.featured-games .game-tags .tag');
+
+            tags.forEach(tag => {
+                tag.classList.remove(...tagColorClasses);
+                tag.classList.add(getTagColorClass(tag.textContent.trim()));
+            });
+        }
+
+        applyFeaturedTagColors();
+    </script>
 </body>
 </html>

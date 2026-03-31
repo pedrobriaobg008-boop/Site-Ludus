@@ -53,6 +53,24 @@
     <!-- Games Grid Section -->
     <section class="games-grid-section">
         <div class="container">
+            <div class="tags-legend" aria-label="Legenda de cores das tags">
+                <span class="legend-item">
+                    <span class="legend-dot legend-dot--pink" aria-hidden="true"></span>
+                    Linguagem, aprendizado e educacao
+                </span>
+                <span class="legend-item">
+                    <span class="legend-dot legend-dot--blue" aria-hidden="true"></span>
+                    Exatas
+                </span>
+                <span class="legend-item">
+                    <span class="legend-dot legend-dot--green" aria-hidden="true"></span>
+                    Ciencias naturais
+                </span>
+                <span class="legend-item">
+                    <span class="legend-dot legend-dot--orange" aria-hidden="true"></span>
+                    Ciencias humanas
+                </span>
+            </div>
             <p class="games-counter"><%= jogos.length %> jogos encontrados</p>
             
             <div class="games-grid">
@@ -102,6 +120,51 @@
 
         function normalizeText(text) {
             return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        function getTagColorClass(tagText) {
+            const normalizedTag = normalizeText(tagText);
+
+            const pinkKeywords = ['linguagem', 'portugues', 'leitura', 'escrita', 'alfabetizacao', 'educacao', 'aprendizagem', 'aprendizado', 'idioma', 'literatura', 'gramatica'];
+            const blueKeywords = ['matematica', 'exatas', 'logica', 'fisica', 'programacao', 'algebra', 'geometria', 'numeros', 'calculo', 'estatistica'];
+            const greenKeywords = ['ciencias naturais', 'ciencias', 'biologia', 'quimica', 'natureza', 'ecologia', 'meio ambiente', 'ambiental', 'corpo humano'];
+            const orangeKeywords = ['ciencias humanas', 'humanas', 'historia', 'geografia', 'sociologia', 'filosofia', 'cidadania', 'sociedade', 'cultura'];
+
+            if (pinkKeywords.some(keyword => normalizedTag.includes(keyword))) return 'tag--pink';
+            if (blueKeywords.some(keyword => normalizedTag.includes(keyword))) return 'tag--blue';
+            if (greenKeywords.some(keyword => normalizedTag.includes(keyword))) return 'tag--green';
+            if (orangeKeywords.some(keyword => normalizedTag.includes(keyword))) return 'tag--orange';
+
+            return 'tag--pink';
+        }
+
+        function applyTagColors() {
+            const tagColorClasses = ['tag--pink', 'tag--blue', 'tag--green', 'tag--orange'];
+            const groupPriority = {
+                'tag--pink': 1,
+                'tag--blue': 2,
+                'tag--green': 3,
+                'tag--orange': 4
+            };
+
+            document.querySelectorAll('.game-tags').forEach(container => {
+                const tags = Array.from(container.querySelectorAll('.tag'));
+
+                tags.forEach(tag => {
+                    tag.classList.remove(...tagColorClasses);
+                    tag.classList.add(getTagColorClass(tag.textContent.trim()));
+                });
+
+                tags.sort((a, b) => {
+                    const aClass = tagColorClasses.find(cls => a.classList.contains(cls)) || 'tag--pink';
+                    const bClass = tagColorClasses.find(cls => b.classList.contains(cls)) || 'tag--pink';
+                    const priorityDiff = groupPriority[aClass] - groupPriority[bClass];
+                    if (priorityDiff !== 0) return priorityDiff;
+                    return normalizeText(a.textContent.trim()).localeCompare(normalizeText(b.textContent.trim()));
+                });
+
+                tags.forEach(tag => container.appendChild(tag));
+            });
         }
 
         function matchesFilter(card, filter) {
@@ -171,6 +234,7 @@
             }
         });
 
+        applyTagColors();
         updateGames();
     </script>
 </body>
