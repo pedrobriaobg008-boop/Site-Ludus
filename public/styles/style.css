@@ -2362,9 +2362,9 @@ body {
 .jogo-player-area {
     background: #ffffff;
     border-radius: 22px;
-    padding: 14px;
+    padding: 12px;
     border: 3px solid #ffffff;
-    box-shadow: 0 8px 18px rgba(2, 130, 177, 0.12);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     width: min(1280px, calc(100% - 48px));
     margin: 0 auto;
     text-align: center;
@@ -2404,19 +2404,19 @@ body {
     width: 100%;
     aspect-ratio: 16 / 9;
     margin: 0 auto;
-    border-radius: 18px;
-    border: 2px solid #ffffff;
+    border-radius: 14px;
+    border: none;
     background: #ffffff;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: none;
 }
 
 .jogo-iframe-shell {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
 }
 
 .jogo-iframe {
@@ -2588,7 +2588,7 @@ body {
 
     .jogo-player-area {
         width: calc(100% - 24px);
-        padding: 10px;
+        padding: 8px;
     }
 
     .jogo-icon-container {
@@ -2656,7 +2656,7 @@ body {
 
     .jogo-player-area {
         width: calc(100% - 16px);
-        padding: 8px;
+        padding: 6px;
     }
 
     .jogo-icon-container {
