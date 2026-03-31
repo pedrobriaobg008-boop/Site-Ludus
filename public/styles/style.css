@@ -2313,8 +2313,7 @@ body {
 /* JOGO DETALHES PAGE */
 .jogo-detalhes {
     background: white;
-    padding: 60px 0;
-    min-height: 100vh;
+    padding: 60px 0 0;
 }
 
 .jogo-header {
@@ -2561,7 +2560,7 @@ body {
 /* Responsive - Jogo Detalhes */
 @media (max-width: 768px) {
     .jogo-detalhes {
-        padding: 40px 0;
+        padding: 40px 0 0;
     }
 
     .jogo-header h1 {
