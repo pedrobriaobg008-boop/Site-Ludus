@@ -56,7 +56,7 @@
             <div class="tags-legend" aria-label="Legenda de cores das tags">
                 <span class="legend-item">
                     <span class="legend-dot legend-dot--pink" aria-hidden="true"></span>
-                    Linguagem, aprendizado e educacao
+                    Linguagem, aprendizado e educação
                 </span>
                 <span class="legend-item">
                     <span class="legend-dot legend-dot--blue" aria-hidden="true"></span>
@@ -77,13 +77,15 @@
                 <% jogos.forEach(jogo => { %>
                     <div class="game-card-full">
                         <div class="game-image">
-                            <% if (jogo.icone_url) { %>
-                                <img src="<%= jogo.icone_url %>" alt="<%= jogo.nome %>" style="width: 100%; height: 100%; object-fit: cover;">
-                            <% } else { %>
-                                <div class="game-placeholder">
-                                    <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--placeholder" aria-hidden="true">
-                                </div>
-                            <% } %>
+                            <a href="/jogo/<%= jogo._id %>" class="game-image-link" aria-label="Abrir detalhes do jogo <%= jogo.nome %>">
+                                <% if (jogo.icone_url) { %>
+                                    <img src="<%= jogo.icone_url %>" alt="<%= jogo.nome %>" class="game-image-img">
+                                <% } else { %>
+                                    <div class="game-placeholder">
+                                        <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--placeholder" aria-hidden="true">
+                                    </div>
+                                <% } %>
+                            </a>
                         </div>
                         <div class="game-info">
                             <h3><%= jogo.nome %></h3>
