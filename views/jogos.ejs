@@ -64,11 +64,11 @@
                 </span>
                 <span class="legend-item">
                     <span class="legend-dot legend-dot--green" aria-hidden="true"></span>
-                    Ciencias naturais
+                    Ciências naturais
                 </span>
                 <span class="legend-item">
                     <span class="legend-dot legend-dot--orange" aria-hidden="true"></span>
-                    Ciencias humanas
+                    Ciências humanas
                 </span>
             </div>
             <p class="games-counter"><%= jogos.length %> jogos encontrados</p>
@@ -100,8 +100,11 @@
                                 <% } %>
                             </div>
                             <a href="/jogo/<%= jogo._id %>" class="btn-play">
-                                <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
-                                Abrir Jogo
+                                <span class="btn-play-label">
+                                    <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
+                                    <span>Abrir Jogo</span>
+                                </span>
+                                <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
                             </a>
                         </div>
                     </div>
