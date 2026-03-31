@@ -2369,7 +2369,7 @@ body {
 .jogo-player-area {
     background: #ffffff;
     border-radius: 18px;
-    padding: 2px;
+    padding: 14px 2px;
     border: none;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     width: 100%;
@@ -2588,7 +2588,7 @@ body {
 
     .jogo-player-area {
         width: 100%;
-        padding: 2px;
+        padding: 10px 2px;
     }
 
     .jogo-icon-container {
@@ -2648,7 +2648,7 @@ body {
 
     .jogo-player-area {
         width: 100%;
-        padding: 1px;
+        padding: 8px 1px;
     }
 
     .jogo-icon-container {
