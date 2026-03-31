@@ -30,15 +30,23 @@
             <!-- Área de Exibição do Jogo -->
             <div class="jogo-player-area">
                 <% if (jogo.link_jogar) { %>
-                    <div class="jogo-iframe-container">
-                        <iframe 
-                            src="<%= jogo.link_jogar %>"
-                            width="960" 
-                            height="600" 
-                            frameborder="0"
-                            allowfullscreen
-                            style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        </iframe>
+                    <div class="jogo-iframe-shell">
+                        <div class="jogo-iframe-container">
+                            <iframe
+                                src="<%= jogo.link_jogar %>"
+                                class="jogo-iframe"
+                                loading="lazy"
+                                allow="fullscreen; autoplay; gamepad"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <button type="button" class="btn-action btn-action--fullscreen" id="fullscreen-game-btn">
+                            <span class="btn-play-label">
+                                <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
+                                <span id="fullscreen-game-btn-label">Tela cheia</span>
+                            </span>
+                            <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
+                        </button>
                     </div>
                 <% } else { %>
                     <div class="jogo-player-container">
@@ -84,13 +92,19 @@
             <div class="jogo-play-section">
                 <% if (jogo.link_jogar) { %>
                     <a href="<%= jogo.link_jogar %>" target="_blank" class="btn-play-large">
-                        <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--button-large" aria-hidden="true">
-                        Abrir Jogo
+                        <span class="btn-play-label">
+                            <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button-large" aria-hidden="true">
+                            <span>Abrir Jogo</span>
+                        </span>
+                        <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
                     </a>
                 <% } else { %>
                     <button class="btn-play-large" disabled>
-                        <img src="/ícone controle azul.png" alt="" class="controller-icon controller-icon--button-large" aria-hidden="true">
-                        Em breve
+                        <span class="btn-play-label">
+                            <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button-large" aria-hidden="true">
+                            <span>Em breve</span>
+                        </span>
+                        <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
                     </button>
                 <% } %>
             </div>
@@ -192,6 +206,30 @@
         }
 
         applyDetailsTagColors();
+
+        const fullscreenButton = document.getElementById('fullscreen-game-btn');
+        const fullscreenButtonLabel = document.getElementById('fullscreen-game-btn-label');
+        const iframeContainer = document.querySelector('.jogo-iframe-container');
+
+        if (fullscreenButton && iframeContainer) {
+            fullscreenButton.addEventListener('click', async () => {
+                try {
+                    if (document.fullscreenElement) {
+                        await document.exitFullscreen();
+                    } else {
+                        await iframeContainer.requestFullscreen();
+                    }
+                } catch (error) {
+                    console.error('Nao foi possivel alternar tela cheia.', error);
+                }
+            });
+
+            document.addEventListener('fullscreenchange', () => {
+                if (fullscreenButtonLabel) {
+                    fullscreenButtonLabel.textContent = document.fullscreenElement ? 'Sair da tela cheia' : 'Tela cheia';
+                }
+            });
+        }
     </script>
 </body>
 </html>
