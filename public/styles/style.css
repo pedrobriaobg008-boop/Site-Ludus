@@ -2356,18 +2356,18 @@ body {
     margin-left: -40px;
     margin-right: -40px;
     width: auto;
-    padding: 6px 40px 6px;
-    margin-bottom: 40px;
+    padding: 12px 40px;
+    margin-bottom: 24px;
     border-radius: 0;
 }
 
 .jogo-player-area {
     background: #ffffff;
     border-radius: 18px;
-    padding: 0 0 3px;
+    padding: 6px;
     border: none;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    width: min(1240px, calc(100% - 120px));
+    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -2461,7 +2461,7 @@ body {
     background: #ffffff;
     border-radius: 0;
     padding: 32px 0;
-    margin-bottom: 0;
+    margin-bottom: 16px;
     box-shadow: none;
 }
 
@@ -2557,12 +2557,12 @@ body {
         margin-left: -24px;
         margin-right: -24px;
         width: auto;
-        padding: 6px 24px 5px;
+        padding: 10px 24px;
     }
 
     .jogo-player-area {
-        width: min(100%, calc(100% - 48px));
-        padding: 0 0 4px;
+        width: 100%;
+        padding: 4px;
     }
 
     .jogo-icon-container {
@@ -2621,12 +2621,12 @@ body {
         margin-left: -16px;
         margin-right: -16px;
         width: auto;
-        padding: 5px 16px;
+        padding: 8px 16px;
     }
 
     .jogo-player-area {
-        width: min(100%, calc(100% - 20px));
-        padding: 0 0 3px;
+        width: 100%;
+        padding: 3px;
     }
 
     .jogo-icon-container {
