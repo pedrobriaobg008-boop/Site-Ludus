@@ -2356,8 +2356,8 @@ body {
     border-radius: 20px;
     padding: 28px;
     margin-bottom: 40px;
-    border: 1px solid rgba(2, 130, 177, 0.18);
-    box-shadow: 0 8px 24px rgba(2, 130, 177, 0.12);
+    border: 1px solid rgba(2, 130, 177, 0.2);
+    box-shadow: 0 10px 26px rgba(2, 130, 177, 0.14);
     text-align: center;
 }
 
@@ -2394,10 +2394,11 @@ body {
     aspect-ratio: 16 / 10;
     margin: 0 auto;
     border-radius: 18px;
-    border: 2px solid rgba(2, 130, 177, 0.24);
+    border: 4px solid #ffffff;
     background: #ffffff;
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(2, 130, 177, 0.14);
+    box-shadow: 0 10px 28px rgba(2, 130, 177, 0.18);
 }
 
 .jogo-iframe-shell {
@@ -2413,6 +2414,23 @@ body {
     display: block;
     border: none;
     background: #f5f9fb;
+}
+
+/* Clean embed mode used to hide common Unity chrome around the canvas. */
+.jogo-iframe-container.is-unity-embed .jogo-iframe {
+    height: calc(100% + 54px);
+}
+
+.jogo-iframe-container.is-unity-embed::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 54px;
+    background: #ffffff;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .btn-action--fullscreen {

@@ -210,6 +210,15 @@
         const fullscreenButton = document.getElementById('fullscreen-game-btn');
         const fullscreenButtonLabel = document.getElementById('fullscreen-game-btn-label');
         const iframeContainer = document.querySelector('.jogo-iframe-container');
+        const gameIframe = document.querySelector('.jogo-iframe');
+
+        if (iframeContainer && gameIframe) {
+            const src = (gameIframe.getAttribute('src') || '').toLowerCase();
+            const looksLikeUnityEmbed = src.includes('unity') || src.includes('webgl') || src.includes('itch.io');
+            if (looksLikeUnityEmbed) {
+                iframeContainer.classList.add('is-unity-embed');
+            }
+        }
 
         if (fullscreenButton && iframeContainer) {
             fullscreenButton.addEventListener('click', async () => {
