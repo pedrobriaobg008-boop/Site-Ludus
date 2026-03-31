@@ -91,27 +91,6 @@
                 </div>
             </div>
 
-            <!-- Botão Abrir Jogo Grande -->
-            <div class="jogo-play-section">
-                <% if (jogo.link_jogar) { %>
-                    <a href="<%= jogo.link_jogar %>" target="_blank" class="btn-play-large">
-                        <span class="btn-play-label">
-                            <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button-large" aria-hidden="true">
-                            <span>Abrir Jogo</span>
-                        </span>
-                        <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
-                    </a>
-                <% } else { %>
-                    <button class="btn-play-large" disabled>
-                        <span class="btn-play-label">
-                            <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button-large" aria-hidden="true">
-                            <span>Em breve</span>
-                        </span>
-                        <img src="/ícone extensão branco.png" alt="" class="btn-play-trailing-icon" aria-hidden="true">
-                    </button>
-                <% } %>
-            </div>
-
             <!-- Jogos Relacionados -->
             <% if (jogosRelacionados && jogosRelacionados.length > 0) { %>
             <div class="relacionados-section">

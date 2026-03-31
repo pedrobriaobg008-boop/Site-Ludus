@@ -2355,15 +2355,15 @@ body {
     background: rgba(220, 243, 249, 1);
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    padding: 22px 0;
+    padding: 14px 0;
     margin-bottom: 40px;
 }
 
 .jogo-player-area {
     background: #ffffff;
     border-radius: 22px;
-    padding: 12px;
-    border: 3px solid #ffffff;
+    padding: 8px;
+    border: 2px solid #ffffff;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     width: min(1280px, calc(100% - 48px));
     margin: 0 auto;
@@ -2499,38 +2499,6 @@ body {
     box-shadow: 0 6px 16px rgba(0, 163, 224, 0.25);
 }
 
-/* Jogo Play Section */
-.jogo-play-section {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
-}
-
-.btn-play-large {
-    background: linear-gradient(135deg, var(--primary-pink) 0%, #D81A80 100%);
-    color: white;
-    border: none;
-    padding: 18px 50px;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: inherit;
-    box-shadow: 0 8px 20px rgba(233, 30, 140, 0.3);
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    text-decoration: none;
-    min-width: 260px;
-}
-
-.btn-play-large:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(233, 30, 140, 0.4);
-}
-
 /* Relacionados Section */
 .relacionados-section {
     background: white;
@@ -2617,15 +2585,6 @@ body {
         min-width: 140px;
     }
 
-    .jogo-play-section {
-        margin-bottom: 40px;
-    }
-
-    .btn-play-large {
-        padding: 14px 35px;
-        font-size: 16px;
-    }
-
     .relacionados-section {
         padding: 25px 20px;
     }
@@ -2682,11 +2641,6 @@ body {
     .btn-action {
         padding: 10px 16px;
         font-size: 12px;
-    }
-
-    .btn-play-large {
-        padding: 12px 25px;
-        font-size: 14px;
     }
 
     .relacionados-header h2 {
