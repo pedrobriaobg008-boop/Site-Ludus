@@ -2354,7 +2354,7 @@ body {
 .jogo-player-band {
     background: rgba(220, 243, 249, 1);
     border-radius: 22px;
-    padding: 18px;
+    padding: 16px;
     margin-bottom: 40px;
 }
 
@@ -2362,8 +2362,8 @@ body {
     background: #ffffff;
     border-radius: 20px;
     padding: 32px;
-    border: 3px solid #ffffff;
-    box-shadow: 0 10px 24px rgba(2, 130, 177, 0.12);
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
 }
 
@@ -2406,7 +2406,7 @@ body {
     background: #ffffff;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 28px rgba(2, 130, 177, 0.22);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
 .jogo-iframe-shell {
