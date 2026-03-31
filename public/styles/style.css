@@ -2356,8 +2356,8 @@ body {
     border-radius: 20px;
     padding: 32px;
     margin-bottom: 40px;
-    border: 1px solid rgba(2, 130, 177, 0.24);
-    box-shadow: 0 10px 24px rgba(2, 130, 177, 0.16);
+    border: 3px solid #ffffff;
+    box-shadow: 0 10px 24px rgba(2, 130, 177, 0.14);
     text-align: center;
 }
 
