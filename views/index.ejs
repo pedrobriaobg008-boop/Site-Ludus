@@ -66,8 +66,19 @@
                                 </a>
                             </div>
                             <div class="featured-game-body">
+                                <%
+                                    const descricaoPadraoDestaque = 'Jogo educacional acessível para todas as crianças.';
+                                    const descricaoCompletaDestaque = ((jogo.descricao || descricaoPadraoDestaque) + '').trim();
+                                    const limiteDescricaoDestaque = 100;
+                                    const descricaoDestaqueFoiCortada = descricaoCompletaDestaque.length > limiteDescricaoDestaque;
+                                    const descricaoExibidaDestaque = descricaoDestaqueFoiCortada
+                                        ? `${descricaoCompletaDestaque.slice(0, limiteDescricaoDestaque).trimEnd()}`
+                                        : descricaoCompletaDestaque;
+                                %>
                                 <h3><%= jogo.nome %></h3>
-                                <p><%= jogo.descricao || 'Jogo educacional acessível para todas as crianças.' %></p>
+                                <p class="featured-game-description">
+                                    <%= descricaoExibidaDestaque %><% if (descricaoDestaqueFoiCortada) { %><a href="/jogo/<%= jogo._id %>" class="featured-game-description-more" aria-label="Continuar lendo a descrição do jogo <%= jogo.nome %>">...</a><% } %>
+                                </p>
                                 <div class="game-tags">
                                     <% if (jogo.categorias && jogo.categorias.length > 0) { %>
                                         <% jogo.categorias.slice(0, 2).forEach((cat) => { %>

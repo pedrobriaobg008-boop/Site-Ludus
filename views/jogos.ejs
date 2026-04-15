@@ -88,8 +88,19 @@
                             </a>
                         </div>
                         <div class="game-info">
+                            <% 
+                                const descricaoPadrao = 'Jogo educacional divertido e interativo';
+                                const descricaoCompleta = ((jogo.descricao || descricaoPadrao) + '').trim();
+                                const limiteDescricao = 140;
+                                const descricaoFoiCortada = descricaoCompleta.length > limiteDescricao;
+                                const descricaoExibida = descricaoFoiCortada
+                                    ? `${descricaoCompleta.slice(0, limiteDescricao).trimEnd()}`
+                                    : descricaoCompleta;
+                            %>
                             <h3><%= jogo.nome %></h3>
-                            <p class="game-description"><%= jogo.descricao || 'Jogo educacional divertido e interativo' %></p>
+                            <p class="game-description" data-full-description="<%= descricaoCompleta %>">
+                                <%= descricaoExibida %><% if (descricaoFoiCortada) { %><a href="/jogo/<%= jogo._id %>" class="game-description-more" aria-label="Continuar lendo a descrição do jogo <%= jogo.nome %>">...</a><% } %>
+                            </p>
                             <div class="game-tags">
                                 <% if (jogo.categorias && jogo.categorias.length > 0) { %>
                                     <% jogo.categorias.forEach(cat => { %>
@@ -196,7 +207,10 @@
             
             const normalized = normalizeText(searchTerm);
             const title = normalizeText(card.querySelector('h3').textContent);
-            const description = normalizeText(card.querySelector('.game-description').textContent);
+            const descriptionElement = card.querySelector('.game-description');
+            const description = normalizeText(
+                descriptionElement.getAttribute('data-full-description') || descriptionElement.textContent
+            );
             const tags = Array.from(card.querySelectorAll('.tag')).map(t => normalizeText(t.textContent));
             
             return title.includes(normalized) || 

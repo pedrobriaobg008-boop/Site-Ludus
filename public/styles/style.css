@@ -681,6 +681,28 @@ h6,
     position: relative;
 }
 
+.featured-game-description {
+    font-size: 13px;
+    color: #7b7290;
+    margin: 0;
+    flex: 1;
+    line-height: 1.55;
+    display: block;
+    overflow: visible;
+}
+
+.featured-game-description-more {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.featured-game-description-more:hover,
+.featured-game-description-more:focus-visible {
+    text-decoration: underline;
+}
+
 .game-card p[style*="overflow"],
 .game-card p:has(+ .game-tags) {
     --has-content: 1;
@@ -2113,6 +2135,18 @@ h6,
     overflow: visible;
     max-height: none;
     display: block;
+}
+
+.game-description-more {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.game-description-more:hover,
+.game-description-more:focus-visible {
+    text-decoration: underline;
 }
 
 .game-tags {
