@@ -91,7 +91,7 @@
                             <% 
                                 const descricaoPadrao = 'Jogo educacional divertido e interativo';
                                 const descricaoCompleta = ((jogo.descricao || descricaoPadrao) + '').trim();
-                                const limiteDescricao = 140;
+                                const limiteDescricao = 120;
                                 const descricaoFoiCortada = descricaoCompleta.length > limiteDescricao;
                                 const descricaoExibida = descricaoFoiCortada
                                     ? `${descricaoCompleta.slice(0, limiteDescricao).trimEnd()}`

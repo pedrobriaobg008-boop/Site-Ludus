@@ -69,7 +69,7 @@
                                 <%
                                     const descricaoPadraoDestaque = 'Jogo educacional acessível para todas as crianças.';
                                     const descricaoCompletaDestaque = ((jogo.descricao || descricaoPadraoDestaque) + '').trim();
-                                    const limiteDescricaoDestaque = 100;
+                                    const limiteDescricaoDestaque = 120;
                                     const descricaoDestaqueFoiCortada = descricaoCompletaDestaque.length > limiteDescricaoDestaque;
                                     const descricaoExibidaDestaque = descricaoDestaqueFoiCortada
                                         ? `${descricaoCompletaDestaque.slice(0, limiteDescricaoDestaque).trimEnd()}`
