@@ -9,6 +9,7 @@
 :root {
     --primary-pink: #E91E8C;
     --primary-blue: #0282b1;
+    --color-azure-35: rgba(2, 133, 177, 1);
     --color-magenta-40: rgba(122, 71, 133, 1);
     --purple: #7B3FF2;
     --light-purple: #E8D5F2;
@@ -2128,7 +2129,7 @@ h6,
 
 .game-description {
     font-size: 14px;
-    color: #666;
+    color: var(--color-azure-35, rgba(2, 133, 177, 1));
     line-height: 1.5;
     margin: 0 0 12px;
     flex-grow: 1;
@@ -2588,7 +2589,7 @@ h6,
 .jogo-description p {
     font-size: 16px;
     line-height: 1.8;
-    color: #555;
+    color: var(--color-azure-35, rgba(2, 133, 177, 1));
     margin: 0;
     text-align: center;
 }
