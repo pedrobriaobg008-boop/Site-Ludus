@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -15,12 +17,26 @@
     --header-bg: #E8F7FC;
     --section-alt-bg: #E0F3F9;
     --footer-dark: #5D1B7A;
+    --font-heading: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-body: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[class*="title"],
+[class*="subtitle"],
+[class*="heading"] {
+    font-family: var(--font-heading);
 }
 
 /* NAVBAR */
@@ -247,7 +263,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-body);
     font-weight: inherit;
     font-size: inherit;
     line-height: 1.2;
@@ -2325,7 +2341,7 @@ body {
     font-size: clamp(42px, 5vw, 56px);
     color: var(--color-magenta-27, rgba(105, 15, 123, 1));
     margin-bottom: 15px;
-    font-family: 'Century Gothic', 'Trebuchet MS', 'Segoe UI', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.6px;
