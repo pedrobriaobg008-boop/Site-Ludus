@@ -51,7 +51,7 @@ const secoes = [
                 nome: 'Bruna Bichet',
                 cargo: 'Bolsista e Aluna do Curso Técnico em Design Gráfico',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
-                foto: '/equipe/alunos-bolsistas/bruna-bichet.jpg',
+                foto: '/equipe/alunos-bolsistas/bruna-bichet.jpg.png',
                 bio: 'Designer do Projeto'
             },
             {
@@ -59,7 +59,7 @@ const secoes = [
                 nome: 'Gabriel da Silva',
                 cargo: 'Voluntário e Aluno do Curso Técnico em Análise e Desenvolvimento de Sistemas',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
-                foto: '/equipe/alunos-bolsistas/gabriel-da-silva.jpg',
+                foto: '/equipe/alunos-bolsistas/gabriel-da-silva.jpg.png',
                 bio: 'Desenvolvedor de Jogos com Unity'
             },
             {
@@ -67,7 +67,7 @@ const secoes = [
                 nome: 'João Ferreira',
                 cargo: 'Bolsista e Aluno do Curso Técnico em Análise e Desenvolvimento de Sistemas',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
-                foto: '/equipe/alunos-bolsistas/joao-ferreira.jpg',
+                foto: '/equipe/alunos-bolsistas/joao-ferreira.jpg.png',
                 bio: 'Desenvolvedor de Jogos com Unity'
             },
             {
@@ -75,7 +75,7 @@ const secoes = [
                 nome: 'Lucas Kosby',
                 cargo: 'Bolsista e Aluno do Curso Técnico em Informática',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
-                foto: '/equipe/alunos-bolsistas/lucas-kosby.jpg',
+                foto: '/equipe/alunos-bolsistas/lucas-kosby.jpg.png',
                 bio: 'Desenvolvedor de Jogos com Unity'
             },
             {
@@ -83,7 +83,7 @@ const secoes = [
                 nome: 'Brenda Tuche',
                 cargo: 'Bolsista e Aluna do Curso Técnico em Design Gráfico',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
-                foto: '/equipe/alunos-bolsistas/brenda-tuche.jpg',
+                foto: '/equipe/alunos-bolsistas/brenda-tuche.jpg.png',
                 bio: 'Analista de Acessibilidade e Testes de Usabilidade'
             }
         ]
@@ -99,7 +99,7 @@ const secoes = [
                 nome: 'Rodrigo Bichet',
                 cargo: 'Aluno de mestrado',
                 instituicao: 'Fundação Universidade Federal de Pelotas (UFPel)',
-                foto: '/equipe/colaboradores-externos/rodrigo-bichet.jpg',
+                foto: '/equipe/colaboradores-externos/rodrigo-bichet.jpg.png',
                 bio: 'Consultor e Colaborador externo'
             }
         ]
