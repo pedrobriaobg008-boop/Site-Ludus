@@ -3556,6 +3556,12 @@ h6,
     align-items: start;
 }
 
+.contato-container.contato-container-only-info {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
 .contato-info {
     display: flex;
     flex-direction: column;
