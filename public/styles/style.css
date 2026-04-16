@@ -3669,28 +3669,28 @@ h6,
     color: var(--color-rose-60, rgba(255, 51, 173, 1));
 }
 
-.info-card h3 {
+.info-card:not(.email-card) h3 {
     font-size: 18px;
     font-weight: 700;
     color: var(--primary-blue);
     margin-bottom: 8px;
 }
 
-.info-card p {
+.info-card:not(.email-card) p {
     font-size: 14px;
     color: #666;
     line-height: 1.6;
     margin: 0;
 }
 
-.info-card a {
+.info-card:not(.email-card) a {
     color: var(--primary-blue);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
-.info-card a:hover {
+.info-card:not(.email-card) a:hover {
     color: var(--primary-pink);
 }
 
