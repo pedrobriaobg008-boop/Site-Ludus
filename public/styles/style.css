@@ -3527,13 +3527,21 @@ h6,
 .contato-header p {
     font-size: 17px;
     max-width: 700px;
-    }
-
-    .contato-header p strong {
-        font-weight: 700;
     margin: 0 auto;
     line-height: 1.6;
     color: var(--primary-blue);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.contato-header p strong {
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.contato-subtitle-main,
+.contato-subtitle-highlight {
+    display: inline;
 }
 
 .contato-content {
@@ -3737,6 +3745,19 @@ h6,
 
     .contato-header p {
         font-size: 14px;
+        white-space: normal;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.5;
+        gap: 2px;
+    }
+
+    .contato-subtitle-main,
+    .contato-subtitle-highlight {
+        display: block;
+        white-space: nowrap;
     }
 
     .contato-container {
@@ -3775,7 +3796,7 @@ h6,
     }
 
     .contato-header p {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .contato-info {
