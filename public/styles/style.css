@@ -2843,9 +2843,9 @@ h6,
 .equipe-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     background: rgba(2, 130, 177, 0.12);
-    padding: 10px 20px;
+    padding: 11px 22px;
     border-radius: 50px;
     font-size: 14px;
     font-weight: 700;
@@ -2855,8 +2855,8 @@ h6,
 }
 
 .equipe-badge-icon {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
 }
 
@@ -2896,8 +2896,8 @@ h6,
 }
 
 .group-icon-wrap {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -2914,8 +2914,8 @@ h6,
 }
 
 .group-icon-img {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }
 
@@ -3001,6 +3001,12 @@ h6,
     .equipe-badge {
         font-size: 12px;
         padding: 9px 18px;
+        gap: 9px;
+    }
+
+    .equipe-badge-icon {
+        width: 16px;
+        height: 16px;
     }
 
     .equipe-header h1 {
@@ -3022,6 +3028,16 @@ h6,
 
     .group-title h2 {
         font-size: 30px;
+    }
+
+    .group-icon-wrap {
+        width: 40px;
+        height: 40px;
+    }
+
+    .group-icon-img {
+        width: 22px;
+        height: 22px;
     }
 
     .team-grid {
@@ -3066,6 +3082,15 @@ h6,
         max-width: 100%;
     }
 
+    .equipe-badge {
+        gap: 8px;
+    }
+
+    .equipe-badge-icon {
+        width: 14px;
+        height: 14px;
+    }
+
     .equipe-content {
         padding: 30px 0;
     }
@@ -3076,6 +3101,16 @@ h6,
 
     .group-title h2 {
         font-size: 24px;
+    }
+
+    .group-icon-wrap {
+        width: 36px;
+        height: 36px;
+    }
+
+    .group-icon-img {
+        width: 20px;
+        height: 20px;
     }
 
     .team-grid {
