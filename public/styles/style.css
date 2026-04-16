@@ -3143,22 +3143,31 @@ h6,
 
 /* PARCEIROS PAGE */
 .parceiros-header {
-    background: var(--section-alt-bg);
+    background: #f6f7f8;
     color: var(--dark-purple);
     padding: 60px 0;
     text-align: center;
 }
 
 .parceiros-badge {
-    display: inline-block;
-    background: rgba(0, 163, 224, 0.12);
-    padding: 10px 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(2, 130, 177, 0.12);
+    border: none;
+    padding: 10px 20px;
     border-radius: 50px;
     font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.2px;
     color: var(--primary-blue);
+}
+
+.parceiros-badge-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
 }
 
 .parceiros-header h1 {
@@ -3192,7 +3201,7 @@ h6,
 
 /* Instituição Sede Section */
 .instituicao-sede-section {
-    background: white;
+    background: var(--section-alt-bg);
     padding: 60px 0;
 }
 
@@ -3203,8 +3212,21 @@ h6,
     margin-bottom: 40px;
 }
 
-.sede-icon {
-    font-size: 24px;
+.section-title-icon-wrap {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(2, 130, 177, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.section-title-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
 }
 
 .sede-title h2 {
@@ -3239,7 +3261,7 @@ h6,
 
 /* Instituições Parceiras Section */
 .instituicoes-parceiras-section {
-    background: var(--section-alt-bg);
+    background: #f6f7f8;
     padding: 60px 0;
 }
 
@@ -3248,10 +3270,6 @@ h6,
     align-items: center;
     gap: 12px;
     margin-bottom: 40px;
-}
-
-.parceiros-icon {
-    font-size: 24px;
 }
 
 .parceiros-title h2 {
@@ -3311,7 +3329,12 @@ h6,
 
     .parceiros-badge {
         font-size: 12px;
-        padding: 10px 22px;
+        padding: 9px 16px;
+    }
+
+    .parceiros-badge-icon {
+        width: 14px;
+        height: 14px;
     }
 
     .parceiros-header h1 {
@@ -3354,6 +3377,16 @@ h6,
 
     .parceiros-title h2 {
         font-size: 22px;
+    }
+
+    .section-title-icon-wrap {
+        width: 28px;
+        height: 28px;
+    }
+
+    .section-title-icon {
+        width: 14px;
+        height: 14px;
     }
 
     .parceiros-grid {
@@ -3418,6 +3451,16 @@ h6,
 
     .parceiros-title h2 {
         font-size: 18px;
+    }
+
+    .section-title-icon-wrap {
+        width: 26px;
+        height: 26px;
+    }
+
+    .section-title-icon {
+        width: 13px;
+        height: 13px;
     }
 
     .parceiros-grid {
