@@ -9,26 +9,26 @@ const secoes = [
             {
                 id: 1,
                 nome: 'Marcelo Siedler',
-                cargo: 'Docente do Curso de Computação',
-                instituicao: 'IFSul',
+                cargo: 'Professor da Área de Informática',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
                 foto: '/equipe/professores-pesquisadores/marcelo-siedler.jpg',
                 bio: 'Coordenador do projeto +LUDUS'
             },
             {
                 id: 2,
                 nome: 'Rafael Cardoso',
-                cargo: 'Docente da Área de Computação',
-                instituicao: 'IFSul',
+                cargo: 'Professor da Área de Informática',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
                 foto: '/equipe/professores-pesquisadores/rafael-cardoso.jpg',
-                bio: 'Pesquisador em Tecnologias Educacionais'
+                bio: 'Coordenador do projeto +LUDUS'
             },
             {
                 id: 3,
                 nome: 'Michelle Schmidt',
                 cargo: 'Pesquisadora em Educação Inclusiva',
-                instituicao: 'IFSul',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
                 foto: '/equipe/professores-pesquisadores/michelle-schmidt.jpg',
-                bio: 'Especialista em Design Acessível para UTI'
+                bio: 'Coordenadora do projeto +LUDUS'
             }
         ]
     },
@@ -42,7 +42,7 @@ const secoes = [
                 id: 4,
                 nome: 'Pedro Almeida',
                 cargo: 'Bolsista de Desenvolvimento',
-                instituicao: 'IFSul',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
                 foto: '/equipe/alunos-bolsistas/pedro-almeida.jpg',
                 bio: 'Desenvolvedor de Jogos Educacionais'
             },
@@ -50,7 +50,7 @@ const secoes = [
                 id: 5,
                 nome: 'Julia Martins',
                 cargo: 'Bolsista de Design',
-                instituicao: 'IFSul',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
                 foto: '/equipe/alunos-bolsistas/julia-martins.jpg',
                 bio: 'Designer UX/UI do Projeto'
             },
@@ -58,7 +58,7 @@ const secoes = [
                 id: 6,
                 nome: 'Lucas Siqueira',
                 cargo: 'Pesquisador - Bolsa CNPq',
-                instituicao: 'IFSul',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
                 foto: '/equipe/alunos-bolsistas/lucas-siqueira.jpg',
                 bio: 'Análise de Acessibilidade'
             },
@@ -66,7 +66,7 @@ const secoes = [
                 id: 7,
                 nome: 'Mariana Lima',
                 cargo: 'Estagiária de Educação',
-                instituicao: 'Universidade Federal',
+                instituicao: 'Universidade Federal de Santa Catarina (UFSC)',
                 foto: '/equipe/alunos-bolsistas/mariana-lima.jpg',
                 bio: 'Metodologia Educacional'
             }
