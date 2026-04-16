@@ -25,8 +25,8 @@ const secoes = [
             {
                 id: 3,
                 nome: 'Michelle Schmidt',
-                cargo: 'Pesquisadora em Educação Inclusiva',
-                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
+                cargo: 'Professora da Área de Informática',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
                 foto: '/equipe/professores-pesquisadores/michelle-schmidt.jpg.png?v=2',
                 bio: 'Coordenadora do projeto +LUDUS'
             }
@@ -40,35 +40,51 @@ const secoes = [
         integrantes: [
             {
                 id: 4,
-                nome: 'Pedro Almeida',
-                cargo: 'Bolsista de Desenvolvimento',
+                nome: 'Pedro Brião',
+                cargo: 'Bolsista e Aluno do Curso Técnico em Informática',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
-                foto: '/equipe/alunos-bolsistas/pedro-almeida.jpg',
-                bio: 'Desenvolvedor de Jogos Educacionais'
+                foto: '/equipe/alunos-bolsistas/pedro-briao.jpg',
+                bio: 'Desenvolvedor das Plataformas Web'
             },
             {
                 id: 5,
-                nome: 'Julia Martins',
-                cargo: 'Bolsista de Design',
-                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
-                foto: '/equipe/alunos-bolsistas/julia-martins.jpg',
-                bio: 'Designer UX/UI do Projeto'
+                nome: 'Bruna Bichet',
+                cargo: 'Bolsista e Aluna do Curso Técnico em Design Gráfico',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
+                foto: '/equipe/alunos-bolsistas/bruna-bichet.jpg',
+                bio: 'Designer do Projeto'
             },
             {
                 id: 6,
-                nome: 'Lucas Siqueira',
-                cargo: 'Pesquisador - Bolsa CNPq',
+                nome: 'Gabriel da Silva',
+                cargo: 'Voluntário e Aluno do Curso Técnico em Análise e Desenvolvimento de Sistemas',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
-                foto: '/equipe/alunos-bolsistas/lucas-siqueira.jpg',
-                bio: 'Análise de Acessibilidade'
+                foto: '/equipe/alunos-bolsistas/gabriel-da-silva.jpg',
+                bio: 'Desenvolvedor de Jogos com Unity'
             },
             {
                 id: 7,
-                nome: 'Mariana Lima',
-                cargo: 'Estagiária de Educação',
-                instituicao: 'Universidade Federal de Santa Catarina (UFSC)',
-                foto: '/equipe/alunos-bolsistas/mariana-lima.jpg',
-                bio: 'Metodologia Educacional'
+                nome: 'João Ferreira',
+                cargo: 'Bolsista e Aluno do Curso Técnico em Análise e Desenvolvimento de Sistemas',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
+                foto: '/equipe/alunos-bolsistas/joao-ferreira.jpg',
+                bio: 'Desenvolvedor de Jogos com Unity'
+            },
+            {
+                id: 8,
+                nome: 'Lucas Kosby',
+                cargo: 'Bolsista e Aluno do Curso Técnico em Informática',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
+                foto: '/equipe/alunos-bolsistas/lucas-kosby.jpg',
+                bio: 'Desenvolvedor de Jogos com Unity'
+            },
+            {
+                id: 9,
+                nome: 'Brenda Tuche',
+                cargo: 'Bolsista e Aluna do Curso Técnico em Design Gráfico',
+                instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
+                foto: '/equipe/alunos-bolsistas/brenda-tuche.jpg',
+                bio: 'Analista de Acessibilidade e Testes de Usabilidade'
             }
         ]
     },
@@ -79,28 +95,12 @@ const secoes = [
         icone: '/ícone livro azul.png',
         integrantes: [
             {
-                id: 8,
-                nome: 'Marcelo Siedler',
-                cargo: 'Especialista em Acessibilidade',
-                instituicao: 'Consultoria para Inclusão Digital',
-                foto: '/equipe/colaboradores-externos/marcelo-siedler.jpg',
-                bio: 'Consultor WCAG 2.1 e GAIA'
-            },
-            {
-                id: 9,
-                nome: 'Rafael Cardoso',
-                cargo: 'Consultor de Tecnologia',
-                instituicao: 'Inovação & Tecnologia',
-                foto: '/equipe/colaboradores-externos/rafael-cardoso.jpg',
-                bio: 'Especialista em Arquitetura de Software'
-            },
-            {
                 id: 10,
-                nome: 'Michelle Schmidt',
-                cargo: 'Consultora Psicopedagógica',
-                instituicao: 'Instituto de Educação Inclusiva',
-                foto: '/equipe/colaboradores-externos/michelle-schmidt.jpg',
-                bio: 'Metodologia para Educação Especial'
+                nome: 'Rodrigo Bichet',
+                cargo: 'Aluno de mestrado',
+                instituicao: 'Fundação Universidade Federal de Pelotas (UFPel)',
+                foto: '/equipe/colaboradores-externos/rodrigo-bichet.jpg',
+                bio: 'Consultor e Colaborador externo'
             }
         ]
     }
