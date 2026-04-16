@@ -2877,11 +2877,11 @@ h6,
 
 .equipe-content {
     background: var(--section-alt-bg);
-    padding: 60px 0;
+    padding: 64px 0;
 }
 
 .equipe-group {
-    margin-bottom: 60px;
+    margin-bottom: 46px;
 }
 
 .equipe-group:last-child {
@@ -2891,69 +2891,105 @@ h6,
 .group-title {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
+    gap: 10px;
+    margin-bottom: 18px;
 }
 
-.group-icon {
-    font-size: 24px;
+.group-icon-wrap {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.group-icon-wrap--azul {
+    background: rgba(2, 130, 177, 0.16);
+}
+
+.group-icon-wrap--rosa {
+    background: rgba(233, 30, 140, 0.16);
+}
+
+.group-icon-img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
 }
 
 .group-title h2 {
-    font-size: 28px;
-    color: var(--primary-pink);
+    font-size: 38px;
+    color: #5a2e70;
     margin: 0;
     font-weight: 700;
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
 }
 
 .team-card {
     background: white;
-    border-radius: 16px;
-    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(90, 46, 112, 0.08);
+    padding: 18px 16px 16px;
     text-align: center;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 16px rgba(90, 46, 112, 0.08);
     transition: all 0.3s ease;
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(90, 46, 112, 0.16);
 }
 
-.team-avatar {
-    width: 80px;
-    height: 80px;
+.team-avatar,
+.team-avatar-image {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #E0E0E0 0%, #D0D0D0 100%);
-    margin: 0 auto 15px;
+    margin: 0 auto 14px;
     flex-shrink: 0;
 }
 
+.team-avatar-image {
+    display: block;
+    object-fit: cover;
+    border: 1px solid rgba(90, 46, 112, 0.08);
+}
+
+.team-avatar--azul {
+    background: #d7e9f3;
+}
+
+.team-avatar--rosa {
+    background: #efdced;
+}
+
 .team-card h3 {
-    font-size: 18px;
-    color: var(--dark-purple);
-    margin: 15px 0 8px;
+    font-size: 22px;
+    color: #5a2e70;
+    margin: 0 0 8px;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .team-card .cargo {
-    font-size: 13px;
-    color: var(--primary-pink);
-    font-weight: 600;
+    font-size: 14px;
+    color: #7a5c8f;
+    font-weight: 700;
     margin: 0 0 5px;
 }
 
 .team-card .instituicao {
-    font-size: 12px;
-    color: #999;
+    font-size: 13px;
+    color: #8c7fa0;
     margin: 0;
-    font-style: italic;
+    line-height: 1.4;
 }
 
 /* RESPONSIVE - EQUIPE PAGE */
@@ -2981,29 +3017,30 @@ h6,
     }
 
     .equipe-group {
-        margin-bottom: 40px;
+        margin-bottom: 36px;
     }
 
     .group-title h2 {
-        font-size: 22px;
+        font-size: 30px;
     }
 
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 14px;
     }
 
     .team-card {
-        padding: 20px 15px;
+        padding: 16px 14px;
     }
 
-    .team-avatar {
-        width: 70px;
-        height: 70px;
+    .team-avatar,
+    .team-avatar-image {
+        width: 56px;
+        height: 56px;
     }
 
     .team-card h3 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .team-card .cargo {
@@ -3038,25 +3075,26 @@ h6,
     }
 
     .group-title h2 {
-        font-size: 18px;
+        font-size: 24px;
     }
 
     .team-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
     }
 
     .team-card {
-        padding: 18px 12px;
+        padding: 16px 12px;
     }
 
-    .team-avatar {
-        width: 60px;
-        height: 60px;
+    .team-avatar,
+    .team-avatar-image {
+        width: 50px;
+        height: 50px;
     }
 
     .team-card h3 {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .team-card .cargo {

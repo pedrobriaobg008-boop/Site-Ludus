@@ -24,60 +24,31 @@
     <!-- Equipe Content Section -->
     <section class="equipe-content">
         <div class="container">
-            
-            <!-- Professores e Pesquisadores -->
-            <div class="equipe-group">
-                <div class="group-title">
-                    <span class="group-icon">👁️</span>
-                    <h2>Professores e Pesquisadores</h2>
+            <% equipe.secoes.forEach(secao => { %>
+                <div class="equipe-group">
+                    <div class="group-title">
+                        <span class="group-icon-wrap group-icon-wrap--<%= secao.tema %>">
+                            <img src="<%= secao.icone %>" alt="" class="group-icon-img" aria-hidden="true">
+                        </span>
+                        <h2><%= secao.titulo %></h2>
+                    </div>
+                    <div class="team-grid">
+                        <% secao.integrantes.forEach(pessoa => { %>
+                            <div class="team-card">
+                                <% if (pessoa.foto) { %>
+                                    <img src="<%= pessoa.foto %>" alt="Foto de <%= pessoa.nome %>" class="team-avatar-image" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                    <div class="team-avatar team-avatar--<%= secao.tema %> team-avatar-fallback" style="display: none;"></div>
+                                <% } else { %>
+                                    <div class="team-avatar team-avatar--<%= secao.tema %>"></div>
+                                <% } %>
+                                <h3><%= pessoa.nome %></h3>
+                                <p class="cargo"><%= pessoa.cargo %></p>
+                                <p class="instituicao"><%= pessoa.instituicao %></p>
+                            </div>
+                        <% }); %>
+                    </div>
                 </div>
-                <div class="team-grid">
-                    <% equipe.professoresePesquisadores.forEach(pessoa => { %>
-                        <div class="team-card">
-                            <div class="team-avatar"></div>
-                            <h3><%= pessoa.nome %></h3>
-                            <p class="cargo"><%= pessoa.cargo %></p>
-                            <p class="instituicao"><%= pessoa.instituicao %></p>
-                        </div>
-                    <% }); %>
-                </div>
-            </div>
-
-            <!-- Alunos e Bolsistas -->
-            <div class="equipe-group">
-                <div class="group-title">
-                    <span class="group-icon">🎓</span>
-                    <h2>Alunos e Bolsistas</h2>
-                </div>
-                <div class="team-grid">
-                    <% equipe.alunoseBolsistas.forEach(pessoa => { %>
-                        <div class="team-card">
-                            <div class="team-avatar"></div>
-                            <h3><%= pessoa.nome %></h3>
-                            <p class="cargo"><%= pessoa.cargo %></p>
-                            <p class="instituicao"><%= pessoa.instituicao %></p>
-                        </div>
-                    <% }); %>
-                </div>
-            </div>
-
-            <!-- Colaboradores Externos -->
-            <div class="equipe-group">
-                <div class="group-title">
-                    <span class="group-icon">🏢</span>
-                    <h2>Colaboradores Externos</h2>
-                </div>
-                <div class="team-grid">
-                    <% equipe.colaboradoresExternos.forEach(pessoa => { %>
-                        <div class="team-card">
-                            <div class="team-avatar"></div>
-                            <h3><%= pessoa.nome %></h3>
-                            <p class="cargo"><%= pessoa.cargo %></p>
-                            <p class="instituicao"><%= pessoa.instituicao %></p>
-                        </div>
-                    <% }); %>
-                </div>
-            </div>
+            <% }); %>
 
         </div>
     </section>
