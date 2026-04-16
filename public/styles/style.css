@@ -2409,6 +2409,8 @@ h6,
 .jogo-player-band {
     background: rgba(220, 243, 249, 1);
     width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     padding: 12px 16px;
     margin-bottom: 24px;
     border-radius: 0;
@@ -2654,6 +2656,8 @@ h6,
     background: rgba(220, 243, 249, 1);
     border-radius: 0;
     width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     padding: 34px 16px;
     box-shadow: none;
 }
