@@ -3634,6 +3634,14 @@ h6,
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.social-icon-badge:hover,
+.social-icon-badge:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(122, 71, 133, 0.25);
+    background: rgba(123, 63, 242, 0.18);
 }
 
 .social-card-icon-img {
