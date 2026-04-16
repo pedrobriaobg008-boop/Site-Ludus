@@ -589,8 +589,8 @@ h6,
 }
 
 .game-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(2, 130, 177, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(2, 130, 177, 0.1);
 }
 
 .game-cover {
@@ -1497,8 +1497,8 @@ h6,
 }
 
 .objective-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .objective-icon {
@@ -1610,7 +1610,7 @@ h6,
 }
 
 .mvv-card:hover {
-    box-shadow: 0 12px 24px rgba(233, 30, 140, 0.12);
+    box-shadow: 0 4px 10px rgba(233, 30, 140, 0.1);
     transform: translateY(-2px);
 }
 
@@ -2943,8 +2943,8 @@ h6,
 }
 
 .team-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(90, 46, 112, 0.16);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(90, 46, 112, 0.12);
 }
 
 .team-avatar,
@@ -3296,8 +3296,8 @@ h6,
 }
 
 .parceiro-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(233, 30, 140, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(255, 51, 173, 0.12);
 }
 
 .parceiro-icon-container {
