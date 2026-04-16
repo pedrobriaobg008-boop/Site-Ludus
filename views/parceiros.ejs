@@ -56,7 +56,9 @@
             <div class="parceiros-grid">
                 <% parceiros.instituicoesParceiras.forEach(parceiro => { %>
                     <div class="parceiro-card">
-                        <div class="parceiro-icon-container"></div>
+                        <div class="parceiro-icon-container">
+                            <img src="<%= parceiro.logo %>" alt="<%= parceiro.nome %>" title="<%= parceiro.nome %>" style="width: 100%; height: 100%; object-fit: contain; border-radius: 14px;">
+                        </div>
                         <h3><%= parceiro.nome %></h3>
                         <p><%= parceiro.descricao %></p>
                     </div>
