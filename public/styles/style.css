@@ -2841,7 +2841,9 @@ h6,
 }
 
 .equipe-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: rgba(2, 130, 177, 0.12);
     padding: 10px 20px;
     border-radius: 50px;
@@ -2850,6 +2852,12 @@ h6,
     margin-bottom: 18px;
     letter-spacing: 0.2px;
     color: var(--primary-blue);
+}
+
+.equipe-badge-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
 }
 
 .equipe-header h1 {
