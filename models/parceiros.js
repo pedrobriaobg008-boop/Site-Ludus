@@ -17,28 +17,28 @@ const parceiros = {
             nome: 'PROPESP',
             descricao: 'Pró-Reitoria de Pesquisa, Inovação e Pós-Graduação do IFSUL.',
             website: 'https://ifsul.edu.br/propesp',
-            logo: '/logos/propesp.png'
+            logo: '/propesp.png'
         },
         {
             id: 2,
             nome: 'FAPERGS',
             descricao: 'Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul.',
             website: 'https://fapergs.rs.gov.br',
-            logo: '/logos/fapergs.png'
+            logo: '/fapergs.png'
         },
         {
             id: 3,
             nome: 'CNPq',
             descricao: 'Conselho Nacional de Desenvolvimento Científico e Tecnológico.',
             website: 'https://www.gov.br/cnpq',
-            logo: '/logos/cnpq.png'
+            logo: '/cnpq.png'
         },
         {
             id: 4,
             nome: 'CAPES',
             descricao: 'Coordenação de Aperfeiçoamento de Pessoal de Nível Superior.',
             website: 'https://www.gov.br/capes',
-            logo: '/logos/capes.png'
+            logo: '/capes.png'
         }
     ]
 };
