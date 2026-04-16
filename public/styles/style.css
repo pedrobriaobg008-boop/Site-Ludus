@@ -3614,8 +3614,42 @@ h6,
 }
 
 .info-card .card-icon {
-    font-size: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 12px;
+}
+
+.card-icon-img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.social-icon-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(123, 63, 242, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-card-icon-img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.email-card h3,
+.email-card p,
+.email-card a {
+    color: var(--color-rose-60, rgba(255, 51, 173, 1));
+}
+
+.email-card a:hover {
+    color: var(--color-rose-60, rgba(255, 51, 173, 1));
 }
 
 .info-card h3 {
@@ -3655,10 +3689,15 @@ h6,
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: rgba(0, 163, 224, 0.1);
+    background: rgba(123, 63, 242, 0.1);
     border-radius: 50%;
-    font-size: 20px;
     transition: all 0.3s ease;
+}
+
+.social-link-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
 }
 
 .social-links a:hover {
