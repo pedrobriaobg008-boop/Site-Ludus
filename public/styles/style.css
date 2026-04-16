@@ -3642,14 +3642,21 @@ h6,
     object-fit: contain;
 }
 
-.email-card h3,
-.email-card p,
+.email-card h3 {
+    color: var(--primary-blue);
+}
+
+.email-card p {
+    color: #666;
+}
+
 .email-card a {
-    color: var(--color-rose-60, rgba(255, 51, 173, 1));
+    color: #5a7fa6;
+    transition: color 0.3s ease;
 }
 
 .email-card a:hover {
-    color: var(--color-rose-60, rgba(255, 51, 173, 1));
+    color: var(--primary-blue);
 }
 
 .info-card h3 {
