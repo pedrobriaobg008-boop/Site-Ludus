@@ -11,7 +11,7 @@ const secoes = [
                 nome: 'Marcelo Siedler',
                 cargo: 'Professor da Área de Informática',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
-                foto: '/equipe/professores-pesquisadores/marcelo-siedler.jpg',
+                foto: '/equipe/professores-pesquisadores/marcelo-siedler.jpg.png',
                 bio: 'Coordenador do projeto +LUDUS'
             },
             {
@@ -19,7 +19,7 @@ const secoes = [
                 nome: 'Rafael Cardoso',
                 cargo: 'Professor da Área de Informática',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Pelotas',
-                foto: '/equipe/professores-pesquisadores/rafael-cardoso.jpg',
+                foto: '/equipe/professores-pesquisadores/rafael-cardoso.jpg.png',
                 bio: 'Coordenador do projeto +LUDUS'
             },
             {
@@ -27,7 +27,7 @@ const secoes = [
                 nome: 'Michelle Schmidt',
                 cargo: 'Pesquisadora em Educação Inclusiva',
                 instituicao: 'Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense (IFSul) - Câmpus Bagé',
-                foto: '/equipe/professores-pesquisadores/michelle-schmidt.jpg',
+                foto: '/equipe/professores-pesquisadores/michelle-schmidt.jpg.png',
                 bio: 'Coordenadora do projeto +LUDUS'
             }
         ]
