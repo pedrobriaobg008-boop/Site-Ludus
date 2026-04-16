@@ -3728,6 +3728,10 @@ h6,
     color: var(--primary-blue);
 }
 
+.info-card.location-card p {
+    color: var(--primary-blue);
+}
+
 .social-links {
     display: flex;
     gap: 15px;
