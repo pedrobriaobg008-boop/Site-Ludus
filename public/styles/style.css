@@ -3165,8 +3165,8 @@ h6,
 }
 
 .parceiros-badge-icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
 
@@ -3213,8 +3213,8 @@ h6,
 }
 
 .section-title-icon-wrap {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background: rgba(2, 130, 177, 0.12);
     display: inline-flex;
@@ -3225,8 +3225,8 @@ h6,
 }
 
 .section-title-icon {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
 }
 
@@ -3301,11 +3301,11 @@ h6,
 }
 
 .parceiro-icon-container {
-    width: 70px;
-    height: 70px;
-    border-radius: 12px;
+    width: 84px;
+    height: 84px;
+    border-radius: 14px;
     background: linear-gradient(135deg, #E0F3F9 0%, #D0E8F2 100%);
-    margin: 0 auto 15px;
+    margin: 0 auto 18px;
 }
 
 .parceiro-card h3 {
@@ -3334,8 +3334,8 @@ h6,
     }
 
     .parceiros-badge-icon {
-        width: 14px;
-        height: 14px;
+        width: 17px;
+        height: 17px;
     }
 
     .parceiros-header h1 {
@@ -3381,14 +3381,14 @@ h6,
     }
 
     .section-title-icon-wrap {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
         transform: none;
     }
 
     .section-title-icon {
-        width: 14px;
-        height: 14px;
+        width: 17px;
+        height: 17px;
     }
 
     .parceiros-grid {
@@ -3401,8 +3401,8 @@ h6,
     }
 
     .parceiro-icon-container {
-        width: 60px;
-        height: 60px;
+        width: 72px;
+        height: 72px;
     }
 
     .parceiro-card h3 {
@@ -3456,14 +3456,14 @@ h6,
     }
 
     .section-title-icon-wrap {
-        width: 26px;
-        height: 26px;
+        width: 30px;
+        height: 30px;
         transform: none;
     }
 
     .section-title-icon {
-        width: 13px;
-        height: 13px;
+        width: 16px;
+        height: 16px;
     }
 
     .parceiros-grid {
@@ -3476,8 +3476,8 @@ h6,
     }
 
     .parceiro-icon-container {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     .parceiro-card h3 {
