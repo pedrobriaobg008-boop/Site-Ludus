@@ -3708,6 +3708,26 @@ h6,
     color: var(--primary-pink);
 }
 
+.location-card .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(2, 130, 177, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.location-card h3,
+.location-card p,
+.location-card a,
+.location-card a:hover,
+.location-card a:focus-visible,
+.location-card a:active {
+    color: var(--primary-blue);
+}
+
 .social-links {
     display: flex;
     gap: 15px;
