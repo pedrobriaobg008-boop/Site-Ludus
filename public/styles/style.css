@@ -3643,30 +3643,44 @@ h6,
 }
 
 .email-card .card-icon {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(255, 51, 173, 0.12);
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 16px;
 }
 
 .email-card h3 {
+    font-size: 18px;
+    font-weight: 700;
     color: var(--color-rose-60, rgba(255, 51, 173, 1));
+    margin-bottom: 12px;
 }
 
 .email-card p {
+    font-size: 14px;
     color: var(--color-rose-60, rgba(255, 51, 173, 1));
+    line-height: 1.6;
+    margin: 0;
 }
 
 .email-card a {
     color: var(--color-rose-60, rgba(255, 51, 173, 1));
+    text-decoration: none;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .email-card a:hover {
-    color: var(--color-rose-60, rgba(255, 51, 173, 1));
+    color: var(--primary-blue);
+}
+
+.email-card a:focus-visible,
+.email-card a:active {
+    color: var(--primary-blue);
 }
 
 .info-card:not(.email-card) h3 {
