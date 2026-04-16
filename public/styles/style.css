@@ -3143,7 +3143,7 @@ h6,
 
 /* PARCEIROS PAGE */
 .parceiros-header {
-    background: #f6f7f8;
+    background: rgba(255, 255, 255, 1);
     color: var(--dark-purple);
     padding: 60px 0;
     text-align: center;
@@ -3213,19 +3213,20 @@ h6,
 }
 
 .section-title-icon-wrap {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: rgba(2, 130, 177, 0.12);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transform: translateY(-1px);
 }
 
 .section-title-icon {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     object-fit: contain;
 }
 
@@ -3237,7 +3238,7 @@ h6,
 }
 
 .sede-card {
-    background: white;
+    background: rgba(255, 255, 255, 1);
     border: 2px solid var(--primary-blue);
     border-radius: 20px;
     padding: 40px;
@@ -3261,7 +3262,7 @@ h6,
 
 /* Instituições Parceiras Section */
 .instituicoes-parceiras-section {
-    background: #f6f7f8;
+    background: rgba(255, 255, 255, 1);
     padding: 60px 0;
 }
 
@@ -3286,7 +3287,7 @@ h6,
 }
 
 .parceiro-card {
-    background: white;
+    background: rgba(255, 255, 255, 1);
     border: 2px solid var(--primary-pink);
     border-radius: 16px;
     padding: 30px 20px;
@@ -3382,6 +3383,7 @@ h6,
     .section-title-icon-wrap {
         width: 28px;
         height: 28px;
+        transform: none;
     }
 
     .section-title-icon {
@@ -3456,6 +3458,7 @@ h6,
     .section-title-icon-wrap {
         width: 26px;
         height: 26px;
+        transform: none;
     }
 
     .section-title-icon {
