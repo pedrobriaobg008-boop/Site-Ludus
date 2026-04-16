@@ -2408,16 +2408,14 @@ h6,
 /* Jogo Player Area */
 .jogo-player-band {
     background: rgba(220, 243, 249, 1);
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: 100%;
     padding: 12px 16px;
     margin-bottom: 24px;
     border-radius: 0;
 }
 
 .jogo-player-band > * {
-    max-width: 1320px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -2655,15 +2653,13 @@ h6,
 .relacionados-section {
     background: rgba(220, 243, 249, 1);
     border-radius: 0;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: 100%;
     padding: 34px 16px;
     box-shadow: none;
 }
 
 .relacionados-section > * {
-    max-width: 1320px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
