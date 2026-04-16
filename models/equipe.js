@@ -99,7 +99,7 @@ const secoes = [
                 nome: 'Rodrigo Bichet',
                 cargo: 'Aluno de mestrado',
                 instituicao: 'Fundação Universidade Federal de Pelotas (UFPel)',
-                foto: '/equipe/colaboradores-externos/rodrigo-bichet.jpg.png',
+                foto: '/equipe/colaboradores-externos/rodrigo-bichet.jpeg',
                 bio: 'Consultor e Colaborador externo'
             }
         ]
