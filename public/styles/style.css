@@ -2583,7 +2583,8 @@ h6,
 }
 
 .jogo-description {
-    margin-bottom: 30px;
+    max-width: 1140px;
+    margin: 0 auto 28px;
 }
 
 .jogo-description p {
@@ -2596,9 +2597,10 @@ h6,
 
 .jogo-actions {
     display: flex;
-    gap: 15px;
+    gap: 22px;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .btn-action {
@@ -2622,6 +2624,26 @@ h6,
 .btn-action:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 163, 224, 0.25);
+}
+
+.btn-action--info {
+    background: rgba(2, 133, 177, 0.14);
+    color: var(--color-azure-35, rgba(2, 133, 177, 1));
+    border: none;
+    box-shadow: none;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.15;
+    min-width: 0;
+    padding: 11px 18px;
+}
+
+.btn-action--info:hover,
+.btn-action--info:focus-visible {
+    background: rgba(2, 133, 177, 0.2);
+    box-shadow: none;
+    transform: none;
 }
 
 /* Relacionados Section */
