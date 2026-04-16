@@ -3491,7 +3491,7 @@ h6,
 
 /* CONTATO PAGE */
 .contato-header {
-    background: var(--section-alt-bg);
+    background: white;
     color: var(--dark-purple);
     padding: 60px 0;
     text-align: center;
