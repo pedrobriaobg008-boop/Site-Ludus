@@ -2200,18 +2200,22 @@ h6,
     transition: all 0.3s ease;
     font-family: inherit;
     margin-top: auto;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     width: 100%;
+    min-width: 0;
     text-decoration: none;
+    overflow: hidden;
 }
 
 .btn-play-label {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    min-width: 0;
+    flex: 1;
 }
 
 .btn-play-trailing-icon {
@@ -2219,6 +2223,7 @@ h6,
     height: 16px;
     object-fit: contain;
     flex-shrink: 0;
+    margin-left: auto;
 }
 
 .btn-play:hover {
