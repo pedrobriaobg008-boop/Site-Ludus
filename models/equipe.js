@@ -3,7 +3,7 @@ const secoes = [
         id: 'professores-pesquisadores',
         titulo: 'Professores e Pesquisadores',
         tema: 'azul',
-        icone: '/icone olho rosa.png',
+        icone: '/icone formatura roxo.png',
         // Dica: coloque as imagens em public/equipe/<grupo>/ e ajuste o caminho abaixo.
         integrantes: [
             {
@@ -36,7 +36,7 @@ const secoes = [
         id: 'alunos-bolsistas',
         titulo: 'Alunos e Bolsistas',
         tema: 'rosa',
-        icone: '/icone formatura roxo.png',
+        icone: '/icone equipe rosa.png',
         integrantes: [
             {
                 id: 4,
