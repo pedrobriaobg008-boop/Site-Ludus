@@ -3581,7 +3581,8 @@ h6,
 
 .info-card {
     background: white;
-    border: 2px solid #E0E0E0;
+    border: 1px solid rgba(255, 51, 173, 0.35);
+    border-top: 2px solid var(--color-rose-60, rgba(255, 51, 173, 1));
     border-radius: 15px;
     padding: 25px;
     text-align: left;
@@ -3589,8 +3590,7 @@ h6,
 }
 
 .email-card {
-    border-color: var(--primary-pink);
-    border-left: 4px solid var(--primary-pink);
+    border-left: 1px solid rgba(255, 51, 173, 0.35);
 }
 
 .email-card:hover {
@@ -3598,8 +3598,7 @@ h6,
 }
 
 .location-card {
-    border-color: var(--primary-pink);
-    border-left: 4px solid var(--primary-pink);
+    border-left: 1px solid rgba(255, 51, 173, 0.35);
 }
 
 .location-card:hover {
@@ -3607,8 +3606,7 @@ h6,
 }
 
 .social-card {
-    border-color: var(--primary-pink);
-    border-left: 4px solid var(--primary-pink);
+    border-left: 1px solid rgba(255, 51, 173, 0.35);
 }
 
 .social-card:hover {
