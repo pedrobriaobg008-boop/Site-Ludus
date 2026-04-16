@@ -3630,7 +3630,7 @@ h6,
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(123, 63, 242, 0.1);
+    background: var(--color-magenta-15, rgba(58, 8, 68, 1));
     display: inline-flex;
     align-items: center;
     justify-content: center;
