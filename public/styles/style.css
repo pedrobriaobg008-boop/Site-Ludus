@@ -2891,13 +2891,13 @@ h6,
 .group-title {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 18px;
 }
 
 .group-icon-wrap {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -2914,8 +2914,8 @@ h6,
 }
 
 .group-icon-img {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
 }
 

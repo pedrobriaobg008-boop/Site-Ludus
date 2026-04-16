@@ -36,7 +36,7 @@ const secoes = [
         id: 'alunos-bolsistas',
         titulo: 'Alunos e Bolsistas',
         tema: 'rosa',
-        icone: '/icone equipe rosa.png',
+        icone: '/icone formatura roxo.png',
         integrantes: [
             {
                 id: 4,
@@ -76,7 +76,7 @@ const secoes = [
         id: 'colaboradores-externos',
         titulo: 'Colaboradores Externos',
         tema: 'azul',
-        icone: '/icone informacao azul (2).png',
+        icone: '/ícone livro azul.png',
         integrantes: [
             {
                 id: 8,
