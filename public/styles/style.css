@@ -3493,7 +3493,7 @@ h6,
 .contato-header {
     background: white;
     color: var(--dark-purple);
-    padding: 60px 0;
+    padding: 60px 0 30px;
     text-align: center;
 }
 
@@ -3557,7 +3557,7 @@ h6,
 
 .contato-content {
     background: white;
-    padding: 60px 0;
+    padding: 30px 0 60px;
 }
 
 .contato-container {
