@@ -3736,6 +3736,10 @@ h6,
     color: var(--color-magenta-40, rgba(122, 71, 133, 1));
 }
 
+.info-card.social-card p {
+    color: var(--color-magenta-40, rgba(122, 71, 133, 1));
+}
+
 .info-card.location-card p {
     color: var(--primary-blue);
 }
