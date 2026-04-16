@@ -3627,8 +3627,8 @@ h6,
 }
 
 .social-icon-badge {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(123, 63, 242, 0.1);
     display: inline-flex;
@@ -3637,9 +3637,13 @@ h6,
 }
 
 .social-card-icon-img {
-    width: 14px;
-    height: 14px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
+}
+
+.social-card .card-icon {
+    margin-bottom: 16px;
 }
 
 .email-card .card-icon {
