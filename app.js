@@ -180,41 +180,25 @@ app.get('/jogo/:id', async (req, res) => {
       return res.status(404).send('Jogo nao encontrado');
     }
 
-    const jogosRelacionados = await Jogo.find({
-      _id: { $ne: jogo._id }
-    }).limit(3).populate('categorias');
+    const jogosPossiveis = [String(jogo._id), jogo._id];
+    const [jogosRelacionados, conteudosRelacionados] = await Promise.all([
+      Jogo.find({
+        _id: { $ne: jogo._id }
+      }).limit(3).populate('categorias'),
+      ConteudoRelacionado.find({
+        tipo: 'Artigo',
+        jogos: { $in: jogosPossiveis }
+      }).sort({ createdAt: -1 }).lean()
+    ]);
 
     res.render('jogo-detalhes', {
       jogo,
-      jogosRelacionados
+      jogosRelacionados,
+      conteudosRelacionados
     });
   } catch (erro) {
     console.error('Erro ao buscar jogo:', erro);
     res.status(404).send('Jogo nao encontrado');
-  }
-});
-
-app.get('/jogo/:id/artigos', async (req, res) => {
-  try {
-    const jogo = await Jogo.findById(req.params.id).populate('categorias');
-
-    if (!jogo) return res.status(404).send('Jogo nao encontrado');
-
-    const jogosPossiveis = [String(jogo._id), jogo._id];
-    const artigos = await ConteudoRelacionado.find({
-      tipo: 'Artigo',
-      jogos: { $in: jogosPossiveis }
-    })
-      .sort({ createdAt: -1 })
-      .lean();
-
-    res.render('artigos-relacionados', {
-      jogo,
-      artigos
-    });
-  } catch (erro) {
-    console.error('Erro ao buscar artigos relacionados:', erro);
-    res.status(500).send('Erro ao buscar artigos relacionados');
   }
 });
 
