@@ -2822,7 +2822,7 @@ h6,
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    background: linear-gradient(180deg, rgba(198, 234, 245, 1) 0%, rgba(178, 226, 241, 1) 100%);
+    background: var(--section-alt-bg);
     border-top: 1px solid rgba(2, 130, 177, 0.12);
     border-bottom: 1px solid rgba(2, 130, 177, 0.12);
     padding: 36px 16px 42px;
