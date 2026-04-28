@@ -4,6 +4,7 @@ const Jogo = require('./models/jogos');
 const Categoria = require('./models/categoria');
 const equipe = require('./models/equipe');
 const parceiros = require('./models/parceiros');
+const Artigo = require('./models/artigo');
 
 const app = express();
 
@@ -190,6 +191,24 @@ app.get('/jogo/:id', async (req, res) => {
   } catch (erro) {
     console.error('Erro ao buscar jogo:', erro);
     res.status(404).send('Jogo nao encontrado');
+  }
+});
+
+app.get('/jogo/:id/artigos', async (req, res) => {
+  try {
+    const jogo = await Jogo.findById(req.params.id).populate('categorias');
+
+    if (!jogo) return res.status(404).send('Jogo nao encontrado');
+
+    const artigos = await Artigo.find({ jogos: jogo._id }).sort({ createdAt: -1 }).lean();
+
+    res.render('artigos-relacionados', {
+      jogo,
+      artigos
+    });
+  } catch (erro) {
+    console.error('Erro ao buscar artigos relacionados:', erro);
+    res.status(500).send('Erro ao buscar artigos relacionados');
   }
 });
 

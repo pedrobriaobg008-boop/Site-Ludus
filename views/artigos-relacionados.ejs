@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos relacionados - <%= jogo.nome %> - +LUDUS</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('./header') %>
+
+    <section class="artigos-relacionados">
+        <div class="container">
+            <div class="relacionados-header">
+                <h1>Artigos relacionados a "<%= jogo.nome %>"</h1>
+                <a href="/jogo/<%= jogo._id %>" class="link-all-games">Voltar para o jogo →</a>
+            </div>
+
+            <% if (!artigos || artigos.length === 0) { %>
+                <p>Nenhum artigo relacionado encontrado para este jogo.</p>
+            <% } else { %>
+                <div class="articles-list">
+                    <% artigos.forEach(artigo => { %>
+                        <article class="article-card">
+                            <h2><%= artigo.titulo %></h2>
+                            <p class="article-excerpt"><%= artigo.resumo || (artigo.conteudo && artigo.conteudo.substring(0, 250) + '...') || '' %></p>
+                            <div class="article-actions">
+                                <a href="/artigo/<%= artigo.slug || artigo._id %>" class="btn-action btn-action--secondary">Ler artigo</a>
+                            </div>
+                        </article>
+                    <% }) %>
+                </div>
+            <% } %>
+        </div>
+    </section>
+
+    <%- include('./footer') %>
+
+</body>
+</html>
