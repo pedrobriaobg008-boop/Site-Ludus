@@ -86,35 +86,34 @@
                         Ler Sobre
                     </button>
                 </div>
-            </div>
+                <% if (conteudosRelacionados && conteudosRelacionados.length > 0) { %>
+                <div class="conteudos-relacionados-section">
+                    <div class="conteudos-relacionados-header">
+                        <h2>Artigos Relacionados</h2>
+                        <p>Materiais do admin vinculados a este jogo.</p>
+                    </div>
 
-            <!-- Conteúdos Relacionados -->
-            <% if (conteudosRelacionados && conteudosRelacionados.length > 0) { %>
-            <div class="conteudos-relacionados-section">
-                <div class="relacionados-header">
-                    <h2>Artigos e Materiais Relacionados</h2>
-                </div>
-
-                <div class="conteudos-grid">
-                    <% conteudosRelacionados.forEach(conteudo => { %>
-                        <div class="conteudo-card">
-                            <h3><%= conteudo.titulo %></h3>
-                            <% if (conteudo.descricao) { %>
-                                <p class="conteudo-descricao"><%= conteudo.descricao %></p>
-                            <% } %>
-                            <div class="conteudo-actions">
-                                <% if (conteudo.link_externo) { %>
-                                    <a href="<%= conteudo.link_externo %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir conteúdo</a>
+                    <div class="conteudos-grid">
+                        <% conteudosRelacionados.forEach(conteudo => { %>
+                            <article class="conteudo-card">
+                                <h3><%= conteudo.titulo %></h3>
+                                <% if (conteudo.descricao) { %>
+                                    <p class="conteudo-descricao"><%= conteudo.descricao %></p>
                                 <% } %>
-                                <% if (conteudo.pdf_url) { %>
-                                    <a href="<%= conteudo.pdf_url %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
-                                <% } %>
-                            </div>
-                        </div>
-                    <% }) %>
+                                <div class="conteudo-actions">
+                                    <% if (conteudo.link_externo) { %>
+                                        <a href="<%= conteudo.link_externo %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir conteúdo</a>
+                                    <% } %>
+                                    <% if (conteudo.pdf_url) { %>
+                                        <a href="<%= conteudo.pdf_url %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
+                                    <% } %>
+                                </div>
+                            </article>
+                        <% }) %>
+                    </div>
                 </div>
+                <% } %>
             </div>
-            <% } %>
 
             <!-- Jogos Relacionados -->
             <% if (jogosRelacionados && jogosRelacionados.length > 0) { %>
