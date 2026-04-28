@@ -4,7 +4,7 @@ const Jogo = require('./models/jogos');
 const Categoria = require('./models/categoria');
 const equipe = require('./models/equipe');
 const parceiros = require('./models/parceiros');
-const Artigo = require('./models/artigo');
+const ConteudoRelacionado = require('./models/conteudo-relacionado');
 
 const app = express();
 
@@ -200,7 +200,13 @@ app.get('/jogo/:id/artigos', async (req, res) => {
 
     if (!jogo) return res.status(404).send('Jogo nao encontrado');
 
-    const artigos = await Artigo.find({ jogos: jogo._id }).sort({ createdAt: -1 }).lean();
+    const jogosPossiveis = [String(jogo._id), jogo._id];
+    const artigos = await ConteudoRelacionado.find({
+      tipo: 'Artigo',
+      jogos: { $in: jogosPossiveis }
+    })
+      .sort({ createdAt: -1 })
+      .lean();
 
     res.render('artigos-relacionados', {
       jogo,
