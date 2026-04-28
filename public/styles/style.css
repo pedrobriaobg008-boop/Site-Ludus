@@ -2818,6 +2818,11 @@ h6,
     margin-right: auto;
 }
 
+.relacionados-section {
+    background: linear-gradient(180deg, rgba(220, 243, 249, 1) 0%, rgba(208, 237, 246, 1) 100%);
+    border-top: 1px solid rgba(2, 130, 177, 0.12);
+}
+
 .relacionados-header {
     display: flex;
     justify-content: space-between;
