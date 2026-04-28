@@ -2703,15 +2703,15 @@ h6,
 }
 
 .conteudos-relacionados-header h2 {
-    font-size: 34px;
-    color: var(--purple);
+    font-size: 32px;
+    color: var(--primary-blue);
     margin: 0 0 8px;
     font-weight: 700;
 }
 
 .conteudos-relacionados-header p {
     margin: 0;
-    color: #5f5f6a;
+    color: var(--primary-blue);
     font-size: 15px;
     line-height: 1.5;
 }
