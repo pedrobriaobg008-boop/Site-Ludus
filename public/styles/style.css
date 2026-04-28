@@ -2819,8 +2819,14 @@ h6,
 }
 
 .relacionados-section {
-    background: linear-gradient(180deg, rgba(220, 243, 249, 1) 0%, rgba(208, 237, 246, 1) 100%);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background: linear-gradient(180deg, rgba(198, 234, 245, 1) 0%, rgba(178, 226, 241, 1) 100%);
     border-top: 1px solid rgba(2, 130, 177, 0.12);
+    border-bottom: 1px solid rgba(2, 130, 177, 0.12);
+    padding: 36px 16px 42px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .relacionados-header {
@@ -2862,6 +2868,20 @@ h6,
     border-color: var(--primary-pink);
     background: white;
     transform: translateX(4px);
+}
+
+.relacionados-section .game-card-full {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(2, 130, 177, 0.12);
+    box-shadow: 0 10px 24px rgba(2, 130, 177, 0.12);
+}
+
+.relacionados-section .game-info h3 {
+    color: var(--dark-purple);
+}
+
+.relacionados-section .game-description {
+    color: #4f6070;
 }
 
 /* Responsive - Jogo Detalhes */
