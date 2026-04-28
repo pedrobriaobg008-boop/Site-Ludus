@@ -75,6 +75,14 @@ const obterSecaoAtual = (caminho = '/') => {
   return secoes.includes(caminho) ? caminho : '';
 };
 
+const sanitizarNomeArquivo = (texto = 'arquivo') => String(texto)
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[^a-zA-Z0-9-_]+/g, '-')
+  .replace(/-+/g, '-')
+  .replace(/^-+|-+$/g, '')
+  .toLowerCase() || 'arquivo';
+
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
@@ -199,6 +207,21 @@ app.get('/jogo/:id', async (req, res) => {
   } catch (erro) {
     console.error('Erro ao buscar jogo:', erro);
     res.status(404).send('Jogo nao encontrado');
+  }
+});
+
+app.get('/conteudo-relacionado/:id/pdf', async (req, res) => {
+  try {
+    const conteudo = await ConteudoRelacionado.findById(req.params.id).lean();
+
+    if (!conteudo || !conteudo.pdf_url) {
+      return res.status(404).send('PDF nao encontrado');
+    }
+
+    return res.redirect(conteudo.pdf_url);
+  } catch (erro) {
+    console.error('Erro ao baixar PDF relacionado:', erro);
+    return res.status(500).send('Erro ao baixar PDF');
   }
 });
 
