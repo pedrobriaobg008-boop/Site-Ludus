@@ -2745,6 +2745,15 @@ h6,
 .article-actions {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.article-empty-state {
+    color: #7a7a86;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0 2px;
 }
 
 .artigos-relacionados > .container > p {

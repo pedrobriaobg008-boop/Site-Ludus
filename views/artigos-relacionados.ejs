@@ -33,8 +33,12 @@
                             <div class="article-actions">
                                 <% if (artigo.link_externo) { %>
                                     <a href="<%= artigo.link_externo %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir conteúdo</a>
-                                <% } else if (artigo.pdf_url) { %>
+                                <% } %>
+                                <% if (artigo.pdf_url) { %>
                                     <a href="<%= artigo.pdf_url %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir PDF</a>
+                                <% } %>
+                                <% if (!artigo.link_externo && !artigo.pdf_url) { %>
+                                    <span class="article-empty-state">Sem arquivo vinculado.</span>
                                 <% } %>
                             </div>
                         </article>
