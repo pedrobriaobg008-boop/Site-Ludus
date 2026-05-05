@@ -21,6 +21,10 @@ const jogoSchema = new mongoose.Schema({
   github_url: {
     type: String
   },
+  icone_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    default: null
+  },
   icone_url: {
     type: String
   },

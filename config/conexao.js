@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+const { initGridFS } = require('../helpers/gridfs');
 
 const URL_MONGODB = process.env.MONGODB_URI;
 let conexaoPromise = null;
@@ -24,6 +25,10 @@ const conectarMongoDB = async () => {
 
     await conexaoPromise;
     console.log('✓ Conectado ao MongoDB (banco: ludus) com sucesso!');
+    
+    // Inicializar GridFS
+    initGridFS(mongoose.connection);
+    
     return mongoose.connection;
   } catch (erro) {
     conexaoPromise = null;

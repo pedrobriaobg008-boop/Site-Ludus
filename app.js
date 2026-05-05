@@ -1,14 +1,42 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const axios = require('axios');
 const Jogo = require('./models/jogos');
 const Categoria = require('./models/categoria');
 const equipe = require('./models/equipe');
 const parceiros = require('./models/parceiros');
 const ConteudoRelacionado = require('./models/conteudo-relacionado');
+const { initGridFS, downloadFromGridFS, getGridFSFileInfo, getBucket } = require('./helpers/gridfs');
 
 const app = express();
+
+app.get('/media/jogo/:id', async (req, res) => {
+  try {
+    const fileInfo = await getGridFSFileInfo(req.params.id);
+
+    if (!fileInfo) {
+      return res.status(404).send('Arquivo não encontrado');
+    }
+
+    const bucket = getBucket();
+    const downloadStream = bucket.openDownloadStream(fileInfo._id);
+
+    res.setHeader('Content-Type', fileInfo.contentType || 'application/octet-stream');
+    res.setHeader('Content-Disposition', `inline; filename="${fileInfo.filename || 'imagem'}"`);
+
+    downloadStream.on('error', (error) => {
+      console.error('Erro ao servir imagem:', error);
+      if (!res.headersSent) {
+        res.status(500).send('Erro ao carregar imagem');
+      }
+    });
+
+    downloadStream.pipe(res);
+  } catch (error) {
+    console.error('Erro ao carregar mídia:', error);
+    res.status(500).send('Erro ao carregar imagem');
+  }
+});
 
 const normalizarCategoria = (texto = '') => String(texto)
   .normalize('NFD')
@@ -216,32 +244,26 @@ app.get('/conteudo-relacionado/:id/pdf', async (req, res) => {
   try {
     const conteudo = await ConteudoRelacionado.findById(req.params.id).lean();
 
-    if (!conteudo || !conteudo.pdf_url) {
-      return res.status(404).send('PDF nao encontrado');
+    if (!conteudo) {
+      return res.status(404).send('Conteúdo não encontrado');
     }
 
-    // Baixar arquivo do Cloudinary com credenciais na URL
-    const pdfUrl = conteudo.pdf_url;
-    
-    try {
-      const response = await axios.get(pdfUrl, {
-        responseType: 'arraybuffer',
-        timeout: 10000,
-        headers: {
-          'User-Agent': 'Mozilla/5.0'
-        }
-      });
+    // Se tem PDF no GridFS, servir de lá
 
+
+    if (conteudo.pdf_id) {
+      const pdfBuffer = await downloadFromGridFS(conteudo.pdf_id);
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', 'attachment; filename="conteudo.pdf"');
-      res.setHeader('Content-Length', response.data.length);
-      res.send(response.data);
-    } catch (erroProxy) {
-      console.error('Erro ao baixar do Cloudinary:', erroProxy.message);
-      
-      // Se falhar com a URL pública, tentar redirect como fallback
-      return res.redirect(302, pdfUrl);
+      res.setHeader('Content-Length', pdfBuffer.length);
+      return res.send(pdfBuffer);
     }
+
+    if (conteudo.pdf_url) {
+      return res.redirect(302, conteudo.pdf_url);
+    }
+
+    return res.status(404).send('PDF nao encontrado');
   } catch (erro) {
     console.error('Erro ao baixar PDF relacionado:', erro);
     return res.status(500).send('Erro ao baixar PDF');
