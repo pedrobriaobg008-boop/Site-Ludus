@@ -1,5 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const axios = require('axios');
 const Jogo = require('./models/jogos');
 const Categoria = require('./models/categoria');
 const equipe = require('./models/equipe');
@@ -218,7 +220,28 @@ app.get('/conteudo-relacionado/:id/pdf', async (req, res) => {
       return res.status(404).send('PDF nao encontrado');
     }
 
-    return res.redirect(conteudo.pdf_url);
+    // Baixar arquivo do Cloudinary com credenciais na URL
+    const pdfUrl = conteudo.pdf_url;
+    
+    try {
+      const response = await axios.get(pdfUrl, {
+        responseType: 'arraybuffer',
+        timeout: 10000,
+        headers: {
+          'User-Agent': 'Mozilla/5.0'
+        }
+      });
+
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename="conteudo.pdf"');
+      res.setHeader('Content-Length', response.data.length);
+      res.send(response.data);
+    } catch (erroProxy) {
+      console.error('Erro ao baixar do Cloudinary:', erroProxy.message);
+      
+      // Se falhar com a URL pública, tentar redirect como fallback
+      return res.redirect(302, pdfUrl);
+    }
   } catch (erro) {
     console.error('Erro ao baixar PDF relacionado:', erro);
     return res.status(500).send('Erro ao baixar PDF');
