@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "6967885d1684fa1fb8d55de2",
+    "nome_turma": "5 info",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-14T12:13:17.300Z",
+    "__v": 0
+  },
+  {
+    "_id": "696788691684fa1fb8d55de8",
+    "nome_turma": "4 info",
+    "createdBy": "694010fe97860b421a4265b8",
+    "createdAt": "2026-01-14T12:13:29.378Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e10ac06340b40e9ea62f91",
+    "nome_turma": "9 info",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-04-16T16:13:52.080Z",
+    "__v": 0
+  }
+]

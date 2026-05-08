@@ -1,0 +1,205 @@
+[
+  {
+    "_id": "69bd3241a538cca25db9ae91",
+    "nome": "Pra Que Serve",
+    "descricao": "Jogo educativo voltado para a identificação da utilidade de objetos do cotidiano, incentivando a criança a compreender suas funções por meio de associações visuais. A proposta estimula memória, raciocínio lógico e percepção, contribuindo para a construção de conhecimentos práticos de forma interativa e significativa.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/pra-que-serve/file/pra-que-serve/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774006847/ludus-jogos/jogo-1774006847397.png",
+    "categorias": [
+      "69c277a1b71b813b0a419fe2",
+      "69c277b9b71b813b0a419fe6",
+      "69bd3165a538cca25db9ae8e",
+      "69c277c7b71b813b0a419fea"
+    ],
+    "createdAt": "2026-03-20T11:40:49.121Z",
+    "__v": 2
+  },
+  {
+    "_id": "69c27855b71b813b0a419ff1",
+    "nome": "Missão Verde",
+    "descricao": "Jogo educativo que promove a conscientização ambiental por meio de desafios interativos e situações do dia a dia. O jogador aprende a reconhecer atitudes sustentáveis, desenvolvendo senso de responsabilidade ecológica e compreensão sobre a importância do cuidado com o meio ambiente.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/missão-verde/file/missão-verde/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774352469/ludus-jogos/jogo-1774352469334.png",
+    "categorias": [
+      "69bd315aa538cca25db9ae8a",
+      "69bd3165a538cca25db9ae8e"
+    ],
+    "createdAt": "2026-03-24T11:41:09.929Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c278d3b71b813b0a419ff5",
+    "nome": "ArrasTE-A",
+    "descricao": "Jogo educativo com mecânica de arrastar e soltar, desenvolvido para estimular o pareamento de objetos e o reconhecimento de cores, formas e tamanhos. A proposta favorece o desenvolvimento cognitivo, a coordenação motora e a atenção, proporcionando uma experiência dinâmica e acessível.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/arrastea/file/arrastea/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774352594/ludus-jogos/jogo-1774352594811.png",
+    "categorias": [
+      "69bd315aa538cca25db9ae8a",
+      "69bd3165a538cca25db9ae8e",
+      "69c277c7b71b813b0a419fea"
+    ],
+    "createdAt": "2026-03-24T11:43:15.582Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c282c0a67263434b00b2a0",
+    "nome": "Aventuras Digitais",
+    "descricao": "Jogo matemático que reforça conteúdos de forma lúdica e envolvente, utilizando desafios interativos que estimulam o raciocínio lógico. A experiência promove a fixação de conceitos por meio de atividades progressivas, incentivando o aprendizado contínuo.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/-aventuras-digitais/file/-aventuras-digitais/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774355135/ludus-jogos/jogo-1774355135717.png",
+    "categorias": [
+      "69c28203a67263434b00b299",
+      "69bd315aa538cca25db9ae8a",
+      "69c281f9a67263434b00b294"
+    ],
+    "createdAt": "2026-03-24T12:25:36.156Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c283dfa67263434b00b2a8",
+    "nome": "ABC em Movimento",
+    "descricao": "Jogo educativo 2D com mecânica de arrastar e soltar, voltado ao processo de alfabetização. Auxilia no reconhecimento de letras, formação de palavras e associações visuais, contribuindo para o desenvolvimento da leitura de maneira interativa e intuitiva.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/abc-em-movimento/file/abc-em-movimento/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774355421/ludus-jogos/jogo-1774355421753.png",
+    "categorias": [
+      "69c28353a67263434b00b2a5",
+      "69bd315aa538cca25db9ae8a",
+      "69c277c7b71b813b0a419fea"
+    ],
+    "createdAt": "2026-03-24T12:30:23.053Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c28957a55627aa72961695",
+    "nome": "Números Amigos",
+    "descricao": "Jogo educativo focado no desenvolvimento da contagem, incentivando o reconhecimento visual dos números e sua relação com quantidades. As atividades estimulam a atenção, a percepção e o raciocínio lógico, tornando o aprendizado mais natural e envolvente.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/numeros-amigos/file/numeros-amigos/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774356823/ludus-jogos/jogo-1774356823072.png",
+    "categorias": [
+      "69c28203a67263434b00b299",
+      "69bd315aa538cca25db9ae8a",
+      "69c281f9a67263434b00b294"
+    ],
+    "createdAt": "2026-03-24T12:53:43.572Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c289a573e08a3825f6393c",
+    "nome": "Mercado do Saber",
+    "descricao": "Jogo educativo que simula situações do cotidiano em um ambiente de compras, incentivando a tomada de decisões e o raciocínio lógico. O jogador interage com elementos que reforçam noções matemáticas básicas e organização de forma prática.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/numeros-amigos/file/numeros-amigos/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774356901/ludus-jogos/jogo-1774356900728.png",
+    "categorias": [],
+    "createdAt": "2026-03-24T12:55:01.355Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c28a6273e08a3825f63945",
+    "nome": "Uma Volta no Sistema Solar",
+    "descricao": "Jogo educativo que apresenta o sistema solar de forma interativa, permitindo ao jogador explorar planetas e conhecer suas principais características. A proposta combina aprendizado e curiosidade em uma experiência visual imersiva.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/uma-volta-no-sistema-solar/file/uma-volta-no-sistema-solar/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774357090/ludus-jogos/jogo-1774357090221.png",
+    "categorias": [
+      "69c28203a67263434b00b299",
+      "69bd315aa538cca25db9ae8a"
+    ],
+    "createdAt": "2026-03-24T12:58:10.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c28ade73e08a3825f63949",
+    "nome": "Explorando Estações",
+    "descricao": "Jogo educativo que ensina as estações do ano por meio de associações visuais e exemplos do cotidiano. O jogador aprende a identificar características de cada período, desenvolvendo compreensão e memória de forma leve.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/explorando-estacoes/file/explorando-estacoes/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774357214/ludus-jogos/jogo-1774357213887.png",
+    "categorias": [
+      "69c277b9b71b813b0a419fe6",
+      "69bd3165a538cca25db9ae8e"
+    ],
+    "createdAt": "2026-03-24T13:00:14.867Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c28b6673e08a3825f6394d",
+    "nome": "Material Dourado Digital",
+    "descricao": "Ferramenta educativa digital que auxilia na aprendizagem matemática por meio da representação visual de números e operações. Utiliza o material dourado como base para facilitar a compreensão de conceitos fundamentais de forma prática.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/material-dourado-digital/file/material-dourado-digital/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774357349/ludus-jogos/jogo-1774357349612.png",
+    "categorias": [
+      "69c28203a67263434b00b299",
+      "69bd315aa538cca25db9ae8a",
+      "69c281f9a67263434b00b294"
+    ],
+    "createdAt": "2026-03-24T13:02:30.876Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c28c3c73e08a3825f63951",
+    "nome": "Historietas Divertidas",
+    "descricao": "Aplicativo educativo que estimula a interpretação de textos por meio de histórias interativas e atividades complementares. Promove o desenvolvimento da compreensão, da atenção e do raciocínio lógico de forma envolvente e acessível.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/historietas-divertidas/file/historietas-divertidas/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774357563/ludus-jogos/jogo-1774357563256.webp",
+    "categorias": [
+      "69c277a1b71b813b0a419fe2",
+      "69c28353a67263434b00b2a5",
+      "69bd315aa538cca25db9ae8a"
+    ],
+    "createdAt": "2026-03-24T13:06:04.816Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c29010fe1962c51a0f7a98",
+    "nome": "Ludus Matemática",
+    "descricao": "Jogo educativo voltado ao desenvolvimento das habilidades matemáticas, com desafios progressivos que estimulam o raciocínio lógico. A proposta combina aprendizado e elementos de jogo para tornar o processo mais dinâmico e motivador.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/ludus-matematica/file/ludus-matematica/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774358544/ludus-jogos/jogo-1774358544068.png",
+    "categorias": [
+      "69c277a1b71b813b0a419fe2",
+      "69c28203a67263434b00b299",
+      "69bd315aa538cca25db9ae8a",
+      "69c281f9a67263434b00b294"
+    ],
+    "createdAt": "2026-03-24T13:22:24.839Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c29056fe1962c51a0f7a9c",
+    "nome": "Jogo das Silabas",
+    "descricao": "Jogo educativo com foco na alfabetização, trabalhando a formação de palavras e o reconhecimento de sílabas. As atividades incentivam a leitura e a associação de forma lúdica, contribuindo para o desenvolvimento linguístico.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/jogo-das-silabas/file/jogo-das-silabas/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774358613/ludus-jogos/jogo-1774358613868.png",
+    "categorias": [
+      "69c277a1b71b813b0a419fe2",
+      "69c28353a67263434b00b2a5",
+      "69bd315aa538cca25db9ae8a"
+    ],
+    "createdAt": "2026-03-24T13:23:34.417Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c2910cfe1962c51a0f7aa4",
+    "nome": "Conhecendo os Animais",
+    "descricao": "Jogo educativo que estimula o reconhecimento de animais, seus sons e características principais. A proposta desenvolve memória, associação e percepção por meio de atividades interativas e intuitivas.",
+    "identificacao_unity": "1",
+    "link_jogar": "https://api-ludus.com.marce4358.c44.integrator.host/ludus/uploads/conhecendo-os-animais/file/conhecendo-os-animais/",
+    "icone_url": "https://res.cloudinary.com/dtzq60sak/image/upload/v1774358796/ludus-jogos/jogo-1774358796237.png",
+    "categorias": [
+      "69c277b9b71b813b0a419fe6"
+    ],
+    "createdAt": "2026-03-24T13:26:36.949Z",
+    "__v": 0
+  }
+]

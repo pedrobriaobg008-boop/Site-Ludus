@@ -105,7 +105,7 @@
                                         <a href="<%= conteudo.link_externo %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir conteúdo</a>
                                     <% } %>
                                     <% if (conteudo.pdf_url) { %>
-                                        <a href="/conteudo-relacionado/<%= conteudo._id %>/pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
+                                        <a href="<%= conteudo.pdf_url %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
                                     <% } %>
                                 </div>
                             </article>

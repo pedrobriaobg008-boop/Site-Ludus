@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "69400f9397860b421a4265af",
+    "nome_usuario": "Pedro",
+    "email_usuario": "pedro@email.com",
+    "senha_hash": "$2b$10$JwLZl6I0YuGjMGLwtB3GleHtxdlJnW.fz1cCD8BBTflA2N7UzR7x6",
+    "instituicao_usuario": "IFSul câmpus Bagé",
+    "perfil": [
+      "admin"
+    ],
+    "createdAt": "2025-12-15T13:39:31.006Z",
+    "__v": 0
+  },
+  {
+    "_id": "694010fe97860b421a4265b8",
+    "nome_usuario": "André",
+    "email_usuario": "andre@email.com",
+    "senha_hash": "$2b$10$9VNUOrLg3rYDodihf9s9cupObYFmRzhzPmHvZDCpVO7bihwDDixr2",
+    "instituicao_usuario": "Silveira Martins",
+    "perfil": [
+      "Professor"
+    ],
+    "createdAt": "2025-12-15T13:45:34.068Z",
+    "__v": 0
+  },
+  {
+    "_id": "694011ac46d5416d21f9758c",
+    "nome_usuario": "Administrador",
+    "email_usuario": "admin@ludus.local",
+    "senha_hash": "$2b$10$zFOmwoYY9Rq8ZcKvj6IdHeH4.sJlmaQKFnNu4HigjcHJKB9uYr42K",
+    "instituicao_usuario": "Ludus",
+    "perfil": [
+      "admin"
+    ],
+    "createdAt": "2025-12-15T13:48:28.030Z",
+    "__v": 0
+  }
+]

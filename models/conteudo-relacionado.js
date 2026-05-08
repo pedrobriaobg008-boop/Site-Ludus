@@ -11,10 +11,6 @@ const conteudoRelacionadoSchema = new mongoose.Schema({
   link_externo: {
     type: String
   },
-  pdf_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    default: null
-  },
   pdf_url: {
     type: String
   },

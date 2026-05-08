@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "69bd315aa538cca25db9ae8a",
+    "nome": "Educação",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-03-20T11:36:58.701Z",
+    "__v": 0
+  },
+  {
+    "_id": "69bd3165a538cca25db9ae8e",
+    "nome": "Pareamento",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-03-20T11:37:09.471Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c277a1b71b813b0a419fe2",
+    "nome": "0 a 5 anos",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-03-24T11:38:09.377Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c277b9b71b813b0a419fe6",
+    "nome": "Memória",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-03-24T11:38:33.673Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c277c7b71b813b0a419fea",
+    "nome": "TEA",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-03-24T11:38:47.441Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c281f9a67263434b00b294",
+    "nome": "Matemática",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-03-24T12:22:17.892Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c28203a67263434b00b299",
+    "nome": "Contagem Numérica",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-03-24T12:22:27.588Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c28353a67263434b00b2a5",
+    "nome": "Alfabetização",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-03-24T12:28:03.973Z",
+    "__v": 0
+  }
+]

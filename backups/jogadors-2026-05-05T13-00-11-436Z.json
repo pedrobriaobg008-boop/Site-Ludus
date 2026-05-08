@@ -1,0 +1,158 @@
+[
+  {
+    "_id": "69402209a6e386653019686b",
+    "login": "898",
+    "senha_hash": "$2b$10$gK0vbiRsG4buhP9ESDz3PefFB4mi6HjBIKS326qjQNDhBA1dxhoiK",
+    "nome_jogador": "Pedro",
+    "turma": "694021e1a6e386653019685e",
+    "createdBy": "694010fe97860b421a4265b8",
+    "createdAt": "2025-12-15T14:58:17.336Z",
+    "__v": 0
+  },
+  {
+    "_id": "695e527ad8d59c875c3b9160",
+    "login": "pedro.briao",
+    "senha_hash": "$2b$10$pQcCyuc5UzoEegJkiD.GsuxwZQQgSmG7tMDsFiXnWI.j73omhse2y",
+    "nome_jogador": "Pedro",
+    "turma": "695e54a2cfa787032cbaed8d",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-07T12:32:58.644Z",
+    "__v": 0
+  },
+  {
+    "_id": "695e52d9d8d59c875c3b916c",
+    "login": "joao.silva",
+    "senha_hash": "$2b$10$ocI6AmudF1aGN06JNLS8OOGJWL7fc0EiCQh4DAXGh6mNHnIzPWcDm",
+    "nome_jogador": "João",
+    "turma": "695e5255d8d59c875c3b9159",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-07T12:34:33.580Z",
+    "__v": 0
+  },
+  {
+    "_id": "695e54eecfa787032cbaed9f",
+    "login": "cadu.acosta",
+    "senha_hash": "$2b$10$zzT2QtWpa.MSPssjbvEfue4e/QwCbonJQ7IOlOHkJ5MrQn2gprz3q",
+    "nome_jogador": "Cadu",
+    "turma": "695e54a2cfa787032cbaed8d",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-07T12:43:26.253Z",
+    "__v": 0
+  },
+  {
+    "_id": "695e562ecfa787032cbaedb4",
+    "login": "duda.fernandes",
+    "senha_hash": "$2b$10$PXDsDODWXSxZOYliHaNs4eayFRo8eFJJOK75cJJWICyAov3Md/4My",
+    "nome_jogador": "Duda",
+    "turma": "695e5606cfa787032cbaedac",
+    "createdBy": "695e518bd8d59c875c3b913b",
+    "createdAt": "2026-01-07T12:48:46.047Z",
+    "__v": 0
+  },
+  {
+    "_id": "695e563ecfa787032cbaedbb",
+    "login": "a.a",
+    "senha_hash": "$2b$10$V38ibEWgJo1.oYUmxpUEIuhVHwwMxTABJ0waTMGzZiyT5vE.WW6OW",
+    "nome_jogador": "a",
+    "turma": "695e54a2cfa787032cbaed8d",
+    "createdBy": "695e518bd8d59c875c3b913b",
+    "createdAt": "2026-01-07T12:49:02.501Z",
+    "__v": 0
+  },
+  {
+    "_id": "6965d7419d0260a8caec2de2",
+    "login": "pedro",
+    "senha_hash": "$2b$10$bGsI.cHWRjafEL7dPE58luy.O1otgP50HEHooYkxQ5pBinyT4BYN2",
+    "nome_jogador": "Pedro",
+    "turma": "695e5255d8d59c875c3b9159",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-13T05:25:21.304Z",
+    "__v": 0
+  },
+  {
+    "_id": "6965d8c44eb09e29c877c9e2",
+    "login": "o",
+    "senha_hash": "$2b$10$Y8stwvLO0BKZwVD9os3z6OopJUdV6FT6AtuhbSjn84We9x23/wVk2",
+    "nome_jogador": "o",
+    "turma": "695e5255d8d59c875c3b9159",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-13T05:31:48.894Z",
+    "__v": 0
+  },
+  {
+    "_id": "6965d9b0ba118b4a89736ee6",
+    "login": "oko",
+    "senha_hash": "$2b$10$l1gtMZibgf1i2/dgAfvb9uNYrW3V610xwx1oD/sJC6hoUE3Get4lS",
+    "nome_jogador": "Pedro",
+    "turma": "695e54a2cfa787032cbaed8d",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-13T05:35:44.258Z",
+    "__v": 0
+  },
+  {
+    "_id": "6965da8d30407c95a2bf18fe",
+    "login": "iii",
+    "senha_hash": "$2b$10$51U/TZVdWVPYkVkzhRHe.e7spP8sQG6EQaE5Qpu6zglTW2FinDLkq",
+    "senha_visivel": "0",
+    "nome_jogador": "ko",
+    "turma": "695e5255d8d59c875c3b9159",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-13T05:39:25.378Z",
+    "__v": 0
+  },
+  {
+    "_id": "6965db3fe78cc84b7819eaf8",
+    "login": "jj",
+    "senha_hash": "$2b$10$nSn01yJfRiMvfNSACL2QVOCYiOpxJU13ERg1U6xeXfBZOX0Nnnage",
+    "senha_visivel": "00",
+    "nome_jogador": "ji",
+    "turma": "695e5255d8d59c875c3b9159",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-13T05:42:23.955Z",
+    "__v": 0
+  },
+  {
+    "_id": "696788901684fa1fb8d55df5",
+    "login": "pedroweiorwoijrwo",
+    "senha_hash": "$2b$10$uNphCBKUmECLU1HYzT9drO31Fi28tMPWd5/6IlHdM49P1SqUTOWLO",
+    "senha_visivel": "pedro123",
+    "nome_jogador": "Pedro",
+    "turma": "6967885d1684fa1fb8d55de2",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-14T12:14:08.321Z",
+    "__v": 0
+  },
+  {
+    "_id": "696788a71684fa1fb8d55dfb",
+    "login": "kjoaoaj",
+    "senha_hash": "$2b$10$ou4LZ8Tp8rmWjUGCLcdjCOdh1WnsnE66Y5YuxobKjPBun37Xwwc0C",
+    "senha_visivel": "123",
+    "nome_jogador": "Joao",
+    "turma": "6967885d1684fa1fb8d55de2",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-14T12:14:31.229Z",
+    "__v": 0
+  },
+  {
+    "_id": "696788b41684fa1fb8d55e01",
+    "login": "cadu",
+    "senha_hash": "$2b$10$3yq/nrbjxWl3ejopD4rmveV3S/4C9hOwdHaqbw7YIe40ld7puYTue",
+    "senha_visivel": "1234",
+    "nome_jogador": "Cadu",
+    "turma": "696788691684fa1fb8d55de8",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-01-14T12:14:44.852Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e10ad16340b40e9ea62f98",
+    "login": "pedro.login",
+    "senha_hash": "$2b$10$2bf/s0v0YapfQkNOmdyTLuBJbctdaQRQuHCX6N4QYXrp9RHd6doYe",
+    "senha_visivel": "123",
+    "nome_jogador": "pedro",
+    "turma": "69e10ac06340b40e9ea62f91",
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-04-16T16:14:09.954Z",
+    "__v": 0
+  }
+]

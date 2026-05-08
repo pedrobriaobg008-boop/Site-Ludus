@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "69f0a22efae88eac616c8ac1",
+    "titulo": "bla bla bla",
+    "descricao": "bla",
+    "link_externo": "https://youtu.be/borAHHZcX1I?si=Fb1_A4o9Lkt4oh4H",
+    "pdf_url": "https://res.cloudinary.com/dtzq60sak/raw/upload/v1777985501/ludus-conteudos/conteudo-1777985501101.pdf",
+    "tag": "bom",
+    "tipo": "Artigo",
+    "jogos": [
+      "69c27855b71b813b0a419ff1"
+    ],
+    "createdBy": "69400f9397860b421a4265af",
+    "createdAt": "2026-04-28T12:03:58.653Z",
+    "__v": 0
+  }
+]
