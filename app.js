@@ -84,6 +84,8 @@ const sanitizarNomeArquivo = (texto = 'arquivo') => String(texto)
   .replace(/^-+|-+$/g, '')
   .toLowerCase() || 'arquivo';
 
+const adminArtigosUrl = process.env.ADMIN_ARTIGOS_URL || '/admin';
+
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
@@ -203,7 +205,8 @@ app.get('/jogo/:id', async (req, res) => {
     res.render('jogo-detalhes', {
       jogo,
       jogosRelacionados,
-      conteudosRelacionados
+      conteudosRelacionados,
+      adminArtigosUrl
     });
   } catch (erro) {
     console.error('Erro ao buscar jogo:', erro);

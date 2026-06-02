@@ -82,37 +82,49 @@
                 </div>
 
                 <div class="jogo-actions">
-                    <button type="button" class="btn-action btn-action--info" aria-label="Ler Sobre">
+                    <button
+                        type="button"
+                        class="btn-action btn-action--info"
+                        data-artigos-toggle
+                        aria-controls="artigos-relacionados-panel"
+                        aria-expanded="false"
+                        aria-label="Ler sobre os artigos relacionados"
+                    >
                         Ler Sobre
                     </button>
                 </div>
-                <% if (conteudosRelacionados && conteudosRelacionados.length > 0) { %>
-                <div class="conteudos-relacionados-section">
+                <div class="conteudos-relacionados-section" id="artigos-relacionados-panel" data-artigos-panel hidden>
                     <div class="conteudos-relacionados-header">
                         <h2>Artigos Relacionados</h2>
-                        <p>Materiais do admin vinculados a este jogo.</p>
+                        <p>Materiais publicados em eventos e revistas vinculados a este jogo.</p>
+                        <a href="<%= adminArtigosUrl %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info conteudos-admin-link">
+                            Gerenciar artigos no site administrativo
+                        </a>
                     </div>
 
-                    <div class="conteudos-grid">
-                        <% conteudosRelacionados.forEach(conteudo => { %>
-                            <article class="conteudo-card">
-                                <h3><%= conteudo.titulo %></h3>
-                                <% if (conteudo.descricao) { %>
-                                    <p class="conteudo-descricao"><%= conteudo.descricao %></p>
-                                <% } %>
-                                <div class="conteudo-actions">
-                                    <% if (conteudo.link_externo) { %>
-                                        <a href="<%= conteudo.link_externo %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir conteúdo</a>
+                    <% if (conteudosRelacionados && conteudosRelacionados.length > 0) { %>
+                        <div class="conteudos-grid">
+                            <% conteudosRelacionados.forEach(conteudo => { %>
+                                <article class="conteudo-card">
+                                    <h3><%= conteudo.titulo %></h3>
+                                    <% if (conteudo.descricao) { %>
+                                        <p class="conteudo-descricao"><%= conteudo.descricao %></p>
                                     <% } %>
-                                    <% if (conteudo.pdf_url) { %>
-                                        <a href="<%= conteudo.pdf_url %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
-                                    <% } %>
-                                </div>
-                            </article>
-                        <% }) %>
-                    </div>
+                                    <div class="conteudo-actions">
+                                        <% if (conteudo.link_externo) { %>
+                                            <a href="<%= conteudo.link_externo %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir conteúdo</a>
+                                        <% } %>
+                                        <% if (conteudo.pdf_url) { %>
+                                            <a href="<%= conteudo.pdf_url %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% }) %>
+                        </div>
+                    <% } else { %>
+                        <p class="article-empty-state">Ainda não há artigos publicados para este jogo.</p>
+                    <% } %>
                 </div>
-                <% } %>
             </div>
 
             <!-- Jogos Relacionados -->
@@ -220,6 +232,8 @@
         const fullscreenButtonLabel = document.getElementById('fullscreen-game-btn-label');
         const iframeContainer = document.querySelector('.jogo-iframe-container');
         const gameIframe = document.querySelector('.jogo-iframe');
+        const artigosToggleButton = document.querySelector('[data-artigos-toggle]');
+        const artigosPanel = document.querySelector('[data-artigos-panel]');
 
         if (iframeContainer && gameIframe) {
             const src = (gameIframe.getAttribute('src') || '').toLowerCase();
@@ -227,6 +241,22 @@
             if (looksLikeUnityEmbed) {
                 iframeContainer.classList.add('is-unity-embed');
             }
+        }
+
+        if (artigosToggleButton && artigosPanel) {
+            artigosToggleButton.addEventListener('click', () => {
+                const isHidden = artigosPanel.hasAttribute('hidden');
+
+                if (isHidden) {
+                    artigosPanel.removeAttribute('hidden');
+                    artigosToggleButton.setAttribute('aria-expanded', 'true');
+                    artigosToggleButton.textContent = 'Ocultar artigos';
+                } else {
+                    artigosPanel.setAttribute('hidden', '');
+                    artigosToggleButton.setAttribute('aria-expanded', 'false');
+                    artigosToggleButton.textContent = 'Ler Sobre';
+                }
+            });
         }
 
 
