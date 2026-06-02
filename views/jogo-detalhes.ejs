@@ -112,8 +112,8 @@
                                         <% if (conteudo.link_externo) { %>
                                             <a href="<%= conteudo.link_externo %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir conteúdo</a>
                                         <% } %>
-                                        <% if (conteudo.pdf_url || conteudo._id) { %>
-                                            <a href="/conteudo/pdf/<%= conteudo._id %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
+                                        <% if (conteudo.pdf_url || conteudo.pdf_id || conteudo.pdf) { %>
+                                            <a href="/conteudo/pdf/<%= conteudo._id %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir arquivo enviado</a>
                                         <% } %>
                                     </div>
                                 </article>

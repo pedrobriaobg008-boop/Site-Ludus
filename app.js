@@ -198,7 +198,7 @@ app.get('/jogo/:id', async (req, res) => {
         _id: { $ne: jogo._id }
       }).limit(3).populate('categorias'),
       ConteudoRelacionado.find({
-        tipo: { $in: ['Artigo', 'Evento'] },
+        tipo: { $regex: /^(artigo|evento)$/i },
         jogos: { $in: jogosPossiveis }
       }).sort({ createdAt: -1 }).lean()
     ]);
