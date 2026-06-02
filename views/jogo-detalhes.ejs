@@ -97,9 +97,7 @@
                     <div class="conteudos-relacionados-header">
                         <h2>Artigos Relacionados</h2>
                         <p>Materiais publicados em eventos e revistas vinculados a este jogo.</p>
-                        <a href="<%= adminArtigosUrl %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info conteudos-admin-link">
-                            Gerenciar artigos no site administrativo
-                        </a>
+                        
                     </div>
 
                     <% if (conteudosRelacionados && conteudosRelacionados.length > 0) { %>
@@ -114,8 +112,8 @@
                                         <% if (conteudo.link_externo) { %>
                                             <a href="<%= conteudo.link_externo %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Abrir conteúdo</a>
                                         <% } %>
-                                        <% if (conteudo.pdf_url) { %>
-                                            <a href="<%= conteudo.pdf_url %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
+                                        <% if (conteudo.pdf_url || conteudo._id) { %>
+                                            <a href="/conteudo/pdf/<%= conteudo._id %>" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--info">Download PDF</a>
                                         <% } %>
                                     </div>
                                 </article>

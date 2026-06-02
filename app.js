@@ -1,6 +1,7 @@
 require('dotenv').config({ override: true });
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 const Jogo = require('./models/jogos');
 const Categoria = require('./models/categoria');
 const equipe = require('./models/equipe');
@@ -211,6 +212,58 @@ app.get('/jogo/:id', async (req, res) => {
   } catch (erro) {
     console.error('Erro ao buscar jogo:', erro);
     res.status(404).send('Jogo nao encontrado');
+  }
+});
+
+// Rota pública para servir PDF de conteúdo relacionado
+app.get('/conteudo/pdf/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Tenta encontrar um documento de conteúdo pelo _id
+    let conteudo = null;
+    if (/^[a-fA-F0-9]{24}$/.test(id)) {
+      conteudo = await ConteudoRelacionado.findById(id).lean();
+    }
+
+    // Se existir e tiver pdf_url público, redireciona para ele
+    if (conteudo && conteudo.pdf_url) {
+      return res.redirect(conteudo.pdf_url);
+    }
+
+    // Se o PDF estiver embutido no documento (buffer), serve diretamente
+    if (conteudo && conteudo.pdf && conteudo.pdf.length) {
+      const buffer = Buffer.from(conteudo.pdf.buffer || conteudo.pdf);
+      res.setHeader('Content-Type', conteudo.pdf_mime || 'application/pdf');
+      res.setHeader('Content-Disposition', `inline; filename="${(conteudo.titulo || 'conteudo').replace(/\"/g, '')}.pdf"`);
+      return res.send(buffer);
+    }
+
+    // Caso tenha pdf_id no documento, stream via GridFS
+    const pdfId = (conteudo && conteudo.pdf_id) ? conteudo.pdf_id : id;
+
+    if (!/^[a-fA-F0-9]{24}$/.test(String(pdfId))) {
+      return res.status(404).send('PDF não encontrado');
+    }
+
+    const db = mongoose.connection.db;
+    if (!db) return res.status(500).send('Conexão ao banco não disponível');
+
+    const bucket = new mongoose.mongo.GridFSBucket(db);
+    const objectId = new mongoose.Types.ObjectId(String(pdfId));
+
+    res.setHeader('Content-Type', 'application/pdf');
+    const downloadStream = bucket.openDownloadStream(objectId);
+
+    downloadStream.on('error', (err) => {
+      console.error('Erro ao fazer stream do PDF:', err.message);
+      res.status(404).send('Arquivo não encontrado');
+    });
+
+    downloadStream.pipe(res);
+  } catch (erro) {
+    console.error('Erro na rota /conteudo/pdf/:id', erro);
+    res.status(500).send('Erro ao servir o PDF');
   }
 });
 
