@@ -73,7 +73,7 @@ const selecionarDestaquesRotativos = (jogos = [], limite = 4) => {
 
 const obterSecaoAtual = (caminho = '/') => {
   if (caminho.startsWith('/jogo/')) return '/jogos';
-  const secoes = ['/', '/jogos', '/projeto', '/equipe', '/parceiros', '/contato'];
+  const secoes = ['/', '/jogos', '/artigos', '/projeto', '/equipe', '/parceiros', '/contato'];
   return secoes.includes(caminho) ? caminho : '';
 };
 
@@ -173,6 +173,55 @@ app.get('/api/categorias', async (req, res) => {
   } catch (erro) {
     console.error('Erro ao buscar categorias:', erro);
     res.status(500).json({ erro: 'Falha ao buscar categorias' });
+  }
+});
+
+app.get('/artigos', async (req, res) => {
+  try {
+    const [conteudos, jogos] = await Promise.all([
+      ConteudoRelacionado.find().sort({ createdAt: -1, _id: -1 }).lean(),
+      Jogo.find().populate('categorias').lean()
+    ]);
+
+    const jogosPorId = new Map(jogos.map((jogo) => [String(jogo._id), jogo]));
+    const artigos = conteudos.map((conteudo) => {
+      const idsJogos = Array.isArray(conteudo.jogos) ? conteudo.jogos.map((id) => String(id)) : [];
+      const jogosRelacionados = idsJogos
+        .map((id) => jogosPorId.get(id))
+        .filter(Boolean);
+
+      return {
+        ...conteudo,
+        jogosRelacionados,
+        ano: conteudo.createdAt ? new Date(conteudo.createdAt).getFullYear() : null,
+        temArquivo: Boolean(conteudo.pdf_url || conteudo.pdf_id || conteudo.pdf),
+        temLink: Boolean(conteudo.link_externo)
+      };
+    });
+
+    const anos = [...new Set(artigos.map((artigo) => artigo.ano).filter(Boolean))]
+      .sort((a, b) => b - a);
+    const tipos = [...new Set(artigos.map((artigo) => artigo.tipo || 'Artigo').filter(Boolean))]
+      .sort((a, b) => a.localeCompare(b, 'pt-BR', { sensitivity: 'base' }));
+    const tags = [...new Set(artigos.map((artigo) => artigo.tag).filter(Boolean))]
+      .sort((a, b) => a.localeCompare(b, 'pt-BR', { sensitivity: 'base' }));
+
+    res.render('artigos', {
+      artigos,
+      jogos,
+      anos,
+      tipos,
+      tags
+    });
+  } catch (erro) {
+    console.error('Erro ao buscar artigos:', erro);
+    res.render('artigos', {
+      artigos: [],
+      jogos: [],
+      anos: [],
+      tipos: [],
+      tags: []
+    });
   }
 });
 

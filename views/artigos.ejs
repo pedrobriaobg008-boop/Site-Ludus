@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos Publicados - +LUDUS</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('./header') %>
+
+    <section class="artigos-academicos-hero">
+        <div class="container">
+            <div class="artigos-hero-grid">
+                <div class="artigos-hero-copy">
+                    <div class="artigos-badge">
+                        <img src="/ícone livro azul.png" alt="" class="artigos-badge-icon" aria-hidden="true">
+                        Biblioteca de pesquisa +LUDUS
+                    </div>
+                    <h1>Artigos publicados</h1>
+                    <p>Um acervo navegável de publicações, arquivos e materiais ligados aos jogos, à acessibilidade, à inclusão e às práticas pedagógicas do projeto.</p>
+                </div>
+
+                <div class="artigos-hero-panel" aria-label="Resumo do acervo">
+                    <div class="artigos-stat">
+                        <strong><%= artigos.length %></strong>
+                        <span>publicações no acervo</span>
+                    </div>
+                    <div class="artigos-stat">
+                        <strong><%= jogos.length %></strong>
+                        <span>jogos conectados</span>
+                    </div>
+                    <div class="artigos-stat">
+                        <strong><%= anos.length || 1 %></strong>
+                        <span>ciclos de pesquisa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="artigos-academicos">
+        <div class="container">
+            <section class="artigos-search-shell" aria-label="Busca de artigos">
+                <div class="artigos-search-box">
+                    <img src="/icone pesquisa rosa.png" alt="" class="artigos-search-icon" aria-hidden="true">
+                    <input type="search" class="artigos-search-input" data-artigos-search placeholder="Pesquisar por título, jogo, tema ou descrição">
+                    <button type="button" class="artigos-clear-btn" data-artigos-clear aria-label="Limpar busca">Limpar</button>
+                </div>
+
+                <div class="artigos-toolbar">
+                    <p class="artigos-counter" data-artigos-counter><%= artigos.length %> resultados encontrados</p>
+                    <label class="artigos-sort">
+                        <span>Ordenar</span>
+                        <select data-artigos-sort>
+                            <option value="recentes">Mais recentes</option>
+                            <option value="titulo">Título</option>
+                            <option value="jogos">Mais jogos relacionados</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+
+            <div class="artigos-layout">
+                <aside class="artigos-sidebar" aria-label="Filtros dos artigos">
+                    <div class="artigos-filter-group">
+                        <h2>Período</h2>
+                        <button type="button" class="artigos-filter active" data-filter-group="ano" data-filter-value="all">Qualquer ano</button>
+                        <% anos.forEach((ano) => { %>
+                            <button type="button" class="artigos-filter" data-filter-group="ano" data-filter-value="<%= ano %>">Desde <%= ano %></button>
+                        <% }); %>
+                    </div>
+
+                    <div class="artigos-filter-group">
+                        <h2>Tipo</h2>
+                        <button type="button" class="artigos-filter active" data-filter-group="tipo" data-filter-value="all">Todos</button>
+                        <% tipos.forEach((tipo) => { %>
+                            <button type="button" class="artigos-filter" data-filter-group="tipo" data-filter-value="<%= tipo %>"><%= tipo %></button>
+                        <% }); %>
+                    </div>
+
+                    <div class="artigos-filter-group">
+                        <h2>Tema</h2>
+                        <button type="button" class="artigos-filter active" data-filter-group="tag" data-filter-value="all">Todos os temas</button>
+                        <% tags.forEach((tag) => { %>
+                            <button type="button" class="artigos-filter" data-filter-group="tag" data-filter-value="<%= tag %>"><%= tag %></button>
+                        <% }); %>
+                    </div>
+
+                    <div class="artigos-filter-group artigos-checks">
+                        <h2>Arquivos</h2>
+                        <label>
+                            <input type="checkbox" data-only-pdf>
+                            Apenas com PDF
+                        </label>
+                        <label>
+                            <input type="checkbox" data-only-games>
+                            Com jogos vinculados
+                        </label>
+                    </div>
+                </aside>
+
+                <section class="artigos-results" aria-live="polite">
+                    <% if (artigos && artigos.length > 0) { %>
+                        <% artigos.forEach((artigo, index) => { %>
+                            <article
+                                class="artigo-result"
+                                data-article-card
+                                data-title="<%= artigo.titulo || '' %>"
+                                data-description="<%= artigo.descricao || '' %>"
+                                data-year="<%= artigo.ano || '' %>"
+                                data-type="<%= artigo.tipo || 'Artigo' %>"
+                                data-tag="<%= artigo.tag || '' %>"
+                                data-pdf="<%= artigo.temArquivo ? 'true' : 'false' %>"
+                                data-games-count="<%= artigo.jogosRelacionados.length %>"
+                                data-index="<%= index %>"
+                                data-games="<%= artigo.jogosRelacionados.map((jogo) => jogo.nome).join(' ') %>"
+                            >
+                                <div class="artigo-main">
+                                    <div class="artigo-kicker">
+                                        <span><%= artigo.tipo || 'Artigo' %></span>
+                                        <% if (artigo.ano) { %>
+                                            <span><%= artigo.ano %></span>
+                                        <% } %>
+                                        <% if (artigo.tag) { %>
+                                            <span><%= artigo.tag %></span>
+                                        <% } %>
+                                    </div>
+
+                                    <h2><%= artigo.titulo %></h2>
+
+                                    <p class="artigo-meta">
+                                        +LUDUS
+                                        <% if (artigo.jogosRelacionados.length > 0) { %>
+                                            · vinculado a <%= artigo.jogosRelacionados.length %> jogo<%= artigo.jogosRelacionados.length !== 1 ? 's' : '' %>
+                                        <% } else { %>
+                                            · pesquisa e extensão
+                                        <% } %>
+                                    </p>
+
+                                    <% if (artigo.descricao) { %>
+                                        <p class="artigo-resumo"><%= artigo.descricao %></p>
+                                    <% } else { %>
+                                        <p class="artigo-resumo">Material publicado pelo projeto +LUDUS para apoiar o estudo de jogos educacionais acessíveis e práticas inclusivas.</p>
+                                    <% } %>
+
+                                    <% if (artigo.jogosRelacionados.length > 0) { %>
+                                        <div class="artigo-jogos">
+                                            <% artigo.jogosRelacionados.forEach((jogo) => { %>
+                                                <a href="/jogo/<%= jogo._id %>" class="artigo-jogo-chip">
+                                                    <% if (jogo.icone_url) { %>
+                                                        <img src="<%= jogo.icone_url %>" alt="" aria-hidden="true">
+                                                    <% } else { %>
+                                                        <img src="/ícone controle azul.png" alt="" aria-hidden="true">
+                                                    <% } %>
+                                                    <span><%= jogo.nome %></span>
+                                                </a>
+                                            <% }); %>
+                                        </div>
+                                    <% } %>
+
+                                    <div class="artigo-actions">
+                                        <% if (artigo.temArquivo) { %>
+                                            <a href="/conteudo/pdf/<%= artigo._id %>" target="_blank" rel="noopener noreferrer" class="artigo-action artigo-action--primary">Abrir PDF</a>
+                                        <% } %>
+                                        <% if (artigo.link_externo) { %>
+                                            <a href="<%= artigo.link_externo %>" target="_blank" rel="noopener noreferrer" class="artigo-action">Link externo</a>
+                                        <% } %>
+                                        <button type="button" class="artigo-action artigo-action--ghost" data-copy-citation>Copiar referência</button>
+                                    </div>
+                                </div>
+
+                                <div class="artigo-file-card" aria-hidden="true">
+                                    <span class="artigo-file-type"><%= artigo.temArquivo ? 'PDF' : 'WEB' %></span>
+                                    <span class="artigo-file-lines"></span>
+                                    <span class="artigo-file-lines artigo-file-lines--short"></span>
+                                </div>
+                            </article>
+                        <% }); %>
+                    <% } %>
+
+                    <div class="artigos-empty" data-artigos-empty <%= artigos.length > 0 ? 'hidden' : '' %>>
+                        <h2>Nenhum artigo encontrado</h2>
+                        <p>Ajuste a busca ou os filtros para explorar outros materiais do acervo.</p>
+                    </div>
+                </section>
+            </div>
+
+            <section class="artigos-cadernos" aria-label="Cadernos temáticos">
+                <div class="artigos-cadernos-head">
+                    <h2>Cadernos de pesquisa</h2>
+                    <p>Trilhas para navegar pelo acervo quando a busca ainda está aberta demais.</p>
+                </div>
+                <div class="artigos-cadernos-grid">
+                    <button type="button" class="artigos-caderno" data-suggest-search="autismo acessibilidade">
+                        <span>Acessibilidade e autismo</span>
+                        <small>Jogos pensados para necessidades diversas.</small>
+                    </button>
+                    <button type="button" class="artigos-caderno" data-suggest-search="matemática aprendizagem">
+                        <span>Aprendizagem por jogos</span>
+                        <small>Estratégias lúdicas para sala de aula.</small>
+                    </button>
+                    <button type="button" class="artigos-caderno" data-suggest-search="professores educação">
+                        <span>Prática docente</span>
+                        <small>Materiais para professores e mediação.</small>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <%- include('./footer') %>
+
+    <script>
+        const searchInput = document.querySelector('[data-artigos-search]');
+        const clearButton = document.querySelector('[data-artigos-clear]');
+        const counter = document.querySelector('[data-artigos-counter]');
+        const sortSelect = document.querySelector('[data-artigos-sort]');
+        const articleCards = Array.from(document.querySelectorAll('[data-article-card]'));
+        const emptyState = document.querySelector('[data-artigos-empty]');
+        const filters = document.querySelectorAll('[data-filter-group]');
+        const onlyPdf = document.querySelector('[data-only-pdf]');
+        const onlyGames = document.querySelector('[data-only-games]');
+        const results = document.querySelector('.artigos-results');
+
+        const activeFilters = {
+            ano: 'all',
+            tipo: 'all',
+            tag: 'all'
+        };
+
+        function normalizeText(text) {
+            return String(text || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        function updateCounter(count) {
+            counter.textContent = `${count} resultado${count !== 1 ? 's' : ''} encontrado${count !== 1 ? 's' : ''}`;
+        }
+
+        function cardMatchesSearch(card) {
+            const query = normalizeText(searchInput.value);
+            if (!query) return true;
+
+            const searchable = normalizeText([
+                card.dataset.title,
+                card.dataset.description,
+                card.dataset.type,
+                card.dataset.tag,
+                card.dataset.games
+            ].join(' '));
+
+            return searchable.includes(query);
+        }
+
+        function cardMatchesFilters(card) {
+            const matchesYear = activeFilters.ano === 'all' || card.dataset.year === activeFilters.ano;
+            const matchesType = activeFilters.tipo === 'all' || card.dataset.type === activeFilters.tipo;
+            const matchesTag = activeFilters.tag === 'all' || card.dataset.tag === activeFilters.tag;
+            const matchesPdf = !onlyPdf.checked || card.dataset.pdf === 'true';
+            const matchesGames = !onlyGames.checked || Number(card.dataset.gamesCount) > 0;
+
+            return matchesYear && matchesType && matchesTag && matchesPdf && matchesGames;
+        }
+
+        function sortCards(cards) {
+            const sortMode = sortSelect.value;
+
+            return cards.sort((a, b) => {
+                if (sortMode === 'titulo') {
+                    return normalizeText(a.dataset.title).localeCompare(normalizeText(b.dataset.title), 'pt-BR');
+                }
+
+                if (sortMode === 'jogos') {
+                    return Number(b.dataset.gamesCount) - Number(a.dataset.gamesCount);
+                }
+
+                return Number(a.dataset.index) - Number(b.dataset.index);
+            });
+        }
+
+        function updateArticles() {
+            const visibleCards = [];
+
+            articleCards.forEach((card) => {
+                const visible = cardMatchesSearch(card) && cardMatchesFilters(card);
+                card.hidden = !visible;
+                if (visible) visibleCards.push(card);
+            });
+
+            sortCards(visibleCards).forEach((card) => results.appendChild(card));
+            updateCounter(visibleCards.length);
+            emptyState.hidden = visibleCards.length > 0;
+        }
+
+        filters.forEach((filter) => {
+            filter.addEventListener('click', () => {
+                const group = filter.dataset.filterGroup;
+                activeFilters[group] = filter.dataset.filterValue;
+
+                document.querySelectorAll(`[data-filter-group="${group}"]`).forEach((button) => {
+                    button.classList.toggle('active', button === filter);
+                });
+
+                updateArticles();
+            });
+        });
+
+        [searchInput, sortSelect, onlyPdf, onlyGames].forEach((control) => {
+            control.addEventListener('input', updateArticles);
+            control.addEventListener('change', updateArticles);
+        });
+
+        clearButton.addEventListener('click', () => {
+            searchInput.value = '';
+            searchInput.focus();
+            updateArticles();
+        });
+
+        document.querySelectorAll('[data-suggest-search]').forEach((button) => {
+            button.addEventListener('click', () => {
+                searchInput.value = button.dataset.suggestSearch;
+                searchInput.focus();
+                updateArticles();
+                window.scrollTo({ top: document.querySelector('.artigos-search-shell').offsetTop - 120, behavior: 'smooth' });
+            });
+        });
+
+        document.querySelectorAll('[data-copy-citation]').forEach((button) => {
+            button.addEventListener('click', async () => {
+                const card = button.closest('[data-article-card]');
+                const reference = `${card.dataset.title}. Projeto +LUDUS${card.dataset.year ? ', ' + card.dataset.year : ''}.`;
+
+                try {
+                    await navigator.clipboard.writeText(reference);
+                    button.textContent = 'Referência copiada';
+                    setTimeout(() => {
+                        button.textContent = 'Copiar referência';
+                    }, 1800);
+                } catch (error) {
+                    button.textContent = reference;
+                }
+            });
+        });
+
+        updateArticles();
+    </script>
+</body>
+</html>
