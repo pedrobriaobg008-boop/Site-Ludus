@@ -822,11 +822,11 @@ h6,
     font-size: 16px;
     color: var(--primary-blue);
     max-width: 600px;
-    margin: 0 auto 50px;
+    margin: 0 auto 8px;
 }
 
 .features > .container > p:last-of-type {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .features-grid {
