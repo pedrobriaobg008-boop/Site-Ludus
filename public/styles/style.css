@@ -970,14 +970,15 @@ h6,
 .footer-heading-with-icon {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .footer-heading-icon {
-    width: 1.1em;
-    height: 1.1em;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
     flex-shrink: 0;
+    display: block;
 }
 
 .footer-section-logo {
@@ -1017,17 +1018,18 @@ h6,
 .footer-contact-line {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 16px;
     font-size: 15px;
 }
 
 .footer-inline-icon {
-    width: 1.1em;
-    height: 1.1em;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
     flex-shrink: 0;
     opacity: 0.95;
+    display: block;
 }
 
 .footer-section a {
