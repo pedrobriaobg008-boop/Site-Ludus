@@ -807,7 +807,7 @@ h6,
 /* FEATURES SECTION */
 .features {
     background: white;
-    padding: 80px 0;
+    padding: 50px 0;
     text-align: center;
 }
 
@@ -822,7 +822,7 @@ h6,
     font-size: 16px;
     color: var(--primary-blue);
     max-width: 600px;
-    margin: 0 auto 60px;
+    margin: 0 auto 25px;
 }
 
 .features-grid {
