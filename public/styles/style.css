@@ -2384,10 +2384,9 @@ h6,
 }
 
 .artigos-hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-    gap: 32px;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .artigos-hero-copy {
@@ -2426,7 +2425,7 @@ h6,
     font-size: 17px;
     line-height: 1.75;
     max-width: 720px;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .artigos-hero-panel {

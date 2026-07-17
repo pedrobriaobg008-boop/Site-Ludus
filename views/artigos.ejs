@@ -21,20 +21,6 @@
                     <p>Um acervo navegável de publicações, arquivos e materiais ligados aos jogos, à acessibilidade, à inclusão e às práticas pedagógicas do projeto.</p>
                 </div>
 
-                <div class="artigos-hero-panel" aria-label="Resumo do acervo">
-                    <div class="artigos-stat">
-                        <strong><%= artigos.length %></strong>
-                        <span>publicações no acervo</span>
-                    </div>
-                    <div class="artigos-stat">
-                        <strong><%= jogos.length %></strong>
-                        <span>jogos conectados</span>
-                    </div>
-                    <div class="artigos-stat">
-                        <strong><%= anos.length || 1 %></strong>
-                        <span>ciclos de pesquisa</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -174,26 +160,6 @@
                 </section>
             </div>
 
-            <section class="artigos-cadernos" aria-label="Cadernos temáticos">
-                <div class="artigos-cadernos-head">
-                    <h2>Cadernos de pesquisa</h2>
-                    <p>Trilhas para navegar pelo acervo quando a busca ainda está aberta demais.</p>
-                </div>
-                <div class="artigos-cadernos-grid">
-                    <button type="button" class="artigos-caderno" data-suggest-search="autismo acessibilidade">
-                        <span>Acessibilidade e autismo</span>
-                        <small>Jogos pensados para necessidades diversas.</small>
-                    </button>
-                    <button type="button" class="artigos-caderno" data-suggest-search="matemática aprendizagem">
-                        <span>Aprendizagem por jogos</span>
-                        <small>Estratégias lúdicas para sala de aula.</small>
-                    </button>
-                    <button type="button" class="artigos-caderno" data-suggest-search="professores educação">
-                        <span>Prática docente</span>
-                        <small>Materiais para professores e mediação.</small>
-                    </button>
-                </div>
-            </section>
         </div>
     </main>
 
@@ -299,15 +265,6 @@
             searchInput.value = '';
             searchInput.focus();
             updateArticles();
-        });
-
-        document.querySelectorAll('[data-suggest-search]').forEach((button) => {
-            button.addEventListener('click', () => {
-                searchInput.value = button.dataset.suggestSearch;
-                searchInput.focus();
-                updateArticles();
-                window.scrollTo({ top: document.querySelector('.artigos-search-shell').offsetTop - 120, behavior: 'smooth' });
-            });
         });
 
         document.querySelectorAll('[data-copy-citation]').forEach((button) => {
