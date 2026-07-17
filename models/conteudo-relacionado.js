@@ -14,11 +14,20 @@ const conteudoRelacionadoSchema = new mongoose.Schema({
   pdf_url: {
     type: String
   },
-  tag: {
+  pdf: {
+    type: Buffer
+  },
+  pdf_mime: {
     type: String
+  },
+  pdf_id: {
+    type: mongoose.Schema.Types.ObjectId
   },
   tipo: {
     type: String
+  },
+  data_postagem: {
+    type: Date
   },
   jogos: [{
     type: mongoose.Schema.Types.Mixed

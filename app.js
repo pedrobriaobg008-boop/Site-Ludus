@@ -100,7 +100,7 @@ app.use((req, res, next) => {
 // Rotas
 app.get('/', async (req, res) => {
   try {
-    const jogosRecentes = await Jogo.find()
+    const jogosRecentes = await Jogo.find({ ativo: { $ne: false } })
       .sort({ createdAt: -1, _id: -1 })
       .limit(12)
       .populate('categorias')
@@ -122,7 +122,7 @@ app.get('/projeto', (req, res) => {
 app.get('/jogos', async (req, res) => {
   try {
     const [jogos, categoriasDoBanco] = await Promise.all([
-      Jogo.find().populate('categorias'),
+      Jogo.find({ ativo: { $ne: false } }).populate('categorias'),
       Categoria.find({}, { nome: 1 }).sort({ nome: 1 }).lean()
     ]);
 
@@ -179,8 +179,8 @@ app.get('/api/categorias', async (req, res) => {
 app.get('/artigos', async (req, res) => {
   try {
     const [conteudos, jogos] = await Promise.all([
-      ConteudoRelacionado.find().sort({ createdAt: -1, _id: -1 }).lean(),
-      Jogo.find().populate('categorias').lean()
+      ConteudoRelacionado.find().sort({ data_postagem: -1, createdAt: -1, _id: -1 }).lean(),
+      Jogo.find({ ativo: { $ne: false } }).populate('categorias').lean()
     ]);
 
     const jogosPorId = new Map(jogos.map((jogo) => [String(jogo._id), jogo]));
@@ -193,7 +193,7 @@ app.get('/artigos', async (req, res) => {
       return {
         ...conteudo,
         jogosRelacionados,
-        ano: conteudo.createdAt ? new Date(conteudo.createdAt).getFullYear() : null,
+        ano: (conteudo.data_postagem || conteudo.createdAt) ? new Date(conteudo.data_postagem || conteudo.createdAt).getFullYear() : null,
         temArquivo: Boolean(conteudo.pdf_url || conteudo.pdf_id || conteudo.pdf),
         temLink: Boolean(conteudo.link_externo)
       };
@@ -203,15 +203,11 @@ app.get('/artigos', async (req, res) => {
       .sort((a, b) => b - a);
     const tipos = [...new Set(artigos.map((artigo) => artigo.tipo || 'Artigo').filter(Boolean))]
       .sort((a, b) => a.localeCompare(b, 'pt-BR', { sensitivity: 'base' }));
-    const tags = [...new Set(artigos.map((artigo) => artigo.tag).filter(Boolean))]
-      .sort((a, b) => a.localeCompare(b, 'pt-BR', { sensitivity: 'base' }));
-
     res.render('artigos', {
       artigos,
       jogos,
       anos,
-      tipos,
-      tags
+      tipos
     });
   } catch (erro) {
     console.error('Erro ao buscar artigos:', erro);
@@ -219,8 +215,7 @@ app.get('/artigos', async (req, res) => {
       artigos: [],
       jogos: [],
       anos: [],
-      tipos: [],
-      tags: []
+      tipos: []
     });
   }
 });
@@ -235,7 +230,7 @@ app.get('/parceiros', (req, res) => {
 
 app.get('/jogo/:id', async (req, res) => {
   try {
-    const jogo = await Jogo.findById(req.params.id).populate('categorias');
+    const jogo = await Jogo.findOne({ _id: req.params.id, ativo: { $ne: false } }).populate('categorias');
 
     if (!jogo) {
       return res.status(404).send('Jogo nao encontrado');
@@ -244,11 +239,12 @@ app.get('/jogo/:id', async (req, res) => {
     const jogosPossiveis = [String(jogo._id), jogo._id];
     const [jogosRelacionados, conteudosRelacionados] = await Promise.all([
       Jogo.find({
-        _id: { $ne: jogo._id }
+        _id: { $ne: jogo._id },
+        ativo: { $ne: false }
       }).limit(3).populate('categorias'),
       ConteudoRelacionado.find({
         jogos: { $in: jogosPossiveis }
-      }).sort({ createdAt: -1 }).lean()
+      }).sort({ data_postagem: -1, createdAt: -1 }).lean()
     ]);
 
     res.render('jogo-detalhes', {

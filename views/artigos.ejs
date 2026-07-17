@@ -79,14 +79,6 @@
                         <% }); %>
                     </div>
 
-                    <div class="artigos-filter-group">
-                        <h2>Tema</h2>
-                        <button type="button" class="artigos-filter active" data-filter-group="tag" data-filter-value="all">Todos os temas</button>
-                        <% tags.forEach((tag) => { %>
-                            <button type="button" class="artigos-filter" data-filter-group="tag" data-filter-value="<%= tag %>"><%= tag %></button>
-                        <% }); %>
-                    </div>
-
                     <div class="artigos-filter-group artigos-checks">
                         <h2>Arquivos</h2>
                         <label>
@@ -110,7 +102,6 @@
                                 data-description="<%= artigo.descricao || '' %>"
                                 data-year="<%= artigo.ano || '' %>"
                                 data-type="<%= artigo.tipo || 'Artigo' %>"
-                                data-tag="<%= artigo.tag || '' %>"
                                 data-pdf="<%= artigo.temArquivo ? 'true' : 'false' %>"
                                 data-games-count="<%= artigo.jogosRelacionados.length %>"
                                 data-index="<%= index %>"
@@ -121,9 +112,6 @@
                                         <span><%= artigo.tipo || 'Artigo' %></span>
                                         <% if (artigo.ano) { %>
                                             <span><%= artigo.ano %></span>
-                                        <% } %>
-                                        <% if (artigo.tag) { %>
-                                            <span><%= artigo.tag %></span>
                                         <% } %>
                                     </div>
 
@@ -225,8 +213,7 @@
 
         const activeFilters = {
             ano: 'all',
-            tipo: 'all',
-            tag: 'all'
+            tipo: 'all'
         };
 
         function normalizeText(text) {
@@ -245,7 +232,6 @@
                 card.dataset.title,
                 card.dataset.description,
                 card.dataset.type,
-                card.dataset.tag,
                 card.dataset.games
             ].join(' '));
 
@@ -255,11 +241,10 @@
         function cardMatchesFilters(card) {
             const matchesYear = activeFilters.ano === 'all' || card.dataset.year === activeFilters.ano;
             const matchesType = activeFilters.tipo === 'all' || card.dataset.type === activeFilters.tipo;
-            const matchesTag = activeFilters.tag === 'all' || card.dataset.tag === activeFilters.tag;
             const matchesPdf = !onlyPdf.checked || card.dataset.pdf === 'true';
             const matchesGames = !onlyGames.checked || Number(card.dataset.gamesCount) > 0;
 
-            return matchesYear && matchesType && matchesTag && matchesPdf && matchesGames;
+            return matchesYear && matchesType && matchesPdf && matchesGames;
         }
 
         function sortCards(cards) {

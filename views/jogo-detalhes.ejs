@@ -95,7 +95,7 @@
                 </div>
                 <div class="conteudos-relacionados-section" id="artigos-relacionados-panel" data-artigos-panel hidden>
                     <div class="conteudos-relacionados-header">
-                        <h2>Artigos Relacionados</h2>
+                        <h2>Conteúdos relacionados</h2>
                         <p>Materiais publicados em eventos e revistas vinculados a este jogo.</p>
                         <a href="/artigos" class="btn-action btn-action--info conteudos-admin-link">Ver acervo completo</a>
                         
@@ -108,6 +108,13 @@
                                     <h3><%= conteudo.titulo %></h3>
                                     <% if (conteudo.descricao) { %>
                                         <p class="conteudo-descricao"><%= conteudo.descricao %></p>
+                                    <% } %>
+                                    <% if (conteudo.tipo || conteudo.data_postagem) { %>
+                                        <p class="conteudo-descricao">
+                                            <% if (conteudo.tipo) { %><strong><%= conteudo.tipo %></strong><% } %>
+                                            <% if (conteudo.tipo && conteudo.data_postagem) { %> · <% } %>
+                                            <% if (conteudo.data_postagem) { %><%= new Date(conteudo.data_postagem).toLocaleDateString('pt-BR', { timeZone: 'UTC' }) %><% } %>
+                                        </p>
                                     <% } %>
                                     <div class="conteudo-actions">
                                         <% if (conteudo.link_externo) { %>

@@ -34,6 +34,10 @@ const jogoSchema = new mongoose.Schema({
   xp_maxima: {
     type: Number
   },
+  ativo: {
+    type: Boolean,
+    default: true
+  },
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Usuario'
