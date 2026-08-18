@@ -77,14 +77,6 @@ const obterSecaoAtual = (caminho = '/') => {
   return secoes.includes(caminho) ? caminho : '';
 };
 
-const sanitizarNomeArquivo = (texto = 'arquivo') => String(texto)
-  .normalize('NFD')
-  .replace(/[\u0300-\u036f]/g, '')
-  .replace(/[^a-zA-Z0-9-_]+/g, '-')
-  .replace(/-+/g, '-')
-  .replace(/^-+|-+$/g, '')
-  .toLowerCase() || 'arquivo';
-
 const adminArtigosUrl = process.env.ADMIN_ARTIGOS_URL || '/admin';
 
 // Middleware
