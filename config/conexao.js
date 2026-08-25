@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-require('dotenv').config({ override: true });
+// As variáveis entregues pelo Docker têm prioridade sobre um .env empacotado.
+require('dotenv').config();
 
-const URL_MONGODB = process.env.MONGODB_URI;
+const URL_MONGODB = process.env.MONGO_URI || process.env.MONGODB_URI;
 let conexaoPromise = null;
 
 const conectarMongoDB = async () => {
