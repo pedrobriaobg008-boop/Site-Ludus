@@ -81,6 +81,9 @@ const adminArtigosUrl = process.env.ADMIN_ARTIGOS_URL || '/admin';
 
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
+// Builds enviados pelo painel ficam em um volume compartilhado com o admin.
+// Em desenvolvimento, sem a variável, o diretório continua dentro de public.
+app.use('/jogos-publicados', express.static(process.env.GAME_PUBLIC_DIR || path.join(__dirname, 'public', 'jogos-publicados')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
