@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const Jogo = require('./models/jogos');
+const gameResolution = require('./helpers/game-resolution');
 const Categoria = require('./models/categoria');
 const equipe = require('./models/equipe');
 const parceiros = require('./models/parceiros');
@@ -243,6 +244,7 @@ app.get('/jogo/:id', async (req, res) => {
     ]);
 
     res.render('jogo-detalhes', {
+      gameResolution: gameResolution(jogo),
       jogo,
       jogosRelacionados,
       conteudosRelacionados,

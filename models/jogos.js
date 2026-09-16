@@ -12,8 +12,8 @@ const jogoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  resolucao_largura: { type: Number, default: 1280, min: 240, max: 7680, validate: Number.isInteger },
-  resolucao_altura: { type: Number, default: 800, min: 240, max: 7680, validate: Number.isInteger },
+  resolucao_largura: { type: Number, min: 240, max: 7680, validate: Number.isInteger },
+  resolucao_altura: { type: Number, min: 240, max: 7680, validate: Number.isInteger },
   link_jogar: {
     type: String
   },

@@ -3160,7 +3160,7 @@ h6,
     width: 100%;
     aspect-ratio: var(--game-width, 1280) / var(--game-height, 800);
     margin: 0 auto;
-    border-radius: 14px;
+    border-radius: 0;
     border: none;
     background: #ffffff;
     position: relative;
@@ -4818,6 +4818,3 @@ h6,
         font-size: 12px;
     }
 }
-
-.jogo-resolution-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; }
-.jogo-resolution-controls input { width: 100px; padding: 6px; }
