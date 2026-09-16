@@ -32,16 +32,21 @@
                 <div class="jogo-player-area">
                     <% if (jogo.link_jogar) { %>
                         <div class="jogo-iframe-shell">
-                            <div class="jogo-iframe-container">
+                            <div class="jogo-iframe-container" style="--game-width: <%= jogo.resolucao_largura || 1280 %>; --game-height: <%= jogo.resolucao_altura || 800 %>;">
                                 <iframe
                                     src="<%= jogo.link_jogar %>"
                                     class="jogo-iframe"
                                     loading="lazy"
-                                    scrolling="no"
+                                    title="Jogar <%= jogo.nome %>"
                                     allow="fullscreen; autoplay; gamepad"
                                     allowfullscreen>
                                 </iframe>
                             </div>
+                            <form class="jogo-resolution-controls" id="game-resolution-form">
+                                <label>Largura (px) <input id="game-width" type="number" min="240" max="7680" step="1" required value="<%= jogo.resolucao_largura || 1280 %>"></label>
+                                <label>Altura (px) <input id="game-height" type="number" min="240" max="7680" step="1" required value="<%= jogo.resolucao_altura || 800 %>"></label>
+                                <button type="submit" class="btn-action">Aplicar resolu??o</button>
+                            </form>
                             <a href="<%= jogo.link_jogar %>" target="_blank" class="btn-action btn-action--fullscreen" id="fullscreen-game-btn">
                                 <span class="btn-play-label">
                                     <img src="/ícone controle branco.png" alt="" class="controller-icon controller-icon--button" aria-hidden="true">
@@ -242,11 +247,29 @@
         const artigosPanel = document.querySelector('[data-artigos-panel]');
 
         if (iframeContainer && gameIframe) {
-            const src = (gameIframe.getAttribute('src') || '').toLowerCase();
-            const looksLikeUnityEmbed = src.includes('unity') || src.includes('webgl') || src.includes('itch.io');
-            if (looksLikeUnityEmbed) {
-                iframeContainer.classList.add('is-unity-embed');
+            const widthInput = document.getElementById('game-width');
+            const heightInput = document.getElementById('game-height');
+            let width = Number(widthInput.value);
+            let height = Number(heightInput.value);
+            function fitGame() {
+                // Keep the game's viewport intact while scaling the whole frame.
+                const scale = Math.min(1, iframeContainer.parentElement.clientWidth / width,
+                    Math.max(240, window.innerHeight - 180) / height);
+                iframeContainer.style.width = (width * scale) + 'px';
+                iframeContainer.style.height = (height * scale) + 'px';
+                gameIframe.style.transform = 'scale(' + scale + ')';
             }
+            document.getElementById('game-resolution-form').addEventListener('submit', event => {
+                event.preventDefault();
+                width = Number(widthInput.value);
+                height = Number(heightInput.value);
+                iframeContainer.style.setProperty('--game-width', width);
+                iframeContainer.style.setProperty('--game-height', height);
+                fitGame();
+            });
+            new ResizeObserver(fitGame).observe(iframeContainer.parentElement);
+            window.addEventListener('resize', fitGame);
+            fitGame();
         }
 
         if (artigosToggleButton && artigosPanel) {
