@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="ouro-title">
+  <title id="ouro-title">Patente Ouro</title>
+  <defs>
+    <linearGradient id="ouro-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fff0b1"/><stop offset=".43" stop-color="#f4c45d"/><stop offset="1" stop-color="#ba7b26"/>
+    </linearGradient>
+    <linearGradient id="ouro-face" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#98732b"/><stop offset="1" stop-color="#584127"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="64" fill="#e5b23f" opacity=".09"/>
+  <path d="m48 52-29-12 5 28 17 13-12-2 7 17 16 8m60-52 29-12-5 28-17 13 12-2-7 17-16 8" fill="url(#ouro-metal)" stroke="#bc8937" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m25 49 21 19m89-19-21 19" fill="none" stroke="#fff2bb" stroke-width="2" stroke-linecap="round"/>
+  <path d="m80 25 37 20v39c0 23-18 43-37 54-19-11-37-31-37-54V45Z" fill="url(#ouro-metal)" stroke="#be8831" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 35 29 16v32c0 18-14 36-29 45-15-9-29-27-29-45V51Z" fill="url(#ouro-face)"/>
+  <path d="m80 35 29 16-29 16-29-16Z" fill="#ffeaa0" opacity=".23"/>
+  <path d="M80 67v61c15-9 29-27 29-45V51Z" fill="#422128" opacity=".2"/>
+  <path d="m80 54 8 17 19 3-14 13 4 19-17-9-17 9 4-19-14-13 19-3Z" fill="url(#ouro-metal)" stroke="#fff0b1" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 58 6 18-6 14-6-14Z" fill="#fff7d3"/>
+  <path d="m63 29-2-12 12 6 7-12 7 12 12-6-2 12-17 8Z" fill="url(#ouro-metal)" stroke="#be8831" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="m72 116 8 4 8-4m-5-7-3 3-3-3" fill="none" stroke="#f6d878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

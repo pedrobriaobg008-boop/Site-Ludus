@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="diamante-title">
+  <title id="diamante-title">Patente Diamante</title>
+  <defs>
+    <linearGradient id="diamante-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#edfaff"/><stop offset=".42" stop-color="#97ccfa"/><stop offset="1" stop-color="#6d7add"/>
+    </linearGradient>
+    <linearGradient id="diamante-face" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#506eae"/><stop offset="1" stop-color="#2f2f69"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="65" fill="#7b92e8" opacity=".09"/>
+  <path d="m45 49-29-22 3 29 20 21-15-6 4 20 22 17m65-59 29-22-3 29-20 21 15-6-4 20-22 17" fill="url(#diamante-metal)" stroke="#798cc9" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m22 38 23 26m93-26-23 26" fill="none" stroke="#f1fcff" stroke-width="2" stroke-linecap="round"/>
+  <path d="m80 24 38 20v41c0 23-18 44-38 55-20-11-38-32-38-55V44Z" fill="url(#diamante-metal)" stroke="#7183c0" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 34 30 16v34c0 18-14 36-30 46-16-10-30-28-30-46V50Z" fill="url(#diamante-face)"/>
+  <path d="m80 34 30 16-30 18-30-18Z" fill="#c6e8ff" opacity=".24"/>
+  <path d="M80 68v62c16-10 30-28 30-46V50Z" fill="#201d51" opacity=".24"/>
+  <path d="m66 59 28 0 13 17-27 33-27-33Z" fill="url(#diamante-metal)" stroke="#e9faff" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m66 59 7 17 7-17 7 17 7-17M53 76h54m-34 0 7 33 7-33" fill="none" stroke="#e8faff" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 59 7 17-7 33-7-33Z" fill="#e6f7ff" opacity=".8"/>
+  <path d="m80 8 9 14-9 14-9-14Z" fill="url(#diamante-metal)" stroke="#7e92cd" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="m80 12 3 10-3 9-3-9Z" fill="#fff"/>
+  <path d="m69 117 11 6 11-6" fill="none" stroke="#b7cfff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m30 108 4 6-4 6-4-6Zm100 0 4 6-4 6-4-6Z" fill="#9aafe6"/>
+</svg>

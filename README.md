@@ -50,6 +50,24 @@ Abra o navegador e acesse `http://localhost:3000`
 - **Roxo:** #7B3FF2
 - **Fundo Claro:** #E8F4F8
 
+## Prévia do perfil na navbar
+
+O botão **Meu perfil** abre um painel na própria página. Para experimentar, informe
+um nome ou apelido e escolha **Entrar na demonstração**. O acesso aos jogos continua
+livre, inclusive após sair do perfil.
+
+O painel mostra imagens de seis patentes, XP total de exemplo, nível geral,
+progresso para a próxima patente e último jogo. O último jogo aberto é atualizado
+localmente quando o player carrega ou quando se usa **Abrir em Nova Guia**.
+O nome e o último jogo ficam somente no `localStorage` do navegador, na chave
+`ludus.profile.demo.v1`. Não há autenticação real, envio de credenciais, gravação
+de XP ou integração deste perfil com o banco de dados.
+
+Os dados demonstrativos e os limites de XP estão em
+`public/scripts/user-profile.js`; a interface, em `views/user-profile.ejs`; e os
+emblemas SVG, em `public/images/ranks/`. A prévia soma 2.450 XP, correspondentes ao
+nível 5 e à patente Prata. As patentes usam o XP acumulado de todos os jogos.
+
 ## 🔧 Próximas Funcionalidades
 
 - [ ] Páginas de jogos

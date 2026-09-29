@@ -1,0 +1,102 @@
+<section class="profile-panel" id="user-profile-panel" data-profile-panel role="dialog" aria-labelledby="profile-panel-title" tabindex="-1" hidden>
+    <div class="profile-panel-header">
+        <div>
+            <p class="profile-eyebrow">SEU ESPAÇO +LUDUS</p>
+            <h2 id="profile-panel-title">Meu perfil <span class="profile-preview">Prévia</span></h2>
+        </div>
+        <button class="profile-icon-button" type="button" data-profile-close aria-label="Fechar perfil">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+
+    <div data-profile-guest>
+        <div class="profile-welcome">
+            <img src="/images/ranks/prata.svg" width="100" height="100" alt="Emblema da patente Prata" class="profile-welcome-badge">
+            <h3>Cada descoberta conta!</h3>
+            <p>Um lugar para ver seus jogos, somar experiências e descobrir novas patentes.</p>
+        </div>
+        <form class="profile-form" data-profile-form>
+            <label for="profile-display-name">Como podemos chamar você?</label>
+            <input id="profile-display-name" name="displayName" type="text" placeholder="Seu nome ou apelido" maxlength="32" autocomplete="nickname" required data-profile-name-input aria-describedby="profile-demo-note profile-error">
+            <p class="profile-demo-note" id="profile-demo-note">Experimente o perfil com XP e patentes de exemplo.</p>
+            <button class="profile-primary-button" type="submit">Entrar na demonstração <span aria-hidden="true">→</span></button>
+        </form>
+        <button class="profile-guest-button" type="button" data-profile-close>Continuar sem entrar</button>
+        <p class="profile-optional-note">O login é opcional. Os jogos estão sempre abertos para você.</p>
+    </div>
+
+    <div data-profile-member hidden>
+        <div class="profile-identity">
+            <span class="profile-avatar" data-profile-avatar aria-hidden="true">J</span>
+            <div class="profile-identity-copy">
+                <p class="profile-greeting">Bom te ver por aqui!</p>
+                <h3 data-profile-name>Jogador</h3>
+            </div>
+            <span class="profile-member-dot" aria-hidden="true"></span>
+        </div>
+
+        <div class="profile-rank-card">
+            <img src="/images/ranks/prata.svg" width="112" height="112" alt="Emblema da patente Prata" data-profile-rank-image>
+            <div>
+                <p class="profile-eyebrow">PATENTE ATUAL</p>
+                <h3 data-profile-rank>Prata</h3>
+                <p class="profile-rank-title" data-profile-rank-title>Explorador curioso</p>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <div class="profile-stat">
+                <span class="profile-stat-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg> XP total</span>
+                <strong data-profile-xp>2.450</strong>
+                <span class="profile-stat-caption">em todos os jogos</span>
+            </div>
+            <div class="profile-stat">
+                <span class="profile-stat-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 7-7 7 7M5 19l7-7 7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> Nível geral</span>
+                <strong data-profile-level>5</strong>
+                <span class="profile-stat-caption">uma jornada de descobertas</span>
+            </div>
+        </div>
+
+        <div class="profile-progression">
+            <label for="profile-rank-progress" data-profile-next-rank>Próxima patente: Ouro</label>
+            <progress id="profile-rank-progress" max="100" value="38" data-profile-rank-progress aria-describedby="profile-progress-text">38%</progress>
+            <p id="profile-progress-text" data-profile-progress-text>Faltam 1.550 XP para Ouro</p>
+        </div>
+
+        <div class="profile-last-played">
+            <h3>Último jogo</h3>
+            <a class="profile-game" href="/jogos" data-profile-last-game-link>
+                <img src="/missaoverde.png" width="58" height="58" alt="" data-profile-last-game-image>
+                <span class="profile-game-copy">
+                    <strong data-profile-last-game>Missão Verde</strong>
+                    <span data-profile-last-game-note>Uma aventura pela natureza</span>
+                    <span class="profile-game-action" data-profile-last-game-action>Explorar jogos</span>
+                </span>
+                <span class="profile-game-arrow" aria-hidden="true">↗</span>
+            </a>
+        </div>
+
+        <details class="profile-ranks">
+            <summary>Conhecer as patentes <span aria-hidden="true">+</span></summary>
+            <ol class="profile-rank-list" aria-label="Patentes por XP total">
+                <% [
+                    ['bronze', 'Bronze', '0'],
+                    ['prata', 'Prata', '1.500'],
+                    ['ouro', 'Ouro', '4.000'],
+                    ['platina', 'Platina', '8.000'],
+                    ['diamante', 'Diamante', '14.000'],
+                    ['mestre', 'Mestre', '22.000']
+                ].forEach(([arquivo, nome, xp]) => { %>
+                    <li><img src="/images/ranks/<%= arquivo %>.svg" width="36" height="36" alt="" loading="lazy"><span><%= nome %></span><span><%= xp %> XP</span></li>
+                <% }); %>
+            </ol>
+        </details>
+
+        <p class="profile-demo-note profile-demo-note--member">XP, nível e patentes de exemplo para explorar seu perfil.</p>
+        <div class="profile-panel-footer">
+            <span>Jogue no seu ritmo.</span>
+            <button type="button" data-profile-logout>Sair do perfil <span aria-hidden="true">↗</span></button>
+        </div>
+    </div>
+    <p class="profile-error" id="profile-error" data-profile-error role="status" hidden></p>
+</section>

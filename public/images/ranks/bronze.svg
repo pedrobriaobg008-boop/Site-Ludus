@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="bronze-title">
+  <title id="bronze-title">Patente Bronze</title>
+  <defs>
+    <linearGradient id="bronze-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffe0b4"/><stop offset=".46" stop-color="#c98243"/><stop offset="1" stop-color="#8c4b29"/>
+    </linearGradient>
+    <linearGradient id="bronze-face" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#a96c41"/><stop offset="1" stop-color="#563023"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="62" fill="#c98243" opacity=".08"/>
+  <path d="m45 77-21-8 6 23 21 13m64-28 21-8-6 23-21 13" fill="url(#bronze-metal)" stroke="#995831" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 26 36 19v39c0 23-18 43-36 53-18-10-36-30-36-53V45Z" fill="url(#bronze-metal)" stroke="#9d603a" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 36 28 15v32c0 18-13 35-28 44-15-9-28-26-28-44V51Z" fill="url(#bronze-face)"/>
+  <path d="m80 36 28 15-28 14-28-14Z" fill="#ffe4bf" opacity=".2"/>
+  <path d="M80 65v62c15-9 28-26 28-44V51Z" fill="#201726" opacity=".18"/>
+  <path d="m80 55 7 17 18 2-14 12 4 18-15-9-15 9 4-18-14-12 18-2Z" fill="url(#bronze-metal)" stroke="#ffe4bf" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 60 5 16-5 13-5-13Z" fill="#fff3db" opacity=".7"/>
+  <path d="m71 112 9 5 9-5" fill="none" stroke="#e7ab70" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="platina-title">
+  <title id="platina-title">Patente Platina</title>
+  <defs>
+    <linearGradient id="platina-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d6fff8"/><stop offset=".43" stop-color="#7cdbc9"/><stop offset="1" stop-color="#329c9b"/>
+    </linearGradient>
+    <linearGradient id="platina-face" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#277975"/><stop offset="1" stop-color="#1d3e56"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="65" fill="#42bca7" opacity=".08"/>
+  <path d="m46 52-29-18 4 27 21 18-17-4 6 18 20 14m63-55 29-18-4 27-21 18 17-4-6 18-20 14" fill="url(#platina-metal)" stroke="#379997" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m23 44 23 22m91-22-23 22" fill="none" stroke="#d9fff7" stroke-width="2" stroke-linecap="round"/>
+  <path d="m80 22 38 22v40c0 23-18 44-38 55-20-11-38-32-38-55V44Z" fill="url(#platina-metal)" stroke="#319291" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 33 30 17v33c0 18-14 36-30 46-16-10-30-28-30-46V50Z" fill="url(#platina-face)"/>
+  <path d="m80 33 30 17-30 18-30-18Z" fill="#baf5e8" opacity=".2"/>
+  <path d="M80 68v61c16-10 30-28 30-46V50Z" fill="#152b45" opacity=".25"/>
+  <path d="m80 50 22 28-22 32-22-32Z" fill="url(#platina-metal)" stroke="#dcfff7" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 50 7 28-7 32-7-32Z" fill="#f0fff9"/>
+  <path d="M58 78h44L80 88Z" fill="#64c6b8"/>
+  <path d="m80 50 7 28-7 10-7-10Z" fill="#d5fff2"/>
+  <path d="m62 28 2-13 10 9 6-15 6 15 10-9 2 13-18 9Z" fill="url(#platina-metal)" stroke="#319291" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="m70 116 10 6 10-6" fill="none" stroke="#a8ebd7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m32 108 3 5-3 5-3-5Zm96 0 3 5-3 5-3-5Z" fill="#68c6b6"/>
+</svg>

@@ -10,7 +10,7 @@
     <%- include('./header') %>
 
     <!-- Jogo Detalhes -->
-    <section class="jogo-detalhes">
+    <section class="jogo-detalhes" data-profile-game-name="<%= jogo.nome %>" data-profile-game-url="/jogo/<%= jogo._id %>" data-profile-game-image="<%= jogo.icone_url || '' %>">
         <div class="container">
             
             <!-- Cabeçalho do Jogo -->

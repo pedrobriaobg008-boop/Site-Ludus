@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="mestre-title">
+  <title id="mestre-title">Patente Mestre</title>
+  <defs>
+    <linearGradient id="mestre-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f7e8ff"/><stop offset=".43" stop-color="#c6a0f8"/><stop offset="1" stop-color="#7b3ff2"/>
+    </linearGradient>
+    <linearGradient id="mestre-face" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#774cb2"/><stop offset="1" stop-color="#382357"/>
+    </linearGradient>
+    <linearGradient id="mestre-gem" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fff4bd"/><stop offset="1" stop-color="#e8ad5a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="65" fill="#7b3ff2" opacity=".08"/>
+  <path d="m44 48-31-24 4 29 21 22-17-6 4 21 24 20m67-62 31-24-4 29-21 22 17-6-4 21-24 20" fill="url(#mestre-metal)" stroke="#9470c4" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m20 35 24 28m96-28-24 28" fill="none" stroke="#f6e6ff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M27 101c4 17 17 28 33 30m73-30c-4 17-17 28-33 30" fill="none" stroke="#d0a45f" stroke-width="3" stroke-linecap="round"/>
+  <path d="m80 24 39 20v41c0 24-19 45-39 56-20-11-39-32-39-56V44Z" fill="url(#mestre-metal)" stroke="#8d62c1" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 35 30 16v33c0 18-14 37-30 47-16-10-30-29-30-47V51Z" fill="url(#mestre-face)"/>
+  <path d="m80 35 30 16-30 17-30-17Z" fill="#e2bdff" opacity=".24"/>
+  <path d="M80 68v63c16-10 30-29 30-47V51Z" fill="#281846" opacity=".28"/>
+  <path d="m80 51 8 18 20 8-17 13-11 20-11-20-17-13 20-8Z" fill="url(#mestre-gem)" stroke="#fff2c7" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 56 7 22-7 26-7-26Z" fill="#fff2c7"/>
+  <path d="m57 31-3-17 16 9L80 7l10 16 16-9-3 17-23 9Z" fill="url(#mestre-gem)" stroke="#bd9256" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="m80 17 4 8-4 7-4-7Z" fill="#9460d8"/>
+  <path d="m70 119 10 5 10-5" fill="none" stroke="#dcb8fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m22 112 4 3 1 8-6-5Zm12 13 5 1 5 7-8-1Zm104-13-4 3-1 8 6-5Zm-12 13-5 1-5 7 8-1Z" fill="url(#mestre-gem)"/>
+</svg>

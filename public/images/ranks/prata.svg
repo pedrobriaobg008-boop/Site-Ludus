@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="prata-title">
+  <title id="prata-title">Patente Prata</title>
+  <defs>
+    <linearGradient id="prata-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f5fcff"/><stop offset=".42" stop-color="#c8e6f5"/><stop offset="1" stop-color="#719cb5"/>
+    </linearGradient>
+    <linearGradient id="prata-face" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#377598"/><stop offset="1" stop-color="#183c60"/>
+    </linearGradient>
+    <linearGradient id="prata-star" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fff"/><stop offset="1" stop-color="#a9dcef"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="64" fill="#0282b1" opacity=".07"/>
+  <path d="m49 59-27-9 5 27 16 11-11-1 7 15 16 6m56-49 27-9-5 27-16 11 11-1-7 15-16 6" fill="url(#prata-metal)" stroke="#7ba6bd" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m28 58 18 17m86-17-18 17" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+  <path d="m80 24 37 20v40c0 23-18 43-37 54-19-11-37-31-37-54V44Z" fill="url(#prata-metal)" stroke="#739eb7" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 34 29 16v33c0 18-14 36-29 45-15-9-29-27-29-45V50Z" fill="url(#prata-face)"/>
+  <path d="m80 34 29 16-29 17-29-17Z" fill="#b9ebff" opacity=".22"/>
+  <path d="M80 67v61c15-9 29-27 29-45V50Z" fill="#0d2546" opacity=".24"/>
+  <path d="m80 52 8 18 19 3-14 14 3 20-16-10-16 10 3-20-14-14 19-3Z" fill="url(#prata-star)" stroke="#f2fcff" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m80 56 6 19-6 15-6-15Z" fill="#fff"/>
+  <path d="m80 90 16 17-3-20 14-14-21 2Z" fill="#70b7d4" opacity=".45"/>
+  <path d="m70 115 10 5 10-5" fill="none" stroke="#a4d7ed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m80 14 3 5-3 5-3-5Z" fill="#8cbad2"/>
+</svg>
