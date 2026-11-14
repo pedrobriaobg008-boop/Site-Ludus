@@ -79,6 +79,15 @@ const obterSecaoAtual = (caminho = '/') => {
 };
 
 const adminArtigosUrl = process.env.ADMIN_ARTIGOS_URL || '/admin';
+const inicializarEquipeNoBanco = async () => {
+  if (mongoose.connection.readyState !== 1) return null;
+  const colecao = mongoose.connection.db.collection('equipes');
+  const existente = await colecao.findOne({});
+  if (existente) return existente;
+  const { _id, ...dadosIniciais } = equipe;
+  await colecao.insertOne(dadosIniciais);
+  return colecao.findOne({});
+};
 
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
@@ -216,8 +225,14 @@ app.get('/artigos', async (req, res) => {
   }
 });
 
-app.get('/equipe', (req, res) => {
-  res.render('equipe', { equipe });
+app.get('/equipe', async (_req, res) => {
+  try {
+    const equipePublica = await inicializarEquipeNoBanco();
+    res.render('equipe', { equipe: equipePublica || equipe });
+  } catch (erro) {
+    console.error('Erro ao buscar equipe:', erro);
+    res.render('equipe', { equipe });
+  }
 });
 
 app.get('/parceiros', (req, res) => {
