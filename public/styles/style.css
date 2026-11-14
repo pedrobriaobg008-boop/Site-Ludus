@@ -3804,6 +3804,22 @@ h6,
     transition: all 0.3s ease;
 }
 
+.team-lattes-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.team-lattes-link:hover,
+.team-lattes-link:focus-visible {
+    color: #1746a2;
+    text-decoration: underline;
+}
+
 .team-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(90, 46, 112, 0.12);
