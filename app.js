@@ -8,6 +8,7 @@ const Categoria = require('./models/categoria');
 const equipe = require('./models/equipe');
 const parceiros = require('./models/parceiros');
 const ConteudoRelacionado = require('./models/conteudo-relacionado');
+const EquipeFoto = require('./models/equipe-foto');
 
 const app = express();
 
@@ -232,6 +233,20 @@ app.get('/equipe', async (_req, res) => {
   } catch (erro) {
     console.error('Erro ao buscar equipe:', erro);
     res.render('equipe', { equipe });
+  }
+});
+
+app.get('/equipe/foto/:id', async (req, res) => {
+  try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) return res.sendStatus(404);
+    const foto = await EquipeFoto.findById(req.params.id).lean();
+    if (!foto) return res.sendStatus(404);
+    res.set('Cache-Control', 'public, max-age=31536000, immutable');
+    const dadosImagem = Buffer.isBuffer(foto.dados) ? foto.dados : Buffer.from(foto.dados?.buffer || foto.dados);
+    res.type(foto.mimeType).send(dadosImagem);
+  } catch (erro) {
+    console.error('Erro ao carregar foto da equipe:', erro);
+    res.sendStatus(404);
   }
 });
 
